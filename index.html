@@ -22,7 +22,6 @@
       font-family: Arial, Helvetica, sans-serif;
       color: #102b58;
 
-      /* COLORFUL BACKGROUND — NO BLACK OVERLAY */
       background-color: #20bde8;
       background-image: url("tastystrains-background.PNG");
       background-position: center top;
@@ -63,7 +62,7 @@
 
     .mini-logo {
       width: 145px;
-      max-height: 70px;
+      height: 70px;
       object-fit: contain;
       border-radius: 12px;
     }
@@ -158,7 +157,7 @@
       min-height: 250px;
     }
 
-    .hero-art img {
+    .hero-art video {
       width: min(500px, 100%);
       max-height: 270px;
 
@@ -622,7 +621,7 @@
     .footer-logo {
       width: 155px;
 
-      max-height: 65px;
+      height: 65px;
 
       object-fit: contain;
 
@@ -793,11 +792,20 @@
     <header class="topbar">
 
       <a href="#home">
-        <img
+
+        <video
           class="mini-logo"
-          src="tastystrains-logo.jpg"
-          alt="TastyStrains 313"
+          autoplay
+          muted
+          loop
+          playsinline
         >
+          <source
+            src="tastystrains-logo.MP4"
+            type="video/mp4"
+          >
+        </video>
+
       </a>
 
       <nav class="nav" aria-label="Main navigation">
@@ -873,10 +881,17 @@
 
         <div class="hero-art">
 
-          <img
-            src="tastystrains-logo.jpg"
-            alt="TastyStrains 313 logo"
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
           >
+            <source
+              src="tastystrains-logo.MP4"
+              type="video/mp4"
+            >
+          </video>
 
         </div>
 
@@ -917,7 +932,6 @@
         class="cards"
         aria-label="TastyStrains services"
       >
-
 
         <!-- WATER ICE -->
 
@@ -1087,7 +1101,6 @@
 
       <section class="lower">
 
-
         <!-- STORE -->
 
         <article class="panel">
@@ -1121,7 +1134,6 @@
           </h2>
 
           <div class="flavors">
-
 
             <div class="flavor">
 
@@ -1194,7 +1206,6 @@
 
             </div>
 
-
           </div>
 
         </article>
@@ -1248,14 +1259,20 @@
 
     <footer id="contact">
 
-
       <div>
 
-        <img
+        <video
           class="footer-logo"
-          src="tastystrains-logo.jpg"
-          alt="TastyStrains 313"
+          autoplay
+          muted
+          loop
+          playsinline
         >
+          <source
+            src="tastystrains-logo.MP4"
+            type="video/mp4"
+          >
+        </video>
 
       </div>
 
