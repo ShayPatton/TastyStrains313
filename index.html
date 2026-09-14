@@ -616,48 +616,113 @@
     }
 
     /* =========================
-       OUR STORY
+       OUR STORY — UPGRADED
     ========================== */
 
     .story {
       margin-top: 15px;
       background: #fff;
       border-radius: 22px;
-      padding: 22px;
+      padding: 25px;
       display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 25px;
+      grid-template-columns: 300px 1fr;
+      gap: 30px;
       align-items: center;
       box-shadow: 0 9px 25px rgba(20, 47, 95, .16);
     }
 
+    .story-photo-wrap {
+      position: relative;
+    }
+
     .owner-photo {
       width: 100%;
-      height: 260px;
+      height: 330px;
       object-fit: cover;
-      border-radius: 18px;
+      border-radius: 20px;
+      border: 6px solid #1479cf;
+      box-shadow: 0 8px 20px rgba(20, 47, 95, .18);
+    }
+
+    .founder-badge {
+      position: absolute;
+      left: 15px;
+      bottom: 15px;
+      background: #ff4e9b;
+      color: #fff;
+      padding: 9px 13px;
+      border-radius: 12px;
+      font-size: 9px;
+      line-height: 1.3;
+      font-weight: 1000;
+      letter-spacing: .7px;
+      text-align: center;
+      box-shadow: 0 4px 0 rgba(16, 43, 88, .18);
+    }
+
+    .founder-badge strong {
+      font-size: 10px;
+    }
+
+    .story-content {
+      padding: 5px 5px 5px 0;
+    }
+
+    .story-label {
+      color: #1479cf;
+      font-size: 10px;
+      font-weight: 1000;
+      letter-spacing: 1.2px;
+      margin-bottom: 4px;
     }
 
     .story h2 {
       color: #ff4e9b;
       font-family: "Brush Script MT", "Segoe Script", cursive;
-      font-size: 42px;
+      font-size: 48px;
+      line-height: 1;
       margin-bottom: 7px;
+      text-shadow: 2px 2px 0 rgba(20, 47, 95, .12);
     }
 
     .story h3 {
       color: #1479cf;
-      font-size: 13px;
+      font-size: 12px;
+      line-height: 1.4;
       letter-spacing: 1px;
-      margin-bottom: 10px;
+      margin-bottom: 14px;
     }
 
     .story p {
       color: #334d72;
-      font-size: 14px;
-      line-height: 1.6;
+      font-size: 13px;
+      line-height: 1.55;
       font-weight: 600;
-      max-width: 720px;
+      max-width: 760px;
+      margin-bottom: 10px;
+    }
+
+    .story-highlight {
+      margin-top: 15px;
+      padding: 15px 17px;
+      background: #1479cf;
+      border-radius: 16px;
+      color: #fff;
+      box-shadow: 0 5px 0 rgba(16, 43, 88, .15);
+    }
+
+    .story-highlight strong {
+      display: block;
+      font-size: 11px;
+      letter-spacing: .8px;
+      margin-bottom: 5px;
+    }
+
+    .story-highlight span {
+      display: block;
+      font-size: 11px;
+      line-height: 1.45;
+      font-weight: 700;
     }
 
     /* =========================
@@ -889,6 +954,22 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
+      .story {
+        padding: 18px;
+      }
+
+      .owner-photo {
+        height: 360px;
+      }
+
+      .story-content {
+        padding: 0;
+      }
+
+      .story h2 {
+        font-size: 42px;
+      }
+
       footer {
         grid-template-columns: 1fr;
         text-align: center;
@@ -967,20 +1048,11 @@
 
   <div class="page">
 
-    <!-- =========================
-         HEADER
-    ========================== -->
-
+    <!-- HEADER -->
     <header class="topbar">
 
       <a href="#home">
-        <video
-          class="mini-logo"
-          autoplay
-          muted
-          loop
-          playsinline
-        >
+        <video class="mini-logo" autoplay muted loop playsinline>
           <source src="tastystrains-logo.MP4" type="video/mp4">
         </video>
       </a>
@@ -996,6 +1068,7 @@
       </nav>
 
       <div class="contact-pills">
+
         <a class="pill" href="tel:3135913034">
           313-591-3034
         </a>
@@ -1008,15 +1081,12 @@
         >
           @tastystrains313
         </a>
+
       </div>
 
     </header>
 
-
-    <!-- =========================
-         HERO
-    ========================== -->
-
+    <!-- HERO -->
     <section class="hero" id="home">
 
       <button
@@ -1029,12 +1099,7 @@
 
       <div class="hero-art">
 
-        <video
-          autoplay
-          muted
-          loop
-          playsinline
-        >
+        <video autoplay muted loop playsinline>
           <source src="tastystrains-logo.MP4" type="video/mp4">
         </video>
 
@@ -1066,16 +1131,10 @@
 
     </section>
 
-
-    <!-- =========================
-         MAIN CARDS
-    ========================== -->
-
+    <!-- MAIN CARDS -->
     <section class="cards">
 
-
       <!-- WATER ICE -->
-
       <article class="card water" id="waterice">
 
         <img
@@ -1095,8 +1154,7 @@
           </div>
 
           <p>
-            Authentic Philadelphia Water Ice
-            with bold flavors and a Detroit vibe.
+            Authentic Philadelphia Water Ice with bold flavors and a Detroit vibe.
           </p>
 
           <div class="water-price">
@@ -1131,9 +1189,7 @@
 
       </article>
 
-
       <!-- CATERING -->
-
       <article class="card catering" id="catering">
 
         <img
@@ -1153,9 +1209,8 @@
           </div>
 
           <p>
-            Bring TastyStrains Philadelphia Water Ice
-            to birthdays, graduations, weddings,
-            parties and special events.
+            Bring TastyStrains Philadelphia Water Ice to birthdays,
+            graduations, weddings, parties and special events.
           </p>
 
           <div class="catering-info">
@@ -1163,29 +1218,21 @@
           </div>
 
           <div class="catering-note">
-            Pricing is based on your event,
-            guest count and catering needs.
+            Pricing is based on your event, guest count and catering needs.
           </div>
 
           <div class="catering-note">
-            DEPOSIT REQUIRED TO BOOK.
-            Your event date is not confirmed
+            DEPOSIT REQUIRED TO BOOK. Your event date is not confirmed
             until the required deposit is received.
           </div>
 
           <div class="catering-buttons">
 
-            <a
-              class="button"
-              href="tel:3135913034"
-            >
+            <a class="button" href="tel:3135913034">
               CALL TO BOOK
             </a>
 
-            <a
-              class="button"
-              href="#contact"
-            >
+            <a class="button" href="#contact">
               REQUEST CATERING
             </a>
 
@@ -1195,9 +1242,7 @@
 
       </article>
 
-
       <!-- CLOTHING -->
-
       <article class="card clothing" id="clothing">
 
         <img
@@ -1217,14 +1262,10 @@
           </div>
 
           <p>
-            Fresh TastyStrains apparel made
-            for people who stay true to the vibe.
+            Fresh TastyStrains apparel made for people who stay true to the vibe.
           </p>
 
-          <a
-            class="button"
-            href="#lookbook"
-          >
+          <a class="button" href="#lookbook">
             VIEW THE LOOKBOOK
           </a>
 
@@ -1232,9 +1273,7 @@
 
       </article>
 
-
       <!-- ABOUT -->
-
       <article class="card about" id="about">
 
         <img
@@ -1254,14 +1293,10 @@
           </div>
 
           <p>
-            Detroit-grown flavor, good energy
-            and frozen desserts made to stand out.
+            Detroit-grown flavor, good energy and frozen desserts made to stand out.
           </p>
 
-          <a
-            class="button"
-            href="#story"
-          >
+          <a class="button" href="#story">
             OUR STORY
           </a>
 
@@ -1271,16 +1306,10 @@
 
     </section>
 
-
-    <!-- =========================
-         LOWER SECTION
-    ========================== -->
-
+    <!-- LOWER SECTION -->
     <section class="lower">
 
-
       <!-- IN STORES NOW -->
-
       <article class="panel">
 
         <h2 class="panel-title">
@@ -1299,9 +1328,7 @@
 
       </article>
 
-
       <!-- FEATURED PRODUCTS -->
-
       <article class="panel" id="flavors">
 
         <h2 class="panel-title">
@@ -1356,11 +1383,7 @@
 
     </section>
 
-
-    <!-- =========================
-         CLOTHING LOOKBOOK
-    ========================== -->
-
+    <!-- CLOTHING LOOKBOOK -->
     <section class="lookbook" id="lookbook">
 
       <h2 class="lookbook-title">
@@ -1413,10 +1436,7 @@
 
       <div class="lookbook-bottom">
 
-        <a
-          class="button"
-          href="#contact"
-        >
+        <a class="button" href="#contact">
           SHOP THE LOOK
         </a>
 
@@ -1424,11 +1444,7 @@
 
     </section>
 
-
-    <!-- =========================
-         LOCATIONS
-    ========================== -->
-
+    <!-- LOCATIONS -->
     <section class="locations" id="locations">
 
       <h2 class="locations-title">
@@ -1441,20 +1457,12 @@
 
       <div class="location-grid">
 
-
-        <!-- 1 -->
-
         <div class="location-card">
-
-          <h3>
-            Grand Liquor
-          </h3>
-
+          <h3>Grand Liquor</h3>
           <p>
             12889 Woodward<br>
             Highland Park, MI 48203
           </p>
-
           <a
             class="directions-button"
             href="https://www.google.com/maps/search/?api=1&query=Grand+Liquor+12889+Woodward+Highland+Park+MI+48203"
@@ -1463,23 +1471,14 @@
           >
             GET DIRECTIONS
           </a>
-
         </div>
 
-
-        <!-- 2 -->
-
         <div class="location-card">
-
-          <h3>
-            Imperial Fresh
-          </h3>
-
+          <h3>Imperial Fresh</h3>
           <p>
             14424 Schaefer<br>
             Detroit, MI 48227
           </p>
-
           <a
             class="directions-button"
             href="https://www.google.com/maps/search/?api=1&query=Imperial+Fresh+14424+Schaefer+Detroit+MI+48227"
@@ -1488,23 +1487,14 @@
           >
             GET DIRECTIONS
           </a>
-
         </div>
 
-
-        <!-- 3 -->
-
         <div class="location-card">
-
-          <h3>
-            Martell Liquor
-          </h3>
-
+          <h3>Martell Liquor</h3>
           <p>
             19137 Seven Mile<br>
             Detroit, MI 48219
           </p>
-
           <a
             class="directions-button"
             href="https://www.google.com/maps/search/?api=1&query=Martell+Liquor+19137+Seven+Mile+Detroit+MI+48219"
@@ -1513,23 +1503,14 @@
           >
             GET DIRECTIONS
           </a>
-
         </div>
 
-
-        <!-- 4 -->
-
         <div class="location-card">
-
-          <h3>
-            Heydens Liquor
-          </h3>
-
+          <h3>Heydens Liquor</h3>
           <p>
             20201 Seven Mile<br>
             Detroit, MI 48219
           </p>
-
           <a
             class="directions-button"
             href="https://www.google.com/maps/search/?api=1&query=Heydens+Liquor+20201+Seven+Mile+Detroit+MI+48219"
@@ -1538,23 +1519,14 @@
           >
             GET DIRECTIONS
           </a>
-
         </div>
 
-
-        <!-- 5 -->
-
         <div class="location-card">
-
-          <h3>
-            BP
-          </h3>
-
+          <h3>BP</h3>
           <p>
             30435 Cherry Hill<br>
             Westland, MI 48186
           </p>
-
           <a
             class="directions-button"
             href="https://www.google.com/maps/search/?api=1&query=BP+30435+Cherry+Hill+Westland+MI+48186"
@@ -1563,23 +1535,14 @@
           >
             GET DIRECTIONS
           </a>
-
         </div>
 
-
-        <!-- 6 -->
-
         <div class="location-card">
-
-          <h3>
-            Vintage Village Liquor
-          </h3>
-
+          <h3>Vintage Village Liquor</h3>
           <p>
             28927 Southfield Rd<br>
             Southfield, MI 48076
           </p>
-
           <a
             class="directions-button"
             href="https://www.google.com/maps/search/?api=1&query=Vintage+Village+Liquor+28927+Southfield+Rd+Southfield+MI+48076"
@@ -1588,23 +1551,14 @@
           >
             GET DIRECTIONS
           </a>
-
         </div>
 
-
-        <!-- 7 -->
-
         <div class="location-card">
-
-          <h3>
-            Greenfield Market
-          </h3>
-
+          <h3>Greenfield Market</h3>
           <p>
             15530 Puritan<br>
             Detroit, MI 48227
           </p>
-
           <a
             class="directions-button"
             href="https://www.google.com/maps/search/?api=1&query=Greenfield+Market+15530+Puritan+Detroit+MI+48227"
@@ -1613,23 +1567,14 @@
           >
             GET DIRECTIONS
           </a>
-
         </div>
 
-
-        <!-- 8 -->
-
         <div class="location-card">
-
-          <h3>
-            Big V Liquor
-          </h3>
-
+          <h3>Big V Liquor</h3>
           <p>
             14111 Greenfield Rd<br>
             Detroit, MI 48227
           </p>
-
           <a
             class="directions-button"
             href="https://www.google.com/maps/search/?api=1&query=Big+V+Liquor+14111+Greenfield+Rd+Detroit+MI+48227"
@@ -1638,23 +1583,14 @@
           >
             GET DIRECTIONS
           </a>
-
         </div>
 
-
-        <!-- 9 -->
-
         <div class="location-card">
-
-          <h3>
-            Kennedy Liquor
-          </h3>
-
+          <h3>Kennedy Liquor</h3>
           <p>
             13344 Seven Mile<br>
             Detroit, MI 48219
           </p>
-
           <a
             class="directions-button"
             href="https://www.google.com/maps/search/?api=1&query=Kennedy+Liquor+13344+Seven+Mile+Detroit+MI+48219"
@@ -1663,23 +1599,14 @@
           >
             GET DIRECTIONS
           </a>
-
         </div>
 
-
-        <!-- 10 -->
-
         <div class="location-card">
-
-          <h3>
-            W Liquor
-          </h3>
-
+          <h3>W Liquor</h3>
           <p>
             3325 E Seven Mile<br>
             Detroit, MI 48234
           </p>
-
           <a
             class="directions-button"
             href="https://www.google.com/maps/search/?api=1&query=W+Liquor+3325+E+Seven+Mile+Detroit+MI+48234"
@@ -1688,23 +1615,14 @@
           >
             GET DIRECTIONS
           </a>
-
         </div>
 
-
-        <!-- 11 -->
-
         <div class="location-card">
-
-          <h3>
-            United Liquor
-          </h3>
-
+          <h3>United Liquor</h3>
           <p>
             22040 Seven Mile<br>
             Detroit, MI 48219
           </p>
-
           <a
             class="directions-button"
             href="https://www.google.com/maps/search/?api=1&query=United+Liquor+22040+Seven+Mile+Detroit+MI+48219"
@@ -1713,23 +1631,14 @@
           >
             GET DIRECTIONS
           </a>
-
         </div>
 
-
-        <!-- 12 -->
-
         <div class="location-card">
-
-          <h3>
-            Marathon
-          </h3>
-
+          <h3>Marathon</h3>
           <p>
             10550 W Jefferson Ave<br>
             River Rouge, MI 48218
           </p>
-
           <a
             class="directions-button"
             href="https://www.google.com/maps/search/?api=1&query=Marathon+10550+W+Jefferson+Ave+River+Rouge+MI+48218"
@@ -1738,23 +1647,14 @@
           >
             GET DIRECTIONS
           </a>
-
         </div>
 
-
-        <!-- 13 -->
-
         <div class="location-card">
-
-          <h3>
-            Mobil
-          </h3>
-
+          <h3>Mobil</h3>
           <p>
             10001 Fenkell Ave<br>
             Detroit, MI 48238
           </p>
-
           <a
             class="directions-button"
             href="https://www.google.com/maps/search/?api=1&query=Mobil+10001+Fenkell+Ave+Detroit+MI+48238"
@@ -1763,6 +1663,105 @@
           >
             GET DIRECTIONS
           </a>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- OUR STORY -->
+    <section class="story" id="story">
+
+      <div class="story-photo-wrap">
+
+        <img
+          class="owner-photo"
+          src="owner-photo.PNG"
+          alt="TastyStrains founder"
+        >
+
+        <div class="founder-badge">
+          DETROIT<br>
+          <strong>FOUNDED WITH PURPOSE</strong>
+        </div>
+
+      </div>
+
+      <div class="story-content">
+
+        <div class="story-label">
+          DETROIT, MICHIGAN • FENKELL &amp; MONTE VISTA
+        </div>
+
+        <h2>
+          Our Story
+        </h2>
+
+        <h3>
+          BUILT FROM LOVE. SHAPED BY RESILIENCE. CREATED TO BRING JOY.
+        </h3>
+
+        <p>
+          I was born and raised in Detroit, Michigan, on Fenkell and
+          Monte Vista. Growing up, life was stable and full of love.
+          My parents were present, supportive and hardworking. My father
+          especially played a huge role in my life. He consistently showed
+          up for me and provided for our family alongside my mother.
+        </p>
+
+        <p>
+          Everything changed when my father was arrested and sentenced to
+          20 years in prison. His absence deeply impacted my family,
+          both emotionally and financially. What once felt secure became
+          uncertain, and my mother was left carrying the weight of our
+          household on her own.
+        </p>
+
+        <p>
+          Watching my family struggle during that time shaped how I view
+          responsibility, resilience and community.
+        </p>
+
+        <p>
+          During those years, one of my happiest memories came from my
+          uncle, who owned an ice cream truck. He would let me help pass
+          out ice cream to friends, family and neighbors. I remember the
+          joy on people's faces and the sense of togetherness it created.
+          Even in difficult times, something as simple as ice cream could
+          bring happiness, connection and relief.
+        </p>
+
+        <p>
+          That feeling never left me.
+        </p>
+
+        <p>
+          In 2021, inspired by those memories and my desire to give back,
+          I created Tasty Strains. The name represents bold flavors,
+          creativity and the power food has to uplift people. To me,
+          TastyStrains isn't just about frozen desserts — it's about
+          creating moments of joy, especially in the communities that
+          raised me.
+        </p>
+
+        <p>
+          Today, I'm taking the next step toward growing TastyStrains
+          into a real, sustainable business. My goal is to expand through
+          local retail partnerships, create opportunities and bring
+          something positive back to neighborhoods like the one I grew up in.
+        </p>
+
+        <div class="story-highlight">
+
+          <strong>
+            TASTY STRAINS IS MORE THAN A DESSERT BRAND.
+          </strong>
+
+          <span>
+            It's a story of family, resilience, community and the belief
+            that something meaningful can come from hardship, passion
+            and perseverance.
+          </span>
 
         </div>
 
@@ -1770,48 +1769,7 @@
 
     </section>
 
-
-    <!-- =========================
-         OUR STORY
-    ========================== -->
-
-    <section class="story" id="story">
-
-      <img
-        class="owner-photo"
-        src="owner-photo.PNG"
-        alt="TastyStrains owner"
-      >
-
-      <div>
-
-        <h2>
-          Our Story
-        </h2>
-
-        <h3>
-          DETROIT-GROWN. BUILT FROM THE GROUND UP.
-        </h3>
-
-        <p>
-          TastyStrains was created to bring bold,
-          refreshing frozen desserts to Detroit and
-          surrounding communities. What started with
-          a vision for bringing Philadelphia Water Ice
-          to local neighborhoods is growing into a brand
-          built around flavor, community, creativity
-          and real hustle.
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         CONTACT
-    ========================== -->
-
+    <!-- CONTACT -->
     <section class="contact-section" id="contact">
 
       <h2 class="contact-title">
@@ -1856,9 +1814,7 @@
 
       </div>
 
-
       <!-- PAYMENT METHODS -->
-
       <div class="payment-methods">
 
         <div class="payment-title">
@@ -1879,7 +1835,6 @@
 
           </div>
 
-
           <div class="payment-method">
 
             <img
@@ -1891,7 +1846,6 @@
             Square
 
           </div>
-
 
           <div class="payment-method">
 
@@ -1906,7 +1860,6 @@
           </div>
 
         </div>
-
 
         <p
           style="
@@ -1923,11 +1876,7 @@
 
     </section>
 
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
+    <!-- FOOTER -->
     <footer>
 
       <div>
@@ -1939,19 +1888,18 @@
           loop
           playsinline
         >
-          <source src="tastystrains-logo.MP4" type="video/mp4">
+          <source
+            src="tastystrains-logo.MP4"
+            type="video/mp4"
+          >
         </video>
 
       </div>
 
       <div class="footer-center">
-
         © 2026 TastyStrains LLC<br>
-
         Detroit, Michigan<br>
-
         Philadelphia Water Ice
-
       </div>
 
       <div class="footer-right">
