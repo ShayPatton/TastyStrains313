@@ -292,6 +292,43 @@
       transform: translateY(-1px);
     }
 
+    .water-price {
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: 1000;
+      letter-spacing: 1px;
+      margin-top: 2px;
+      margin-bottom: 5px;
+      text-shadow: 2px 2px 0 rgba(16, 43, 88, 0.25);
+    }
+
+    .water-info {
+      color: #ffffff;
+      font-size: 10px;
+      font-weight: 1000;
+      letter-spacing: 0.8px;
+      margin-bottom: 4px;
+    }
+
+    .water-note {
+      color: #ffffff;
+      font-size: 9px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .water-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 7px;
+      margin-top: auto;
+    }
+
+    .water-buttons .button {
+      margin-top: 0;
+    }
+
     .lower {
       display: grid;
       grid-template-columns: 1.1fr 1fr;
@@ -345,7 +382,6 @@
       border-radius: 50%;
       border: 4px solid #ffffff;
       background: #ffffff;
-
       animation: slowCupSpin 9s linear infinite;
       transform-style: preserve-3d;
       will-change: transform;
@@ -370,7 +406,6 @@
       margin-top: 6px;
       line-height: 1.1;
     }
-
 
     /* =========================
        LOCATIONS
@@ -450,7 +485,6 @@
     .directions-button:hover {
       transform: translateY(-2px);
     }
-
 
     .story {
       margin-top: 15px;
@@ -634,6 +668,15 @@
         font-size: 36px;
       }
 
+      .water-buttons {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .water-buttons .button {
+        width: 100%;
+      }
+
       .story {
         padding: 15px;
       }
@@ -730,33 +773,75 @@
 
       <section class="cards" aria-label="TastyStrains services">
 
+        <!-- =========================
+             WATER ICE
+             ========================= -->
+
         <article class="card water" id="water-ice">
 
           <img
             class="card-image"
             src="water-ice.jpg"
-            alt="TastyStrains water ice"
+            alt="TastyStrains Philadelphia Water Ice"
           >
 
           <div class="card-body">
 
-            <h2 class="script-title">Water Ice</h2>
+            <h2 class="script-title">
+              Water Ice
+            </h2>
 
-            <div class="card-icon">🍧</div>
+            <div class="card-icon">
+              🍧
+            </div>
 
             <p>
-              Authentic Philadelphia water ice
+              Authentic Philadelphia Water Ice
               with bold flavors and a Detroit vibe.
             </p>
 
-            <a class="button" href="#flavors">
-              VIEW FLAVORS
-            </a>
+            <div class="water-price">
+              $5 PER CUP
+            </div>
+
+            <div class="water-info">
+              EBT ACCEPTED
+            </div>
+
+            <div class="water-info">
+              NO THC • NO CBD
+            </div>
+
+            <div class="water-note">
+              Available at participating retail locations
+            </div>
+
+            <div class="water-buttons">
+
+              <a
+                class="button"
+                href="#flavors"
+              >
+                VIEW FLAVORS
+              </a>
+
+              <a
+                class="button"
+                href="#locations"
+              >
+                FIND A LOCATION
+              </a>
+
+            </div>
 
           </div>
 
         </article>
 
+
+        <!-- =========================
+             CATERING
+             ========================= -->
 
         <article class="card catering" id="catering">
 
@@ -768,16 +853,23 @@
 
           <div class="card-body">
 
-            <h2 class="script-title">Catering</h2>
+            <h2 class="script-title">
+              Catering
+            </h2>
 
-            <div class="card-icon">🎉</div>
+            <div class="card-icon">
+              🎉
+            </div>
 
             <p>
               Bring the TastyStrains experience
               to your next party, event or celebration.
             </p>
 
-            <a class="button" href="tel:3135913034">
+            <a
+              class="button"
+              href="tel:3135913034"
+            >
               BOOK CATERING
             </a>
 
@@ -785,6 +877,10 @@
 
         </article>
 
+
+        <!-- =========================
+             CLOTHING
+             ========================= -->
 
         <article class="card clothing" id="clothing">
 
@@ -796,16 +892,23 @@
 
           <div class="card-body">
 
-            <h2 class="script-title">Clothing</h2>
+            <h2 class="script-title">
+              Clothing
+            </h2>
 
-            <div class="card-icon">👕</div>
+            <div class="card-icon">
+              👕
+            </div>
 
             <p>
               Fresh TastyStrains apparel made
               for people who stay true to the vibe.
             </p>
 
-            <a class="button" href="#contact">
+            <a
+              class="button"
+              href="#contact"
+            >
               SHOP THE LOOK
             </a>
 
@@ -813,6 +916,10 @@
 
         </article>
 
+
+        <!-- =========================
+             ABOUT
+             ========================= -->
 
         <article class="card about" id="about">
 
@@ -824,16 +931,23 @@
 
           <div class="card-body">
 
-            <h2 class="script-title">About Us</h2>
+            <h2 class="script-title">
+              About Us
+            </h2>
 
-            <div class="card-icon">💚</div>
+            <div class="card-icon">
+              💚
+            </div>
 
             <p>
               Detroit-grown flavor, good energy
               and frozen desserts made to stand out.
             </p>
 
-            <a class="button" href="#story">
+            <a
+              class="button"
+              href="#story"
+            >
               OUR STORY
             </a>
 
@@ -843,6 +957,10 @@
 
       </section>
 
+
+      <!-- =========================
+           STORE + FLAVORS
+           ========================= -->
 
       <section class="lower">
 
@@ -874,27 +992,50 @@
           <div class="flavors">
 
             <div class="flavor">
-              <img src="mango.jpg" alt="Mango PWI Water Ice">
-              <span>Mango</span>
+              <img
+                src="mango.jpg"
+                alt="Mango PWI Water Ice"
+              >
+              <span>
+                Mango
+              </span>
             </div>
 
             <div class="flavor">
-              <img src="lemon.jpg" alt="Lemon PWI Water Ice">
-              <span>Lemon</span>
+              <img
+                src="lemon.jpg"
+                alt="Lemon PWI Water Ice"
+              >
+              <span>
+                Lemon
+              </span>
             </div>
 
             <div class="flavor">
-              <img src="cherry .jpg" alt="Cherry PWI Water Ice">
-              <span>Cherry</span>
+              <img
+                src="cherry .jpg"
+                alt="Cherry PWI Water Ice"
+              >
+              <span>
+                Cherry
+              </span>
             </div>
 
             <div class="flavor">
-              <img src="blueberry .jpg" alt="Blueberry PWI Water Ice">
-              <span>Blueberry</span>
+              <img
+                src="blueberry .jpg"
+                alt="Blueberry PWI Water Ice"
+              >
+              <span>
+                Blueberry
+              </span>
             </div>
 
             <div class="flavor">
-              <img src="tropical-rainbow.jpg" alt="Tropical Rainbow PWI Water Ice">
+              <img
+                src="tropical-rainbow.jpg"
+                alt="Tropical Rainbow PWI Water Ice"
+              >
               <span>
                 Tropical<br>
                 Rainbow
@@ -902,7 +1043,10 @@
             </div>
 
             <div class="flavor">
-              <img src="cotton candy .jpg" alt="TastyStrains Cotton Candy">
+              <img
+                src="cotton candy .jpg"
+                alt="TastyStrains Cotton Candy"
+              >
               <span>
                 Cotton<br>
                 Candy
@@ -910,13 +1054,23 @@
             </div>
 
             <div class="flavor">
-              <img src="fireworks.jpg" alt="TastyStrains Fireworks">
-              <span>Fireworks</span>
+              <img
+                src="fireworks.jpg"
+                alt="TastyStrains Fireworks"
+              >
+              <span>
+                Fireworks
+              </span>
             </div>
 
             <div class="flavor">
-              <img src="watermelon .jpg" alt="Watermelon">
-              <span>Watermelon</span>
+              <img
+                src="watermelon .jpg"
+                alt="Watermelon"
+              >
+              <span>
+                Watermelon
+              </span>
             </div>
 
           </div>
@@ -930,7 +1084,10 @@
            TASTY STRAINS LOCATIONS
            ========================= -->
 
-      <section class="locations" id="locations">
+      <section
+        class="locations"
+        id="locations"
+      >
 
         <h2 class="locations-title">
           Find TastyStrains
@@ -944,11 +1101,16 @@
 
 
           <div class="location-card">
-            <h3>Grand Liquor</h3>
+
+            <h3>
+              Grand Liquor
+            </h3>
+
             <p>
               12889 Woodward<br>
               Highland Park, MI 48203
             </p>
+
             <a
               class="directions-button"
               href="https://www.google.com/maps/search/?api=1&query=Grand+Liquor+12889+Woodward+Highland+Park+MI+48203"
@@ -957,15 +1119,21 @@
             >
               📍 GET DIRECTIONS
             </a>
+
           </div>
 
 
           <div class="location-card">
-            <h3>Imperial Fresh</h3>
+
+            <h3>
+              Imperial Fresh
+            </h3>
+
             <p>
               14424 Schaefer<br>
               Detroit, MI 48227
             </p>
+
             <a
               class="directions-button"
               href="https://www.google.com/maps/search/?api=1&query=Imperial+Fresh+14424+Schaefer+Detroit+MI+48227"
@@ -974,15 +1142,21 @@
             >
               📍 GET DIRECTIONS
             </a>
+
           </div>
 
 
           <div class="location-card">
-            <h3>Martell Liquor</h3>
+
+            <h3>
+              Martell Liquor
+            </h3>
+
             <p>
               19137 Seven Mile<br>
               Detroit, MI 48219
             </p>
+
             <a
               class="directions-button"
               href="https://www.google.com/maps/search/?api=1&query=Martell+Liquor+19137+Seven+Mile+Detroit+MI+48219"
@@ -991,15 +1165,21 @@
             >
               📍 GET DIRECTIONS
             </a>
+
           </div>
 
 
           <div class="location-card">
-            <h3>Heydens Liquor</h3>
+
+            <h3>
+              Heydens Liquor
+            </h3>
+
             <p>
               20201 Seven Mile<br>
               Detroit, MI 48219
             </p>
+
             <a
               class="directions-button"
               href="https://www.google.com/maps/search/?api=1&query=Heydens+Liquor+20201+Seven+Mile+Detroit+MI+48219"
@@ -1008,15 +1188,21 @@
             >
               📍 GET DIRECTIONS
             </a>
+
           </div>
 
 
           <div class="location-card">
-            <h3>BP</h3>
+
+            <h3>
+              BP
+            </h3>
+
             <p>
               30435 Cherry Hill<br>
               Westland, MI 48186
             </p>
+
             <a
               class="directions-button"
               href="https://www.google.com/maps/search/?api=1&query=BP+30435+Cherry+Hill+Westland+MI+48186"
@@ -1025,15 +1211,21 @@
             >
               📍 GET DIRECTIONS
             </a>
+
           </div>
 
 
           <div class="location-card">
-            <h3>Vintage Village Liquor</h3>
+
+            <h3>
+              Vintage Village Liquor
+            </h3>
+
             <p>
               28927 Southfield Rd<br>
               Southfield, MI 48076
             </p>
+
             <a
               class="directions-button"
               href="https://www.google.com/maps/search/?api=1&query=Vintage+Village+Liquor+28927+Southfield+Rd+Southfield+MI+48076"
@@ -1042,15 +1234,21 @@
             >
               📍 GET DIRECTIONS
             </a>
+
           </div>
 
 
           <div class="location-card">
-            <h3>Greenfield Market</h3>
+
+            <h3>
+              Greenfield Market
+            </h3>
+
             <p>
               15530 Puritan<br>
               Detroit, MI 48227
             </p>
+
             <a
               class="directions-button"
               href="https://www.google.com/maps/search/?api=1&query=Greenfield+Market+15530+Puritan+Detroit+MI+48227"
@@ -1059,15 +1257,21 @@
             >
               📍 GET DIRECTIONS
             </a>
+
           </div>
 
 
           <div class="location-card">
-            <h3>Big V Liquor</h3>
+
+            <h3>
+              Big V Liquor
+            </h3>
+
             <p>
               14111 Greenfield Rd<br>
               Detroit, MI 48227
             </p>
+
             <a
               class="directions-button"
               href="https://www.google.com/maps/search/?api=1&query=Big+V+Liquor+14111+Greenfield+Rd+Detroit+MI+48227"
@@ -1076,15 +1280,21 @@
             >
               📍 GET DIRECTIONS
             </a>
+
           </div>
 
 
           <div class="location-card">
-            <h3>Kennedy Liquor</h3>
+
+            <h3>
+              Kennedy Liquor
+            </h3>
+
             <p>
               13344 Seven Mile<br>
               Detroit, MI 48219
             </p>
+
             <a
               class="directions-button"
               href="https://www.google.com/maps/search/?api=1&query=Kennedy+Liquor+13344+Seven+Mile+Detroit+MI+48219"
@@ -1093,15 +1303,21 @@
             >
               📍 GET DIRECTIONS
             </a>
+
           </div>
 
 
           <div class="location-card">
-            <h3>W Liquor</h3>
+
+            <h3>
+              W Liquor
+            </h3>
+
             <p>
               3325 E Seven Mile<br>
               Detroit, MI 48234
             </p>
+
             <a
               class="directions-button"
               href="https://www.google.com/maps/search/?api=1&query=W+Liquor+3325+E+Seven+Mile+Detroit+MI+48234"
@@ -1110,15 +1326,21 @@
             >
               📍 GET DIRECTIONS
             </a>
+
           </div>
 
 
           <div class="location-card">
-            <h3>United Liquor</h3>
+
+            <h3>
+              United Liquor
+            </h3>
+
             <p>
               22040 Seven Mile<br>
               Detroit, MI 48219
             </p>
+
             <a
               class="directions-button"
               href="https://www.google.com/maps/search/?api=1&query=United+Liquor+22040+Seven+Mile+Detroit+MI+48219"
@@ -1127,15 +1349,21 @@
             >
               📍 GET DIRECTIONS
             </a>
+
           </div>
 
 
           <div class="location-card">
-            <h3>Marathon</h3>
+
+            <h3>
+              Marathon
+            </h3>
+
             <p>
               10550 W Jefferson Ave<br>
               River Rouge, MI 48218
             </p>
+
             <a
               class="directions-button"
               href="https://www.google.com/maps/search/?api=1&query=Marathon+10550+W+Jefferson+Ave+River+Rouge+MI+48218"
@@ -1144,15 +1372,21 @@
             >
               📍 GET DIRECTIONS
             </a>
+
           </div>
 
 
           <div class="location-card">
-            <h3>Mobil</h3>
+
+            <h3>
+              Mobil
+            </h3>
+
             <p>
               10001 Fenkell Ave<br>
               Detroit, MI 48238
             </p>
+
             <a
               class="directions-button"
               href="https://www.google.com/maps/search/?api=1&query=Mobil+10001+Fenkell+Ave+Detroit+MI+48238"
@@ -1161,6 +1395,7 @@
             >
               📍 GET DIRECTIONS
             </a>
+
           </div>
 
 
@@ -1169,7 +1404,14 @@
       </section>
 
 
-      <section class="story" id="story">
+      <!-- =========================
+           OUR STORY
+           ========================= -->
+
+      <section
+        class="story"
+        id="story"
+      >
 
         <img
           class="owner-photo"
@@ -1179,7 +1421,9 @@
 
         <div>
 
-          <h2>Our Story</h2>
+          <h2>
+            Our Story
+          </h2>
 
           <h3>
             DETROIT FLAVOR. FAMILY ENERGY. TASTY VIBES.
@@ -1200,6 +1444,10 @@
 
     </main>
 
+
+    <!-- =========================
+         FOOTER / CONTACT
+         ========================= -->
 
     <footer id="contact">
 
