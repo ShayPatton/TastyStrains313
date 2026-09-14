@@ -1,10 +1,1234 @@
-<!DOCTYPE html> <html lang="en">
-  <head> <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>TastyStrains | Detroit Frozen Desserts</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>TastyStrains | Detroit Frozen Desserts</title>
+
+  <meta
+    name="description"
+    content="TastyStrains — Detroit frozen desserts, Philadelphia Water Ice, catering and apparel."
+  >
+
+  <style>
+    /* =========================
+       TASTY STRAINS
+       COMPLETE ONE-PAGE WEBSITE
+       ========================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --ice-blue: #8fe9ff;
+      --light-blue: #c8f7ff;
+      --pink: #ff8fcf;
+      --white: #ffffff;
+      --dark: #07141c;
+      --glass: rgba(0, 15, 25, 0.68);
+      --glass-light: rgba(255, 255, 255, 0.10);
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--white);
+      background: var(--dark);
+      overflow-x: hidden;
+    }
+
+    /* =========================
+       BACKGROUND
+       ========================= */
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          rgba(3, 16, 25, 0.67),
+          rgba(3, 16, 25, 0.78)
+        ),
+        url("tastystrains-background.jpg");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 10, 18, 0.15);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* =========================
+       NAVIGATION
+       ========================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+
+      background: rgba(2, 13, 20, 0.80);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+
+      border-bottom: 1px solid rgba(143, 233, 255, 0.20);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 16px 22px;
+    }
+
+    .logo {
+      text-decoration: none;
+      color: white;
+      font-weight: 900;
+      font-size: 1.45rem;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: var(--ice-blue);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.92rem;
+      transition: 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: var(--ice-blue);
+    }
+
+    .menu-button {
+      display: none;
+      border: none;
+      background: none;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* =========================
+       GENERAL
+       ========================= */
+
+    section {
+      min-height: 100vh;
+      padding: 110px 20px 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(2.1rem, 6vw, 4rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .section-title p {
+      margin-top: 12px;
+      color: var(--light-blue);
+      font-size: 1rem;
+    }
+
+    .glass {
+      background: var(--glass);
+      border: 1px solid rgba(143, 233, 255, 0.20);
+      border-radius: 22px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.30);
+    }
+
+    /* =========================
+       HERO
+       ========================= */
+
+    #home {
+      min-height: 100vh;
+      text-align: center;
+      padding-top: 130px;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 9px 18px;
+      margin-bottom: 20px;
+
+      border: 1px solid rgba(143, 233, 255, 0.55);
+      border-radius: 50px;
+
+      background: rgba(143, 233, 255, 0.10);
+      color: var(--light-blue);
+
+      font-weight: 800;
+      font-size: 0.82rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      font-size: clamp(3.2rem, 12vw, 8rem);
+      line-height: 0.9;
+      font-weight: 1000;
+      letter-spacing: -4px;
+      text-transform: uppercase;
+
+      text-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.65);
+    }
+
+    .hero-title .blue {
+      color: var(--ice-blue);
+    }
+
+    .hero-title .pink {
+      color: var(--pink);
+    }
+
+    .hero-subtitle {
+      margin: 28px auto;
+      max-width: 650px;
+
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      line-height: 1.7;
+
+      color: #f0fbff;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-block;
+      text-decoration: none;
+      border-radius: 50px;
+      padding: 14px 25px;
+
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+
+      transition: 0.25s;
+    }
+
+    .button-primary {
+      background: var(--ice-blue);
+      color: #06141b;
+      box-shadow: 0 8px 25px rgba(143, 233, 255, 0.20);
+    }
+
+    .button-primary:hover {
+      transform: translateY(-3px);
+      background: white;
+    }
+
+    .button-secondary {
+      color: white;
+      border: 1px solid rgba(255,255,255,0.40);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .button-secondary:hover {
+      transform: translateY(-3px);
+      border-color: var(--ice-blue);
+      color: var(--ice-blue);
+    }
+
+    /* =========================
+       WATER ICE
+       ========================= */
+
+    #water-ice {
+      background: rgba(0, 15, 25, 0.18);
+    }
+
+    .ice-intro {
+      max-width: 800px;
+      margin: 0 auto 35px;
+      text-align: center;
+
+      font-size: 1.08rem;
+      line-height: 1.8;
+      color: #e8faff;
+    }
+
+    .flavor-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .flavor-card {
+      padding: 28px 18px;
+      text-align: center;
+
+      background: rgba(0, 18, 30, 0.72);
+      border: 1px solid rgba(143, 233, 255, 0.20);
+      border-radius: 20px;
+
+      transition: 0.3s;
+    }
+
+    .flavor-card:hover {
+      transform: translateY(-7px);
+      border-color: var(--ice-blue);
+      box-shadow: 0 12px 35px rgba(143, 233, 255, 0.13);
+    }
+
+    .flavor-icon {
+      font-size: 3rem;
+      margin-bottom: 14px;
+    }
+
+    .flavor-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 9px;
+    }
+
+    .flavor-card p {
+      color: #cdebf2;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .notice {
+      max-width: 800px;
+      margin: 35px auto 0;
+      padding: 18px 22px;
+      text-align: center;
+
+      border-radius: 15px;
+      background: rgba(143, 233, 255, 0.08);
+      border: 1px solid rgba(143, 233, 255, 0.22);
+
+      color: #dff9ff;
+    }
+
+    /* =========================
+       CLOTHING
+       ========================= */
+
+    .clothing-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .clothing-card {
+      padding: 40px;
+    }
+
+    .clothing-card h3 {
+      color: var(--ice-blue);
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .clothing-card p {
+      line-height: 1.8;
+      color: #e3f7fb;
+      margin-bottom: 20px;
+    }
+
+    .clothing-features {
+      list-style: none;
+      margin: 20px 0;
+    }
+
+    .clothing-features li {
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .clothing-features li::before {
+      content: "✦";
+      color: var(--pink);
+      margin-right: 10px;
+    }
+
+    .clothing-showcase {
+      min-height: 430px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border-radius: 25px;
+
+      background:
+        linear-gradient(
+          rgba(0, 20, 30, 0.40),
+          rgba(0, 20, 30, 0.75)
+        ),
+        url("tastystrains-background.jpg");
+
+      background-size: cover;
+      background-position: center;
+
+      border: 1px solid rgba(143, 233, 255, 0.25);
+    }
+
+    .icy-text {
+      text-align: center;
+    }
+
+    .icy-text .icy {
+      font-size: clamp(5rem, 15vw, 10rem);
+      font-weight: 1000;
+      color: var(--ice-blue);
+      text-shadow:
+        0 5px 0 rgba(255,255,255,0.3),
+        0 12px 35px rgba(0,0,0,0.7);
+      letter-spacing: -5px;
+    }
+
+    .icy-text p {
+      font-size: 1.2rem;
+      font-weight: 900;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       CATERING
+       ========================= */
+
+    .catering-box {
+      padding: 50px;
+      text-align: center;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .catering-box h3 {
+      font-size: clamp(2rem, 6vw, 3.8rem);
+      margin-bottom: 20px;
+    }
+
+    .catering-box h3 span {
+      color: var(--pink);
+    }
+
+    .catering-box p {
+      line-height: 1.8;
+      color: #e4f8fc;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .catering-options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin: 35px 0;
+    }
+
+    .catering-option {
+      padding: 20px;
+      border-radius: 15px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .catering-option strong {
+      display: block;
+      color: var(--ice-blue);
+      margin-bottom: 7px;
+    }
+
+    /* =========================
+       LOCATIONS
+       ========================= */
+
+    .locations-box {
+      max-width: 850px;
+      margin: auto;
+      padding: 40px;
+    }
+
+    .location-intro {
+      text-align: center;
+      margin-bottom: 30px;
+      line-height: 1.7;
+      color: #e5f8fc;
+    }
+
+    .location-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 18px 5px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .location-item:last-child {
+      border-bottom: none;
+    }
+
+    .location-name {
+      font-weight: 900;
+    }
+
+    .location-status {
+      color: var(--ice-blue);
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    /* =========================
+       OUR STORY
+       ========================= */
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      align-items: stretch;
+    }
+
+    .story-card {
+      padding: 40px;
+    }
+
+    .story-card h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: var(--ice-blue);
+    }
+
+    .story-card p {
+      line-height: 1.85;
+      color: #e4f8fc;
+      margin-bottom: 16px;
+    }
+
+    .story-photo {
+      min-height: 400px;
+      border-radius: 22px;
+
+      background:
+        linear-gradient(
+          rgba(0,0,0,0.25),
+          rgba(0,0,0,0.65)
+        ),
+        url("first-placement.jpg");
+
+      background-size: cover;
+      background-position: center;
+
+      border: 1px solid rgba(143, 233, 255, 0.22);
+
+      display: flex;
+      align-items: flex-end;
+      padding: 25px;
+    }
+
+    .story-photo span {
+      font-size: 1.3rem;
+      font-weight: 900;
+      text-shadow: 0 3px 12px black;
+    }
+
+    /* =========================
+       CONTACT
+       ========================= */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      max-width: 950px;
+      margin: auto;
+    }
+
+    .contact-card {
+      padding: 35px;
+    }
+
+    .contact-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      color: var(--ice-blue);
+    }
+
+    .contact-card p {
+      color: #dff5f9;
+      line-height: 1.8;
+    }
+
+    .contact-link {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .contact-link:hover {
+      color: var(--ice-blue);
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+      padding: 40px 20px;
+      text-align: center;
+
+      background: rgba(0, 8, 13, 0.90);
+      border-top: 1px solid rgba(143, 233, 255, 0.15);
+    }
+
+    footer .footer-logo {
+      font-size: 1.8rem;
+      font-weight: 1000;
+      margin-bottom: 10px;
+    }
+
+    footer .footer-logo span {
+      color: var(--ice-blue);
+    }
+
+    footer p {
+      color: #9fc2cb;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 850px) {
+
+      .nav-links {
+        position: absolute;
+        top: 67px;
+        left: 0;
+        width: 100%;
+
+        display: none;
+        flex-direction: column;
+        gap: 0;
+
+        background: rgba(2, 13, 20, 0.97);
+        border-bottom: 1px solid rgba(143, 233, 255, 0.20);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li {
+        text-align: center;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 15px;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .flavor-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .clothing-layout,
+      .story-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .catering-options {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      section {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      nav {
+        padding: 14px 16px;
+      }
+
+      .hero-title {
+        letter-spacing: -2px;
+      }
+
+      .flavor-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .clothing-card,
+      .catering-box,
+      .locations-box,
+      .story-card,
+      .contact-card {
+        padding: 25px;
+      }
+
+      .location-item {
+        gap: 15px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<h1>tastystrains</h1>
-<p>Detroit frozen desserts</p>
+
+  <!-- =========================
+       NAVIGATION
+       ========================= -->
+
+  <header>
+    <nav>
+
+      <a href="#home" class="logo">
+        Tasty<span>Strains</span>
+      </a>
+
+      <button class="menu-button" onclick="toggleMenu()" aria-label="Open menu">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#water-ice">Water Ice</a></li>
+        <li><a href="#clothing">Clothing</a></li>
+        <li><a href="#catering">Catering</a></li>
+        <li><a href="#locations">Locations</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+
+  <!-- =========================
+       HOME
+       ========================= -->
+
+  <section id="home">
+
+    <div class="hero-content">
+
+      <div class="hero-badge">
+        Detroit • Michigan
+      </div>
+
+      <h1 class="hero-title">
+        Tasty<span class="blue">Strains</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Detroit frozen desserts with a Philly-inspired twist.
+        Featuring Philadelphia Water Ice, TastyStrains apparel,
+        and catering for your next event.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#water-ice" class="button button-primary">
+          Explore Water Ice
+        </a>
+
+        <a href="#catering" class="button button-secondary">
+          Book Catering
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       WATER ICE
+       ========================= -->
+
+  <section id="water-ice">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Water Ice</h2>
+        <p>Cold. Smooth. Flavorful.</p>
+      </div>
+
+      <p class="ice-intro">
+        TastyStrains brings Philadelphia Water Ice to Detroit.
+        Our frozen cups are made for a smooth, refreshing treat
+        whenever you need something icy and flavorful.
+      </p>
+
+      <div class="flavor-grid">
+
+        <div class="flavor-card">
+          <div class="flavor-icon">🍓</div>
+          <h3>Strawberry</h3>
+          <p>Sweet, fruity and refreshing.</p>
+        </div>
+
+        <div class="flavor-card">
+          <div class="flavor-icon">🍋</div>
+          <h3>Lemon</h3>
+          <p>Bright, tangy and icy cold.</p>
+        </div>
+
+        <div class="flavor-card">
+          <div class="flavor-icon">🍒</div>
+          <h3>Cherry</h3>
+          <p>Classic cherry flavor with a frozen finish.</p>
+        </div>
+
+        <div class="flavor-card">
+          <div class="flavor-icon">🌈</div>
+          <h3>Tropical Rainbow</h3>
+          <p>A colorful combination made for TastyStrains.</p>
+        </div>
+
+      </div>
+
+      <div class="notice">
+        <strong>Find TastyStrains in stores.</strong><br>
+        Look for our branded frozen dessert freezer at participating locations.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CLOTHING
+       ========================= -->
+
+  <section id="clothing">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Clothing</h2>
+        <p>Wear the brand. Rep the ice.</p>
+      </div>
+
+      <div class="clothing-layout">
+
+        <div class="clothing-card glass">
+
+          <h3>TastyStrains Apparel</h3>
+
+          <p>
+            TastyStrains isn't just something you eat.
+            It's a brand you can wear.
+          </p>
+
+          <p>
+            Our apparel collection brings the same icy
+            personality of TastyStrains into premium streetwear.
+          </p>
+
+          <ul class="clothing-features">
+            <li>Premium heavyweight pieces</li>
+            <li>TastyStrains branding</li>
+            <li>ICY-inspired designs</li>
+            <li>Limited releases</li>
+          </ul>
+
+          <a href="#contact" class="button button-primary">
+            Ask About Clothing
+          </a>
+
+        </div>
+
+        <div class="clothing-showcase">
+
+          <div class="icy-text">
+
+            <div class="icy">
+              ICY
+            </div>
+
+            <p>
+              TastyStrains
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CATERING
+       ========================= -->
+
+  <section id="catering">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Catering</h2>
+        <p>Bring the ice to your event.</p>
+      </div>
+
+      <div class="catering-box glass">
+
+        <h3>
+          Make Your Event
+          <span>ICY.</span>
+        </h3>
+
+        <p>
+          From parties and celebrations to community events,
+          business functions and special occasions, TastyStrains
+          can bring frozen dessert service directly to you.
+        </p>
+
+        <div class="catering-options">
+
+          <div class="catering-option">
+            <strong>Private Events</strong>
+            Birthdays, family gatherings and celebrations.
+          </div>
+
+          <div class="catering-option">
+            <strong>Business Events</strong>
+            Company events, launches and employee gatherings.
+          </div>
+
+          <div class="catering-option">
+            <strong>Community Events</strong>
+            Festivals, pop-ups and neighborhood events.
+          </div>
+
+        </div>
+
+        <a href="#contact" class="button button-primary">
+          Request Catering
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       LOCATIONS
+       ========================= -->
+
+  <section id="locations">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Store Locations</h2>
+        <p>Find TastyStrains near you.</p>
+      </div>
+
+      <div class="locations-box glass">
+
+        <p class="location-intro">
+          TastyStrains is growing throughout the Detroit area.
+          Check our Instagram for the newest store placements
+          and restock announcements.
+        </p>
+
+        <div class="location-item">
+          <span class="location-name">
+            Fenkell & Wyoming
+          </span>
+
+          <span class="location-status">
+            TASTY STRAINS
+          </span>
+        </div>
+
+        <div class="location-item">
+          <span class="location-name">
+            Detroit Area Locations
+          </span>
+
+          <span class="location-status">
+            MORE COMING
+          </span>
+        </div>
+
+        <div class="location-item">
+          <span class="location-name">
+            Highland Park Area
+          </span>
+
+          <span class="location-status">
+            TASTY STRAINS
+          </span>
+        </div>
+
+        <div style="text-align:center; margin-top:30px;">
+
+          <a
+            href="https://www.instagram.com/tastystrains313/"
+            target="_blank"
+            rel="noopener"
+            class="button button-primary"
+          >
+            Follow @tastystrains313
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       OUR STORY
+       ========================= -->
+
+  <section id="story">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Our Story</h2>
+        <p>From an idea to store shelves.</p>
+      </div>
+
+      <div class="story-grid">
+
+        <div class="story-card glass">
+
+          <h3>Built in Detroit.</h3>
+
+          <p>
+            TastyStrains started with a simple idea:
+            bring a different kind of frozen dessert experience
+            to Detroit.
+          </p>
+
+          <p>
+            What started with the first store placement is growing
+            into a larger brand built around frozen desserts,
+            apparel and catering.
+          </p>
+
+          <p>
+            The mission is simple — create something people
+            recognize, remember and want to come back for.
+          </p>
+
+          <p>
+            <strong>
+              TastyStrains — Detroit frozen desserts.
+            </strong>
+          </p>
+
+        </div>
+
+        <div class="story-photo">
+
+          <span>
+            Our First Store Placement
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CONTACT
+       ========================= -->
+
+  <section id="contact">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Contact</h2>
+        <p>Let's work together.</p>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-card glass">
+
+          <h3>Business</h3>
+
+          <p>
+            Interested in carrying TastyStrains,
+            booking catering, or working with the brand?
+            Get in touch.
+          </p>
+
+          <a
+            href="tel:3135913034"
+            class="contact-link"
+          >
+            📞 313-591-3034
+          </a>
+
+        </div>
+
+        <div class="contact-card glass">
+
+          <h3>Social Media</h3>
+
+          <p>
+            Follow TastyStrains for new flavors,
+            store placements, clothing drops and events.
+          </p>
+
+          <a
+            href="https://www.instagram.com/tastystrains313/"
+            target="_blank"
+            rel="noopener"
+            class="contact-link"
+          >
+            📸 Instagram — @tastystrains313
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+
+  <footer>
+
+    <div class="footer-logo">
+      Tasty<span>Strains</span>
+    </div>
+
+    <p>
+      Detroit Frozen Desserts • Philadelphia Water Ice • Clothing • Catering
+    </p>
+
+    <p style="margin-top:10px;">
+      © 2026 TastyStrains LLC. All rights reserved.
+    </p>
+
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+       ========================= -->
+
+  <script>
+
+    function toggleMenu() {
+
+      const nav = document.getElementById("navLinks");
+
+      nav.classList.toggle("active");
+
+    }
+
+    /* Close mobile menu after clicking a link */
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        document
+          .getElementById("navLinks")
+          .classList.remove("active");
+
+      });
+
+    });
+
+  </script>
+
 </body>
 </html>
