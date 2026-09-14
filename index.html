@@ -338,7 +338,6 @@
       gap: 12px;
     }
 
-    /* SLOW, SMOOTH 360° ROTATION FOR THE WATER-ICE PICTURES */
     .flavor img {
       width: 100%;
       aspect-ratio: 1;
@@ -371,6 +370,87 @@
       margin-top: 6px;
       line-height: 1.1;
     }
+
+
+    /* =========================
+       LOCATIONS
+       ========================= */
+
+    .locations {
+      margin-top: 15px;
+      background: #ffffff;
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 9px 25px rgba(20, 47, 95, 0.16);
+    }
+
+    .locations-title {
+      color: #ff4e9b;
+      text-align: center;
+      font-family: "Brush Script MT", "Segoe Script", cursive;
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .locations-subtitle {
+      color: #1479cf;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.8px;
+      margin-bottom: 18px;
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .location-card {
+      background: #1479cf;
+      border-radius: 18px;
+      padding: 17px 14px;
+      text-align: center;
+      box-shadow: 0 6px 16px rgba(20, 47, 95, 0.14);
+    }
+
+    .location-card:nth-child(even) {
+      background: #ff4e9b;
+    }
+
+    .location-card h3 {
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 1000;
+      margin-bottom: 7px;
+    }
+
+    .location-card p {
+      color: #ffffff;
+      font-size: 11px;
+      line-height: 1.45;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .directions-button {
+      display: inline-block;
+      background: #ffffff;
+      color: #102b58;
+      padding: 9px 15px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 1000;
+      box-shadow: 0 4px 0 rgba(16, 43, 88, 0.15);
+      transition: transform 0.2s ease;
+    }
+
+    .directions-button:hover {
+      transform: translateY(-2px);
+    }
+
 
     .story {
       margin-top: 15px;
@@ -515,6 +595,10 @@
         grid-template-columns: repeat(4, 1fr);
       }
 
+      .location-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       footer {
         grid-template-columns: 1fr;
         text-align: center;
@@ -536,6 +620,18 @@
 
       .flavors {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .location-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .locations {
+        padding: 16px;
+      }
+
+      .locations-title {
+        font-size: 36px;
       }
 
       .story {
@@ -565,6 +661,7 @@
 
       <nav class="nav" aria-label="Main navigation">
         <a class="active" href="#home">Home</a>
+        <a href="#locations">Locations</a>
         <a href="#water-ice">Water Ice</a>
         <a href="#catering">Catering</a>
         <a href="#clothing">Clothing</a>
@@ -777,85 +874,297 @@
           <div class="flavors">
 
             <div class="flavor">
-              <img
-                src="mango.jpg"
-                alt="Mango PWI Water Ice"
-              >
+              <img src="mango.jpg" alt="Mango PWI Water Ice">
               <span>Mango</span>
             </div>
 
-
             <div class="flavor">
-              <img
-                src="lemon.jpg"
-                alt="Lemon PWI Water Ice"
-              >
+              <img src="lemon.jpg" alt="Lemon PWI Water Ice">
               <span>Lemon</span>
             </div>
 
-
             <div class="flavor">
-              <img
-                src="cherry .jpg"
-                alt="Cherry PWI Water Ice"
-              >
+              <img src="cherry .jpg" alt="Cherry PWI Water Ice">
               <span>Cherry</span>
             </div>
 
-
             <div class="flavor">
-              <img
-                src="blueberry .jpg"
-                alt="Blueberry PWI Water Ice"
-              >
+              <img src="blueberry .jpg" alt="Blueberry PWI Water Ice">
               <span>Blueberry</span>
             </div>
 
-
             <div class="flavor">
-              <img
-                src="tropical-rainbow.jpg"
-                alt="Tropical Rainbow PWI Water Ice"
-              >
+              <img src="tropical-rainbow.jpg" alt="Tropical Rainbow PWI Water Ice">
               <span>
                 Tropical<br>
                 Rainbow
               </span>
             </div>
 
-
             <div class="flavor">
-              <img
-                src="cotton candy .jpg"
-                alt="TastyStrains Cotton Candy"
-              >
+              <img src="cotton candy .jpg" alt="TastyStrains Cotton Candy">
               <span>
                 Cotton<br>
                 Candy
               </span>
             </div>
 
-
             <div class="flavor">
-              <img
-                src="fireworks.jpg"
-                alt="TastyStrains Fireworks"
-              >
+              <img src="fireworks.jpg" alt="TastyStrains Fireworks">
               <span>Fireworks</span>
             </div>
 
-
             <div class="flavor">
-              <img
-                src="watermelon .jpg"
-                alt="Watermelon"
-              >
+              <img src="watermelon .jpg" alt="Watermelon">
               <span>Watermelon</span>
             </div>
 
           </div>
 
         </article>
+
+      </section>
+
+
+      <!-- =========================
+           TASTY STRAINS LOCATIONS
+           ========================= -->
+
+      <section class="locations" id="locations">
+
+        <h2 class="locations-title">
+          Find TastyStrains
+        </h2>
+
+        <p class="locations-subtitle">
+          GRAB YOUR FAVORITE WATER ICE AT A LOCATION NEAR YOU!
+        </p>
+
+        <div class="location-grid">
+
+
+          <div class="location-card">
+            <h3>Grand Liquor</h3>
+            <p>
+              12889 Woodward<br>
+              Highland Park, MI 48203
+            </p>
+            <a
+              class="directions-button"
+              href="https://www.google.com/maps/search/?api=1&query=Grand+Liquor+12889+Woodward+Highland+Park+MI+48203"
+              target="_blank"
+              rel="noopener"
+            >
+              📍 GET DIRECTIONS
+            </a>
+          </div>
+
+
+          <div class="location-card">
+            <h3>Imperial Fresh</h3>
+            <p>
+              14424 Schaefer<br>
+              Detroit, MI 48227
+            </p>
+            <a
+              class="directions-button"
+              href="https://www.google.com/maps/search/?api=1&query=Imperial+Fresh+14424+Schaefer+Detroit+MI+48227"
+              target="_blank"
+              rel="noopener"
+            >
+              📍 GET DIRECTIONS
+            </a>
+          </div>
+
+
+          <div class="location-card">
+            <h3>Martell Liquor</h3>
+            <p>
+              19137 Seven Mile<br>
+              Detroit, MI 48219
+            </p>
+            <a
+              class="directions-button"
+              href="https://www.google.com/maps/search/?api=1&query=Martell+Liquor+19137+Seven+Mile+Detroit+MI+48219"
+              target="_blank"
+              rel="noopener"
+            >
+              📍 GET DIRECTIONS
+            </a>
+          </div>
+
+
+          <div class="location-card">
+            <h3>Heydens Liquor</h3>
+            <p>
+              20201 Seven Mile<br>
+              Detroit, MI 48219
+            </p>
+            <a
+              class="directions-button"
+              href="https://www.google.com/maps/search/?api=1&query=Heydens+Liquor+20201+Seven+Mile+Detroit+MI+48219"
+              target="_blank"
+              rel="noopener"
+            >
+              📍 GET DIRECTIONS
+            </a>
+          </div>
+
+
+          <div class="location-card">
+            <h3>BP</h3>
+            <p>
+              30435 Cherry Hill<br>
+              Westland, MI 48186
+            </p>
+            <a
+              class="directions-button"
+              href="https://www.google.com/maps/search/?api=1&query=BP+30435+Cherry+Hill+Westland+MI+48186"
+              target="_blank"
+              rel="noopener"
+            >
+              📍 GET DIRECTIONS
+            </a>
+          </div>
+
+
+          <div class="location-card">
+            <h3>Vintage Village Liquor</h3>
+            <p>
+              28927 Southfield Rd<br>
+              Southfield, MI 48076
+            </p>
+            <a
+              class="directions-button"
+              href="https://www.google.com/maps/search/?api=1&query=Vintage+Village+Liquor+28927+Southfield+Rd+Southfield+MI+48076"
+              target="_blank"
+              rel="noopener"
+            >
+              📍 GET DIRECTIONS
+            </a>
+          </div>
+
+
+          <div class="location-card">
+            <h3>Greenfield Market</h3>
+            <p>
+              15530 Puritan<br>
+              Detroit, MI 48227
+            </p>
+            <a
+              class="directions-button"
+              href="https://www.google.com/maps/search/?api=1&query=Greenfield+Market+15530+Puritan+Detroit+MI+48227"
+              target="_blank"
+              rel="noopener"
+            >
+              📍 GET DIRECTIONS
+            </a>
+          </div>
+
+
+          <div class="location-card">
+            <h3>Big V Liquor</h3>
+            <p>
+              14111 Greenfield Rd<br>
+              Detroit, MI 48227
+            </p>
+            <a
+              class="directions-button"
+              href="https://www.google.com/maps/search/?api=1&query=Big+V+Liquor+14111+Greenfield+Rd+Detroit+MI+48227"
+              target="_blank"
+              rel="noopener"
+            >
+              📍 GET DIRECTIONS
+            </a>
+          </div>
+
+
+          <div class="location-card">
+            <h3>Kennedy Liquor</h3>
+            <p>
+              13344 Seven Mile<br>
+              Detroit, MI 48219
+            </p>
+            <a
+              class="directions-button"
+              href="https://www.google.com/maps/search/?api=1&query=Kennedy+Liquor+13344+Seven+Mile+Detroit+MI+48219"
+              target="_blank"
+              rel="noopener"
+            >
+              📍 GET DIRECTIONS
+            </a>
+          </div>
+
+
+          <div class="location-card">
+            <h3>W Liquor</h3>
+            <p>
+              3325 E Seven Mile<br>
+              Detroit, MI 48234
+            </p>
+            <a
+              class="directions-button"
+              href="https://www.google.com/maps/search/?api=1&query=W+Liquor+3325+E+Seven+Mile+Detroit+MI+48234"
+              target="_blank"
+              rel="noopener"
+            >
+              📍 GET DIRECTIONS
+            </a>
+          </div>
+
+
+          <div class="location-card">
+            <h3>United Liquor</h3>
+            <p>
+              22040 Seven Mile<br>
+              Detroit, MI 48219
+            </p>
+            <a
+              class="directions-button"
+              href="https://www.google.com/maps/search/?api=1&query=United+Liquor+22040+Seven+Mile+Detroit+MI+48219"
+              target="_blank"
+              rel="noopener"
+            >
+              📍 GET DIRECTIONS
+            </a>
+          </div>
+
+
+          <div class="location-card">
+            <h3>Marathon</h3>
+            <p>
+              10550 W Jefferson Ave<br>
+              River Rouge, MI 48218
+            </p>
+            <a
+              class="directions-button"
+              href="https://www.google.com/maps/search/?api=1&query=Marathon+10550+W+Jefferson+Ave+River+Rouge+MI+48218"
+              target="_blank"
+              rel="noopener"
+            >
+              📍 GET DIRECTIONS
+            </a>
+          </div>
+
+
+          <div class="location-card">
+            <h3>Mobil</h3>
+            <p>
+              10001 Fenkell Ave<br>
+              Detroit, MI 48238
+            </p>
+            <a
+              class="directions-button"
+              href="https://www.google.com/maps/search/?api=1&query=Mobil+10001+Fenkell+Ave+Detroit+MI+48238"
+              target="_blank"
+              rel="noopener"
+            >
+              📍 GET DIRECTIONS
+            </a>
+          </div>
+
+
+        </div>
 
       </section>
 
