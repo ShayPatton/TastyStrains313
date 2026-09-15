@@ -571,9 +571,7 @@
       margin-top: 12px;
     }
 
-    /* =====================================================
-       REAL FILLABLE CATERING FORM
-       ===================================================== */
+    /* REAL CATERING FORM */
 
     .catering-form-box {
       max-width: 950px;
@@ -668,6 +666,38 @@
     .submit-btn {
       min-width: 260px;
       font-size: 16px;
+    }
+
+    /* CATERING CONFIRMATION */
+
+    .confirmation-box {
+      max-width: 850px;
+      margin: 0 auto 45px;
+      background: rgba(255, 255, 255, 0.97);
+      padding: 45px 30px;
+      border-radius: 30px;
+      text-align: center;
+      border: 5px solid var(--baby-blue);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.16);
+    }
+
+    .confirmation-box h3 {
+      font-family: "Archivo Black", Impact, sans-serif;
+      font-size: clamp(30px, 6vw, 52px);
+      color: var(--bubblegum-pink);
+      margin-bottom: 15px;
+    }
+
+    .confirmation-box p {
+      font-weight: 600;
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    .confirmation-box .confirmation-check {
+      font-size: 55px;
+      line-height: 1;
+      margin-bottom: 15px;
     }
 
     /* CLOTHING */
@@ -923,6 +953,10 @@
 
       .submit-btn {
         width: 100%;
+      }
+
+      .confirmation-box {
+        padding: 35px 20px;
       }
     }
 
@@ -1271,8 +1305,6 @@
           method="POST"
         >
 
-          <!-- FORM SETTINGS -->
-
           <input
             type="hidden"
             name="_subject"
@@ -1291,13 +1323,13 @@
             value="true"
           >
 
+          <!-- CUSTOMER RETURNS TO TASTY STRAINS CONFIRMATION -->
+
           <input
             type="hidden"
             name="_next"
-            value="https://tastystrains313.github.io/tastystrains313/"
+            value="https://tastystrains313.github.io/tastystrains313/#catering-confirmation"
           >
-
-          <!-- CUSTOMER INFORMATION -->
 
           <div class="form-grid">
 
@@ -1604,6 +1636,38 @@
           </div>
 
         </form>
+
+      </div>
+
+      <!-- CONFIRMATION MESSAGE -->
+
+      <div
+        id="catering-confirmation"
+        class="confirmation-box"
+      >
+
+        <div class="confirmation-check">✓</div>
+
+        <h3>
+          CATERING REQUEST SUBMITTED!
+        </h3>
+
+        <p>
+          Thank you for contacting TastyStrains!
+        </p>
+
+        <p>
+          Your catering request has been received.
+          We will review your information and be in touch soon.
+        </p>
+
+        <a
+          href="#home"
+          class="btn btn-blue"
+          style="margin-top:20px;"
+        >
+          BACK TO HOME
+        </a>
 
       </div>
 
