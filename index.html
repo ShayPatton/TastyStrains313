@@ -1,1928 +1,1928 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>TastyStrains | Detroit Frozen Desserts</title>
-
-  <meta
-    name="description"
-    content="TastyStrains — Detroit frozen desserts, Philadelphia Water Ice, catering and apparel."
-  >
-
-  <style>
-    /* =========================
-       TASTY STRAINS BASE
-    ========================== */
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      min-height: 100vh;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #102b58;
-      background-color: #20bde8;
-      background-image: url("tastystrains-background.PNG");
-      background-position: center top;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    .page {
-      width: min(1280px, calc(100% - 28px));
-      margin: 0 auto;
-      padding: 18px 0 34px;
-    }
-
-    /* =========================
-       TOP BAR
-    ========================== */
-
-    .topbar {
-      display: grid;
-      grid-template-columns: 160px 1fr auto;
-      align-items: center;
-      gap: 18px;
-      min-height: 76px;
-    }
-
-    .mini-logo {
-      width: 145px;
-      height: 70px;
-      object-fit: contain;
-      border-radius: 12px;
-    }
-
-    .nav {
-      justify-self: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 4px;
-      padding: 7px;
-      background: #fff;
-      border-radius: 999px;
-      box-shadow: 0 7px 20px rgba(20, 47, 95, .14);
-    }
-
-    .nav a {
-      padding: 10px 15px;
-      border-radius: 999px;
-      color: #102b58;
-      font-size: 13px;
-      font-weight: 800;
-      white-space: nowrap;
-    }
-
-    .nav a.active,
-    .nav a:hover {
-      background: #ff4e9b;
-      color: #fff;
-    }
-
-    .contact-pills {
-      display: flex;
-      gap: 8px;
-      justify-content: flex-end;
-    }
-
-    .pill {
-      background: #fff;
-      border-radius: 999px;
-      padding: 10px 13px;
-      font-size: 12px;
-      font-weight: 800;
-      color: #102b58;
-      box-shadow: 0 7px 20px rgba(20, 47, 95, .14);
-      white-space: nowrap;
-    }
-
-    /* =========================
-       HERO
-    ========================== */
-
-    .hero {
-      position: relative;
-      min-height: 315px;
-      margin-top: 15px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 20px;
-      padding: 22px 55px;
-      overflow: hidden;
-      border-radius: 32px;
-    }
-
-    .hero-art {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 250px;
-    }
-
-    .hero-art video {
-      width: min(500px, 100%);
-      max-height: 270px;
-      object-fit: contain;
-      filter: drop-shadow(0 8px 4px rgba(0, 0, 0, .08));
-    }
-
-    .hero-copy {
-      text-align: center;
-      padding: 10px;
-    }
-
-    .hero-script {
-      color: #fff;
-      font-family: "Brush Script MT", "Segoe Script", cursive;
-      font-size: clamp(48px, 6vw, 82px);
-      line-height: .88;
-      font-weight: 700;
-      text-shadow:
-        3px 4px 0 #1f5da4,
-        5px 6px 0 rgba(255,255,255,.7);
-      transform: rotate(-3deg);
-      margin-bottom: 22px;
-    }
-
-    .hero-copy p {
-      color: #fff;
-      font-size: 14px;
-      font-weight: 900;
-      letter-spacing: 1.5px;
-      text-shadow: 1px 2px 0 #2364a5;
-      margin-bottom: 18px;
-    }
-
-    .ribbon {
-      display: inline-block;
-      padding: 10px 24px;
-      background: #ff4e9b;
-      color: #fff;
-      border: 3px solid #fff;
-      border-radius: 7px;
-      font-size: 13px;
-      font-weight: 1000;
-      letter-spacing: 1.2px;
-      transform: rotate(-2deg);
-      box-shadow: 0 6px 0 rgba(31, 93, 164, .3);
-    }
-
-    .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 42px;
-      height: 42px;
-      border: 0;
-      border-radius: 50%;
-      background: #111;
-      color: #fff;
-      font-size: 27px;
-      line-height: 42px;
-      cursor: pointer;
-      z-index: 5;
-    }
-
-    .arrow.left {
-      left: 9px;
-    }
-
-    .arrow.right {
-      right: 9px;
-    }
-
-    .arrow:hover {
-      transform: translateY(-50%) scale(1.06);
-    }
-
-    /* =========================
-       MAIN CARDS
-    ========================== */
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-      margin-top: 5px;
-    }
-
-    .card {
-      overflow: hidden;
-      border-radius: 20px;
-      background: #fff;
-      box-shadow: 0 9px 25px rgba(20, 47, 95, .16);
-      text-align: center;
-    }
-
-    .card-image {
-      width: 100%;
-      height: 145px;
-      object-fit: cover;
-    }
-
-    .card-body {
-      min-height: 185px;
-      padding: 13px 15px 16px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .card.water .card-body {
-      background: #ff4e9b;
-    }
-
-    .card.catering .card-body {
-      background: #28aee8;
-    }
-
-    .card.clothing .card-body {
-      background: #7756d8;
-    }
-
-    .card.about .card-body {
-      background: #52c95b;
-    }
-
-    .script-title {
-      color: #fff;
-      font-family: "Brush Script MT", "Segoe Script", cursive;
-      font-size: 30px;
-      line-height: 1;
-      font-weight: 700;
-      margin-bottom: 7px;
-      text-shadow: 2px 2px 0 rgba(16, 43, 88, .45);
-    }
-
-    .card-icon {
-      width: 30px;
-      height: 30px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: #fff;
-      margin-bottom: 7px;
-      font-size: 16px;
-    }
-
-    .card-body p {
-      color: #fff;
-      font-size: 12px;
-      line-height: 1.35;
-      font-weight: 800;
-      max-width: 235px;
-      margin-bottom: 12px;
-    }
-
-    .button {
-      margin-top: auto;
-      display: inline-block;
-      background: #fff;
-      color: #102b58;
-      padding: 9px 19px;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 1000;
-      box-shadow: 0 4px 0 rgba(16, 43, 88, .15);
-      transition: transform .2s ease;
-    }
-
-    .button:hover {
-      transform: translateY(-1px);
-    }
-
-    /* =========================
-       WATER ICE INFO
-    ========================== */
-
-    .water-price {
-      color: #ffffff;
-      font-size: 20px;
-      font-weight: 1000;
-      letter-spacing: 1px;
-      margin-top: 2px;
-      margin-bottom: 5px;
-      text-shadow: 2px 2px 0 rgba(16, 43, 88, .25);
-    }
-
-    .water-info {
-      color: #ffffff;
-      font-size: 10px;
-      font-weight: 1000;
-      letter-spacing: .8px;
-      margin-bottom: 4px;
-    }
-
-    .water-note {
-      color: #ffffff;
-      font-size: 9px;
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
-
-    .water-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 7px;
-      margin-top: auto;
-    }
-
-    .water-buttons .button {
-      margin-top: 0;
-    }
-
-    /* =========================
-       CATERING INFO
-    ========================== */
-
-    .catering-info {
-      color: #fff;
-      font-size: 10px;
-      font-weight: 1000;
-      letter-spacing: .7px;
-      margin-bottom: 4px;
-    }
-
-    .catering-note {
-      color: #fff;
-      font-size: 9px;
-      line-height: 1.35;
-      font-weight: 800;
-      max-width: 245px;
-      margin-bottom: 9px;
-    }
-
-    .catering-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 7px;
-      margin-top: auto;
-    }
-
-    .catering-buttons .button {
-      margin-top: 0;
-    }
-
-    /* =========================
-       LOWER PANELS
-    ========================== */
-
-    .lower {
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 15px;
-      margin-top: 15px;
-    }
-
-    .panel {
-      border-radius: 21px;
-      overflow: hidden;
-      background: #1479cf;
-      box-shadow: 0 9px 25px rgba(20, 47, 95, .16);
-    }
-
-    .panel-title {
-      color: #fff;
-      text-align: center;
-      font-family: "Brush Script MT", "Segoe Script", cursive;
-      font-size: 30px;
-      font-weight: 700;
-      padding: 10px 10px 4px;
-      text-shadow: 2px 2px 0 rgba(16, 43, 88, .4);
-    }
-
-    .store-photo {
-      width: 100%;
-      height: 185px;
-      object-fit: cover;
-      border: 7px solid #1479cf;
-    }
-
-    .store-text {
-      color: #fff;
-      text-align: center;
-      font-size: 12px;
-      font-weight: 900;
-      padding: 2px 10px 14px;
-    }
-
-    /* =========================
-       FLAVORS
-    ========================== */
-
-    .flavors {
-      padding: 8px 12px 17px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-    }
-
-    .flavor img {
-      width: 100%;
-      aspect-ratio: 1;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid #fff;
-      background: #fff;
-      animation: slowCupSpin 9s linear infinite;
-      transform-style: preserve-3d;
-      will-change: transform;
-    }
-
-    @keyframes slowCupSpin {
-      from {
-        transform: rotateY(0deg);
-      }
-
-      to {
-        transform: rotateY(360deg);
-      }
-    }
-
-    .flavor span {
-      display: block;
-      color: #fff;
-      text-align: center;
-      font-size: 9px;
-      font-weight: 900;
-      margin-top: 6px;
-      line-height: 1.1;
-    }
-
-    /* =========================
-       CLOTHING LOOKBOOK
-    ========================== */
-
-    .lookbook {
-      margin-top: 15px;
-      background: #7756d8;
-      border-radius: 22px;
-      padding: 20px;
-      box-shadow: 0 9px 25px rgba(20, 47, 95, .16);
-    }
-
-    .lookbook-title {
-      color: #fff;
-      text-align: center;
-      font-family: "Brush Script MT", "Segoe Script", cursive;
-      font-size: 42px;
-      font-weight: 700;
-      text-shadow: 2px 2px 0 rgba(16, 43, 88, .4);
-      margin-bottom: 4px;
-    }
-
-    .lookbook-subtitle {
-      color: #fff;
-      text-align: center;
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: .8px;
-      margin-bottom: 18px;
-    }
-
-    .lookbook-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-    }
-
-    .lookbook-photo {
-      width: 100%;
-      height: 320px;
-      object-fit: cover;
-      border-radius: 18px;
-      background: #fff;
-      border: 5px solid #fff;
-      box-shadow: 0 7px 18px rgba(16, 43, 88, .18);
-      transition: transform .25s ease;
-    }
-
-    .lookbook-photo:hover {
-      transform: translateY(-4px);
-    }
-
-    .lookbook-bottom {
-      text-align: center;
-      margin-top: 17px;
-    }
-
-    .lookbook-bottom .button {
-      margin-top: 0;
-    }
-
-    /* =========================
-       LOCATIONS
-    ========================== */
-
-    .locations {
-      margin-top: 15px;
-      background: #fff;
-      border-radius: 22px;
-      padding: 22px;
-      box-shadow: 0 9px 25px rgba(20, 47, 95, .16);
-    }
-
-    .locations-title {
-      color: #ff4e9b;
-      text-align: center;
-      font-family: "Brush Script MT", "Segoe Script", cursive;
-      font-size: 42px;
-      font-weight: 700;
-      margin-bottom: 5px;
-    }
-
-    .locations-subtitle {
-      color: #1479cf;
-      text-align: center;
-      font-size: 13px;
-      font-weight: 900;
-      letter-spacing: .8px;
-      margin-bottom: 18px;
-    }
-
-    .location-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-
-    .location-card {
-      background: #1479cf;
-      border-radius: 18px;
-      padding: 17px 14px;
-      text-align: center;
-      box-shadow: 0 6px 16px rgba(20, 47, 95, .14);
-    }
-
-    .location-card:nth-child(even) {
-      background: #ff4e9b;
-    }
-
-    .location-card h3 {
-      color: #fff;
-      font-size: 15px;
-      font-weight: 1000;
-      margin-bottom: 7px;
-    }
-
-    .location-card p {
-      color: #fff;
-      font-size: 11px;
-      line-height: 1.45;
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-
-    .directions-button {
-      display: inline-block;
-      background: #fff;
-      color: #102b58;
-      padding: 9px 15px;
-      border-radius: 999px;
-      font-size: 10px;
-      font-weight: 1000;
-      box-shadow: 0 4px 0 rgba(16, 43, 88, .15);
-      transition: transform .2s ease;
-    }
-
-    .directions-button:hover {
-      transform: translateY(-2px);
-    }
-
-    /* =========================
-       OUR STORY — UPGRADED
-    ========================== */
-
-    .story {
-      margin-top: 15px;
-      background: #fff;
-      border-radius: 22px;
-      padding: 25px;
-      display: grid;
-      grid-template-columns: 300px 1fr;
-      gap: 30px;
-      align-items: center;
-      box-shadow: 0 9px 25px rgba(20, 47, 95, .16);
-    }
-
-    .story-photo-wrap {
-      position: relative;
-    }
-
-    .owner-photo {
-      width: 100%;
-      height: 330px;
-      object-fit: cover;
-      border-radius: 20px;
-      border: 6px solid #1479cf;
-      box-shadow: 0 8px 20px rgba(20, 47, 95, .18);
-    }
-
-    .founder-badge {
-      position: absolute;
-      left: 15px;
-      bottom: 15px;
-      background: #ff4e9b;
-      color: #fff;
-      padding: 9px 13px;
-      border-radius: 12px;
-      font-size: 9px;
-      line-height: 1.3;
-      font-weight: 1000;
-      letter-spacing: .7px;
-      text-align: center;
-      box-shadow: 0 4px 0 rgba(16, 43, 88, .18);
-    }
-
-    .founder-badge strong {
-      font-size: 10px;
-    }
-
-    .story-content {
-      padding: 5px 5px 5px 0;
-    }
-
-    .story-label {
-      color: #1479cf;
-      font-size: 10px;
-      font-weight: 1000;
-      letter-spacing: 1.2px;
-      margin-bottom: 4px;
-    }
-
-    .story h2 {
-      color: #ff4e9b;
-      font-family: "Brush Script MT", "Segoe Script", cursive;
-      font-size: 48px;
-      line-height: 1;
-      margin-bottom: 7px;
-      text-shadow: 2px 2px 0 rgba(20, 47, 95, .12);
-    }
-
-    .story h3 {
-      color: #1479cf;
-      font-size: 12px;
-      line-height: 1.4;
-      letter-spacing: 1px;
-      margin-bottom: 14px;
-    }
-
-    .story p {
-      color: #334d72;
-      font-size: 13px;
-      line-height: 1.55;
-      font-weight: 600;
-      max-width: 760px;
-      margin-bottom: 10px;
-    }
-
-    .story-highlight {
-      margin-top: 15px;
-      padding: 15px 17px;
-      background: #1479cf;
-      border-radius: 16px;
-      color: #fff;
-      box-shadow: 0 5px 0 rgba(16, 43, 88, .15);
-    }
-
-    .story-highlight strong {
-      display: block;
-      font-size: 11px;
-      letter-spacing: .8px;
-      margin-bottom: 5px;
-    }
-
-    .story-highlight span {
-      display: block;
-      font-size: 11px;
-      line-height: 1.45;
-      font-weight: 700;
-    }
-
-    /* =========================
-       CONTACT
-    ========================== */
-
-    .contact-section {
-      margin-top: 15px;
-      background: #fff;
-      border-radius: 22px;
-      padding: 25px;
-      text-align: center;
-      box-shadow: 0 9px 25px rgba(20, 47, 95, .16);
-    }
-
-    .contact-title {
-      color: #ff4e9b;
-      font-family: "Brush Script MT", "Segoe Script", cursive;
-      font-size: 42px;
-      margin-bottom: 5px;
-    }
-
-    .contact-subtitle {
-      color: #1479cf;
-      font-size: 13px;
-      font-weight: 900;
-      letter-spacing: .7px;
-      margin-bottom: 18px;
-    }
-
-    .contact-buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .contact-button {
-      display: inline-block;
-      background: #ff4e9b;
-      color: #fff;
-      padding: 12px 20px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 1000;
-      box-shadow: 0 4px 0 rgba(16, 43, 88, .15);
-      transition: transform .2s ease;
-    }
-
-    .contact-button:hover {
-      transform: translateY(-2px);
-    }
-
-    .contact-button.blue {
-      background: #1479cf;
-    }
-
-    /* =========================
-       PAYMENT METHODS
-    ========================== */
-
-    .payment-methods {
-      margin-top: 22px;
-      padding-top: 18px;
-      border-top: 2px solid #e8eef7;
-    }
-
-    .payment-title {
-      color: #1479cf;
-      font-size: 13px;
-      font-weight: 1000;
-      letter-spacing: .8px;
-      margin-bottom: 12px;
-    }
-
-    .payment-list {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .payment-method {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      background: #fff;
-      color: #102b58;
-      padding: 9px 13px;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 1000;
-      box-shadow: 0 4px 0 rgba(16, 43, 88, .12);
-    }
-
-    .payment-logo {
-      width: 24px;
-      height: 24px;
-      object-fit: contain;
-      border-radius: 6px;
-    }
-
-    /* =========================
-       FOOTER
-    ========================== */
-
-    footer {
-      margin-top: 18px;
-      padding: 22px 25px;
-      border-radius: 22px;
-      background: #102b58;
-      color: #fff;
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .footer-logo {
-      width: 155px;
-      height: 65px;
-      object-fit: contain;
-      border-radius: 10px;
-    }
-
-    .footer-center {
-      text-align: center;
-      font-size: 12px;
-      font-weight: 800;
-      line-height: 1.65;
-    }
-
-    .footer-right {
-      text-align: right;
-      font-family: "Brush Script MT", "Segoe Script", cursive;
-      font-size: 34px;
-      color: #ff4e9b;
-      font-weight: 700;
-    }
-
-    .footer-right a {
-      display: block;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #fff;
-      font-size: 11px;
-      font-weight: 800;
-      margin-top: 3px;
-    }
-
-    /* =========================
-       TABLET
-    ========================== */
-
-    @media(max-width:1050px) {
-
-      .topbar {
-        grid-template-columns: 1fr;
-        justify-items: center;
-      }
-
-      .contact-pills {
-        justify-content: center;
-      }
-
-      .cards {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .lookbook-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    /* =========================
-       MOBILE
-    ========================== */
-
-    @media(max-width:760px) {
-
-      .page {
-        width: min(100% - 16px, 600px);
-        padding-top: 10px;
-      }
-
-      .nav {
-        max-width: 100%;
-        border-radius: 20px;
-      }
-
-      .nav a {
-        padding: 8px 10px;
-        font-size: 11px;
-      }
-
-      .contact-pills {
-        flex-wrap: wrap;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        padding: 20px 38px;
-        min-height: 500px;
-      }
-
-      .hero-art {
-        min-height: 210px;
-      }
-
-      .hero-script {
-        font-size: 58px;
-      }
-
-      .cards,
-      .lower,
-      .story {
-        grid-template-columns: 1fr;
-      }
-
-      .flavors {
-        grid-template-columns: repeat(4, 1fr);
-      }
-
-      .location-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .lookbook-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .story {
-        padding: 18px;
-      }
-
-      .owner-photo {
-        height: 360px;
-      }
-
-      .story-content {
-        padding: 0;
-      }
-
-      .story h2 {
-        font-size: 42px;
-      }
-
-      footer {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .footer-logo {
-        margin: 0 auto;
-      }
-
-      .footer-right {
-        text-align: center;
-      }
-    }
-
-    /* =========================
-       SMALL PHONE
-    ========================== */
-
-    @media(max-width:430px) {
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .flavors {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .location-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .locations {
-        padding: 16px;
-      }
-
-      .locations-title {
-        font-size: 36px;
-      }
-
-      .water-buttons,
-      .catering-buttons {
-        flex-direction: column;
-        width: 100%;
-      }
-
-      .water-buttons .button,
-      .catering-buttons .button {
-        width: 100%;
-      }
-
-      .lookbook {
-        padding: 15px;
-      }
-
-      .lookbook-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .lookbook-photo {
-        height: 390px;
-      }
-
-      .story {
-        padding: 15px;
-      }
-
-      .contact-section {
-        padding: 20px 15px;
-      }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>TastyStrains | Detroit Frozen Desserts</title>
+
+  <meta
+    name="description"
+    content="TastyStrains — Detroit frozen desserts, Philadelphia Water Ice, catering and apparel."
+  >
+
+  <style>
+    /* =========================
+       TASTY STRAINS BASE
+    ========================== */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #102b58;
+      background-color: #20bde8;
+      background-image: url("tastystrains-background.PNG");
+      background-position: center top;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .page {
+      width: min(1280px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 18px 0 34px;
+    }
+
+    /* =========================
+       TOP BAR
+    ========================== */
+
+    .topbar {
+      display: grid;
+      grid-template-columns: 160px 1fr auto;
+      align-items: center;
+      gap: 18px;
+      min-height: 76px;
+    }
+
+    .mini-logo {
+      width: 145px;
+      height: 70px;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .nav {
+      justify-self: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 4px;
+      padding: 7px;
+      background: #fff;
+      border-radius: 999px;
+      box-shadow: 0 7px 20px rgba(20, 47, 95, .14);
+    }
+
+    .nav a {
+      padding: 10px 15px;
+      border-radius: 999px;
+      color: #102b58;
+      font-size: 13px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .nav a.active,
+    .nav a:hover {
+      background: #ff4e9b;
+      color: #fff;
+    }
+
+    .contact-pills {
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .pill {
+      background: #fff;
+      border-radius: 999px;
+      padding: 10px 13px;
+      font-size: 12px;
+      font-weight: 800;
+      color: #102b58;
+      box-shadow: 0 7px 20px rgba(20, 47, 95, .14);
+      white-space: nowrap;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      position: relative;
+      min-height: 315px;
+      margin-top: 15px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 20px;
+      padding: 22px 55px;
+      overflow: hidden;
+      border-radius: 32px;
+    }
+
+    .hero-art {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 250px;
+    }
+
+    .hero-art video {
+      width: min(500px, 100%);
+      max-height: 270px;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 4px rgba(0, 0, 0, .08));
+    }
+
+    .hero-copy {
+      text-align: center;
+      padding: 10px;
+    }
+
+    .hero-script {
+      color: #fff;
+      font-family: "Brush Script MT", "Segoe Script", cursive;
+      font-size: clamp(48px, 6vw, 82px);
+      line-height: .88;
+      font-weight: 700;
+      text-shadow:
+        3px 4px 0 #1f5da4,
+        5px 6px 0 rgba(255,255,255,.7);
+      transform: rotate(-3deg);
+      margin-bottom: 22px;
+    }
+
+    .hero-copy p {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-shadow: 1px 2px 0 #2364a5;
+      margin-bottom: 18px;
+    }
+
+    .ribbon {
+      display: inline-block;
+      padding: 10px 24px;
+      background: #ff4e9b;
+      color: #fff;
+      border: 3px solid #fff;
+      border-radius: 7px;
+      font-size: 13px;
+      font-weight: 1000;
+      letter-spacing: 1.2px;
+      transform: rotate(-2deg);
+      box-shadow: 0 6px 0 rgba(31, 93, 164, .3);
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 50%;
+      background: #111;
+      color: #fff;
+      font-size: 27px;
+      line-height: 42px;
+      cursor: pointer;
+      z-index: 5;
+    }
+
+    .arrow.left {
+      left: 9px;
+    }
+
+    .arrow.right {
+      right: 9px;
+    }
+
+    .arrow:hover {
+      transform: translateY(-50%) scale(1.06);
+    }
+
+    /* =========================
+       MAIN CARDS
+    ========================== */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-top: 5px;
+    }
+
+    .card {
+      overflow: hidden;
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: 0 9px 25px rgba(20, 47, 95, .16);
+      text-align: center;
+    }
+
+    .card-image {
+      width: 100%;
+      height: 145px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      min-height: 185px;
+      padding: 13px 15px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card.water .card-body {
+      background: #ff4e9b;
+    }
+
+    .card.catering .card-body {
+      background: #28aee8;
+    }
+
+    .card.clothing .card-body {
+      background: #7756d8;
+    }
+
+    .card.about .card-body {
+      background: #52c95b;
+    }
+
+    .script-title {
+      color: #fff;
+      font-family: "Brush Script MT", "Segoe Script", cursive;
+      font-size: 30px;
+      line-height: 1;
+      font-weight: 700;
+      margin-bottom: 7px;
+      text-shadow: 2px 2px 0 rgba(16, 43, 88, .45);
+    }
+
+    .card-icon {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #fff;
+      margin-bottom: 7px;
+      font-size: 16px;
+    }
+
+    .card-body p {
+      color: #fff;
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 800;
+      max-width: 235px;
+      margin-bottom: 12px;
+    }
+
+    .button {
+      margin-top: auto;
+      display: inline-block;
+      background: #fff;
+      color: #102b58;
+      padding: 9px 19px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 1000;
+      box-shadow: 0 4px 0 rgba(16, 43, 88, .15);
+      transition: transform .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    /* =========================
+       WATER ICE INFO
+    ========================== */
+
+    .water-price {
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: 1000;
+      letter-spacing: 1px;
+      margin-top: 2px;
+      margin-bottom: 5px;
+      text-shadow: 2px 2px 0 rgba(16, 43, 88, .25);
+    }
+
+    .water-info {
+      color: #ffffff;
+      font-size: 10px;
+      font-weight: 1000;
+      letter-spacing: .8px;
+      margin-bottom: 4px;
+    }
+
+    .water-note {
+      color: #ffffff;
+      font-size: 9px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .water-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 7px;
+      margin-top: auto;
+    }
+
+    .water-buttons .button {
+      margin-top: 0;
+    }
+
+    /* =========================
+       CATERING INFO
+    ========================== */
+
+    .catering-info {
+      color: #fff;
+      font-size: 10px;
+      font-weight: 1000;
+      letter-spacing: .7px;
+      margin-bottom: 4px;
+    }
+
+    .catering-note {
+      color: #fff;
+      font-size: 9px;
+      line-height: 1.35;
+      font-weight: 800;
+      max-width: 245px;
+      margin-bottom: 9px;
+    }
+
+    .catering-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 7px;
+      margin-top: auto;
+    }
+
+    .catering-buttons .button {
+      margin-top: 0;
+    }
+
+    /* =========================
+       LOWER PANELS
+    ========================== */
+
+    .lower {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .panel {
+      border-radius: 21px;
+      overflow: hidden;
+      background: #1479cf;
+      box-shadow: 0 9px 25px rgba(20, 47, 95, .16);
+    }
+
+    .panel-title {
+      color: #fff;
+      text-align: center;
+      font-family: "Brush Script MT", "Segoe Script", cursive;
+      font-size: 30px;
+      font-weight: 700;
+      padding: 10px 10px 4px;
+      text-shadow: 2px 2px 0 rgba(16, 43, 88, .4);
+    }
+
+    .store-photo {
+      width: 100%;
+      height: 185px;
+      object-fit: cover;
+      border: 7px solid #1479cf;
+    }
+
+    .store-text {
+      color: #fff;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 900;
+      padding: 2px 10px 14px;
+    }
+
+    /* =========================
+       FLAVORS
+    ========================== */
+
+    .flavors {
+      padding: 8px 12px 17px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .flavor img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      background: #fff;
+      animation: slowCupSpin 9s linear infinite;
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    @keyframes slowCupSpin {
+      from {
+        transform: rotateY(0deg);
+      }
+
+      to {
+        transform: rotateY(360deg);
+      }
+    }
+
+    .flavor span {
+      display: block;
+      color: #fff;
+      text-align: center;
+      font-size: 9px;
+      font-weight: 900;
+      margin-top: 6px;
+      line-height: 1.1;
+    }
+
+    /* =========================
+       CLOTHING LOOKBOOK
+    ========================== */
+
+    .lookbook {
+      margin-top: 15px;
+      background: #7756d8;
+      border-radius: 22px;
+      padding: 20px;
+      box-shadow: 0 9px 25px rgba(20, 47, 95, .16);
+    }
+
+    .lookbook-title {
+      color: #fff;
+      text-align: center;
+      font-family: "Brush Script MT", "Segoe Script", cursive;
+      font-size: 42px;
+      font-weight: 700;
+      text-shadow: 2px 2px 0 rgba(16, 43, 88, .4);
+      margin-bottom: 4px;
+    }
+
+    .lookbook-subtitle {
+      color: #fff;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .8px;
+      margin-bottom: 18px;
+    }
+
+    .lookbook-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .lookbook-photo {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 18px;
+      background: #fff;
+      border: 5px solid #fff;
+      box-shadow: 0 7px 18px rgba(16, 43, 88, .18);
+      transition: transform .25s ease;
+    }
+
+    .lookbook-photo:hover {
+      transform: translateY(-4px);
+    }
+
+    .lookbook-bottom {
+      text-align: center;
+      margin-top: 17px;
+    }
+
+    .lookbook-bottom .button {
+      margin-top: 0;
+    }
+
+    /* =========================
+       LOCATIONS
+    ========================== */
+
+    .locations {
+      margin-top: 15px;
+      background: #fff;
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 9px 25px rgba(20, 47, 95, .16);
+    }
+
+    .locations-title {
+      color: #ff4e9b;
+      text-align: center;
+      font-family: "Brush Script MT", "Segoe Script", cursive;
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .locations-subtitle {
+      color: #1479cf;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .8px;
+      margin-bottom: 18px;
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .location-card {
+      background: #1479cf;
+      border-radius: 18px;
+      padding: 17px 14px;
+      text-align: center;
+      box-shadow: 0 6px 16px rgba(20, 47, 95, .14);
+    }
+
+    .location-card:nth-child(even) {
+      background: #ff4e9b;
+    }
+
+    .location-card h3 {
+      color: #fff;
+      font-size: 15px;
+      font-weight: 1000;
+      margin-bottom: 7px;
+    }
+
+    .location-card p {
+      color: #fff;
+      font-size: 11px;
+      line-height: 1.45;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .directions-button {
+      display: inline-block;
+      background: #fff;
+      color: #102b58;
+      padding: 9px 15px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 1000;
+      box-shadow: 0 4px 0 rgba(16, 43, 88, .15);
+      transition: transform .2s ease;
+    }
+
+    .directions-button:hover {
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       OUR STORY — UPGRADED
+    ========================== */
+
+    .story {
+      margin-top: 15px;
+      background: #fff;
+      border-radius: 22px;
+      padding: 25px;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 30px;
+      align-items: center;
+      box-shadow: 0 9px 25px rgba(20, 47, 95, .16);
+    }
+
+    .story-photo-wrap {
+      position: relative;
+    }
+
+    .owner-photo {
+      width: 100%;
+      height: 330px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 6px solid #1479cf;
+      box-shadow: 0 8px 20px rgba(20, 47, 95, .18);
+    }
+
+    .founder-badge {
+      position: absolute;
+      left: 15px;
+      bottom: 15px;
+      background: #ff4e9b;
+      color: #fff;
+      padding: 9px 13px;
+      border-radius: 12px;
+      font-size: 9px;
+      line-height: 1.3;
+      font-weight: 1000;
+      letter-spacing: .7px;
+      text-align: center;
+      box-shadow: 0 4px 0 rgba(16, 43, 88, .18);
+    }
+
+    .founder-badge strong {
+      font-size: 10px;
+    }
+
+    .story-content {
+      padding: 5px 5px 5px 0;
+    }
+
+    .story-label {
+      color: #1479cf;
+      font-size: 10px;
+      font-weight: 1000;
+      letter-spacing: 1.2px;
+      margin-bottom: 4px;
+    }
+
+    .story h2 {
+      color: #ff4e9b;
+      font-family: "Brush Script MT", "Segoe Script", cursive;
+      font-size: 48px;
+      line-height: 1;
+      margin-bottom: 7px;
+      text-shadow: 2px 2px 0 rgba(20, 47, 95, .12);
+    }
+
+    .story h3 {
+      color: #1479cf;
+      font-size: 12px;
+      line-height: 1.4;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+
+    .story p {
+      color: #334d72;
+      font-size: 13px;
+      line-height: 1.55;
+      font-weight: 600;
+      max-width: 760px;
+      margin-bottom: 10px;
+    }
+
+    .story-highlight {
+      margin-top: 15px;
+      padding: 15px 17px;
+      background: #1479cf;
+      border-radius: 16px;
+      color: #fff;
+      box-shadow: 0 5px 0 rgba(16, 43, 88, .15);
+    }
+
+    .story-highlight strong {
+      display: block;
+      font-size: 11px;
+      letter-spacing: .8px;
+      margin-bottom: 5px;
+    }
+
+    .story-highlight span {
+      display: block;
+      font-size: 11px;
+      line-height: 1.45;
+      font-weight: 700;
+    }
+
+    /* =========================
+       CONTACT
+    ========================== */
+
+    .contact-section {
+      margin-top: 15px;
+      background: #fff;
+      border-radius: 22px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 9px 25px rgba(20, 47, 95, .16);
+    }
+
+    .contact-title {
+      color: #ff4e9b;
+      font-family: "Brush Script MT", "Segoe Script", cursive;
+      font-size: 42px;
+      margin-bottom: 5px;
+    }
+
+    .contact-subtitle {
+      color: #1479cf;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .7px;
+      margin-bottom: 18px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .contact-button {
+      display: inline-block;
+      background: #ff4e9b;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 1000;
+      box-shadow: 0 4px 0 rgba(16, 43, 88, .15);
+      transition: transform .2s ease;
+    }
+
+    .contact-button:hover {
+      transform: translateY(-2px);
+    }
+
+    .contact-button.blue {
+      background: #1479cf;
+    }
+
+    /* =========================
+       PAYMENT METHODS
+    ========================== */
+
+    .payment-methods {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 2px solid #e8eef7;
+    }
+
+    .payment-title {
+      color: #1479cf;
+      font-size: 13px;
+      font-weight: 1000;
+      letter-spacing: .8px;
+      margin-bottom: 12px;
+    }
+
+    .payment-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .payment-method {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: #fff;
+      color: #102b58;
+      padding: 9px 13px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 1000;
+      box-shadow: 0 4px 0 rgba(16, 43, 88, .12);
+    }
+
+    .payment-logo {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      border-radius: 6px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      margin-top: 18px;
+      padding: 22px 25px;
+      border-radius: 22px;
+      background: #102b58;
+      color: #fff;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      width: 155px;
+      height: 65px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .footer-center {
+      text-align: center;
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.65;
+    }
+
+    .footer-right {
+      text-align: right;
+      font-family: "Brush Script MT", "Segoe Script", cursive;
+      font-size: 34px;
+      color: #ff4e9b;
+      font-weight: 700;
+    }
+
+    .footer-right a {
+      display: block;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      margin-top: 3px;
+    }
+
+    /* =========================
+       TABLET
+    ========================== */
+
+    @media(max-width:1050px) {
+
+      .topbar {
+        grid-template-columns: 1fr;
+        justify-items: center;
+      }
+
+      .contact-pills {
+        justify-content: center;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .lookbook-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media(max-width:760px) {
+
+      .page {
+        width: min(100% - 16px, 600px);
+        padding-top: 10px;
+      }
+
+      .nav {
+        max-width: 100%;
+        border-radius: 20px;
+      }
+
+      .nav a {
+        padding: 8px 10px;
+        font-size: 11px;
+      }
+
+      .contact-pills {
+        flex-wrap: wrap;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 20px 38px;
+        min-height: 500px;
+      }
+
+      .hero-art {
+        min-height: 210px;
+      }
+
+      .hero-script {
+        font-size: 58px;
+      }
+
+      .cards,
+      .lower,
+      .story {
+        grid-template-columns: 1fr;
+      }
+
+      .flavors {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .location-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .lookbook-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .story {
+        padding: 18px;
+      }
+
+      .owner-photo {
+        height: 360px;
+      }
+
+      .story-content {
+        padding: 0;
+      }
+
+      .story h2 {
+        font-size: 42px;
+      }
+
+      footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-logo {
+        margin: 0 auto;
+      }
+
+      .footer-right {
+        text-align: center;
+      }
+    }
+
+    /* =========================
+       SMALL PHONE
+    ========================== */
+
+    @media(max-width:430px) {
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .flavors {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .location-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .locations {
+        padding: 16px;
+      }
+
+      .locations-title {
+        font-size: 36px;
+      }
+
+      .water-buttons,
+      .catering-buttons {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .water-buttons .button,
+      .catering-buttons .button {
+        width: 100%;
+      }
+
+      .lookbook {
+        padding: 15px;
+      }
+
+      .lookbook-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .lookbook-photo {
+        height: 390px;
+      }
+
+      .story {
+        padding: 15px;
+      }
+
+      .contact-section {
+        padding: 20px 15px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <div class="page">
-
-    <!-- HEADER -->
-    <header class="topbar">
+  <div class="page">
+
+    <!-- HEADER -->
+    <header class="topbar">
 
-      <a href="#home">
-        <video class="mini-logo" autoplay muted loop playsinline>
-          <source src="tastystrains-logo.MP4" type="video/mp4">
-        </video>
-      </a>
-
-      <nav class="nav">
-        <a class="active" href="#home">Home</a>
-        <a href="#locations">Locations</a>
-        <a href="#waterice">Water Ice</a>
-        <a href="#catering">Catering</a>
-        <a href="#clothing">Clothing</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <a href="#home">
+        <video class="mini-logo" autoplay muted loop playsinline>
+          <source src="tastystrains-logo.MP4" type="video/mp4">
+        </video>
+      </a>
+
+      <nav class="nav">
+        <a class="active" href="#home">Home</a>
+        <a href="#locations">Locations</a>
+        <a href="#waterice">Water Ice</a>
+        <a href="#catering">Catering</a>
+        <a href="#clothing">Clothing</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-      <div class="contact-pills">
-
-        <a class="pill" href="tel:3135913034">
-          313-591-3034
-        </a>
-
-        <a
-          class="pill"
-          href="https://www.instagram.com/tastystrains313/"
-          target="_blank"
-          rel="noopener"
-        >
-          @tastystrains313
-        </a>
+      <div class="contact-pills">
+
+        <a class="pill" href="tel:3135913034">
+          313-591-3034
+        </a>
+
+        <a
+          class="pill"
+          href="https://www.instagram.com/tastystrains313/"
+          target="_blank"
+          rel="noopener"
+        >
+          @tastystrains313
+        </a>
 
-      </div>
+      </div>
 
-    </header>
+    </header>
 
-    <!-- HERO -->
-    <section class="hero" id="home">
+    <!-- HERO -->
+    <section class="hero" id="home">
 
-      <button
-        class="arrow left"
-        type="button"
-        onclick="document.querySelector('.hero-art video').currentTime -= 1"
-      >
-        ‹
-      </button>
+      <button
+        class="arrow left"
+        type="button"
+        onclick="document.querySelector('.hero-art video').currentTime -= 1"
+      >
+        ‹
+      </button>
 
-      <div class="hero-art">
+      <div class="hero-art">
 
-        <video autoplay muted loop playsinline>
-          <source src="tastystrains-logo.MP4" type="video/mp4">
-        </video>
+        <video autoplay muted loop playsinline>
+          <source src="tastystrains-logo.MP4" type="video/mp4">
+        </video>
 
-      </div>
+      </div>
 
-      <div class="hero-copy">
+      <div class="hero-copy">
 
-        <div class="hero-script">
-          Detroit's Frozen Desserts
-        </div>
+        <div class="hero-script">
+          Detroit's Frozen Desserts
+        </div>
 
-        <p>
-          REAL FLAVOR. REAL VIBES.
-        </p>
+        <p>
+          REAL FLAVOR. REAL VIBES.
+        </p>
 
-        <div class="ribbon">
-          FEATURING PHILADELPHIA WATER ICE
-        </div>
+        <div class="ribbon">
+          FEATURING PHILADELPHIA WATER ICE
+        </div>
 
-      </div>
+      </div>
 
-      <button
-        class="arrow right"
-        type="button"
-        onclick="document.querySelector('.hero-art video').currentTime += 1"
-      >
-        ›
-      </button>
+      <button
+        class="arrow right"
+        type="button"
+        onclick="document.querySelector('.hero-art video').currentTime += 1"
+      >
+        ›
+      </button>
 
-    </section>
+    </section>
 
-    <!-- MAIN CARDS -->
-    <section class="cards">
+    <!-- MAIN CARDS -->
+    <section class="cards">
 
-      <!-- WATER ICE -->
-      <article class="card water" id="waterice">
+      <!-- WATER ICE -->
+      <article class="card water" id="waterice">
 
-        <img
-          class="card-image"
-          src="water-ice.jpg"
-          alt="TastyStrains Philadelphia Water Ice"
-        >
+        <img
+          class="card-image"
+          src="water-ice.jpg"
+          alt="TastyStrains Philadelphia Water Ice"
+        >
 
-        <div class="card-body">
+        <div class="card-body">
 
-          <h2 class="script-title">
-            Water Ice
-          </h2>
+          <h2 class="script-title">
+            Water Ice
+          </h2>
 
-          <div class="card-icon">
-            🍧
-          </div>
+          <div class="card-icon">
+            🍧
+          </div>
 
-          <p>
-            Authentic Philadelphia Water Ice with bold flavors and a Detroit vibe.
-          </p>
+          <p>
+            Authentic Philadelphia Water Ice with bold flavors and a Detroit vibe.
+          </p>
 
-          <div class="water-price">
-            $5 PER CUP
-          </div>
+          <div class="water-price">
+            $5 PER CUP
+          </div>
 
-          <div class="water-info">
-            EBT ACCEPTED
-          </div>
+          <div class="water-info">
+            EBT ACCEPTED
+          </div>
 
-          <div class="water-info">
-            NO THC • NO CBD
-          </div>
+          <div class="water-info">
+            NO THC • NO CBD
+          </div>
 
-          <div class="water-note">
-            Available at participating retail locations
-          </div>
+          <div class="water-note">
+            Available at participating retail locations
+          </div>
 
-          <div class="water-buttons">
+          <div class="water-buttons">
 
-            <a class="button" href="#flavors">
-              VIEW FLAVORS
-            </a>
+            <a class="button" href="#flavors">
+              VIEW FLAVORS
+            </a>
 
-            <a class="button" href="#locations">
-              FIND A LOCATION
-            </a>
+            <a class="button" href="#locations">
+              FIND A LOCATION
+            </a>
 
-          </div>
+          </div>
 
-        </div>
+        </div>
 
-      </article>
+      </article>
 
-      <!-- CATERING -->
-      <article class="card catering" id="catering">
+      <!-- CATERING -->
+      <article class="card catering" id="catering">
 
-        <img
-          class="card-image"
-          src="catering.PNG"
-          alt="TastyStrains catering"
-        >
+        <img
+          class="card-image"
+          src="catering.PNG"
+          alt="TastyStrains catering"
+        >
 
-        <div class="card-body">
+        <div class="card-body">
 
-          <h2 class="script-title">
-            Catering
-          </h2>
+          <h2 class="script-title">
+            Catering
+          </h2>
 
-          <div class="card-icon">
-            🎉
-          </div>
+          <div class="card-icon">
+            🎉
+          </div>
 
-          <p>
-            Bring TastyStrains Philadelphia Water Ice to birthdays,
-            graduations, weddings, parties and special events.
-          </p>
+          <p>
+            Bring TastyStrains Philadelphia Water Ice to birthdays,
+            graduations, weddings, parties and special events.
+          </p>
 
-          <div class="catering-info">
-            CUSTOM PRICING AVAILABLE
-          </div>
+          <div class="catering-info">
+            CUSTOM PRICING AVAILABLE
+          </div>
 
-          <div class="catering-note">
-            Pricing is based on your event, guest count and catering needs.
-          </div>
+          <div class="catering-note">
+            Pricing is based on your event, guest count and catering needs.
+          </div>
 
-          <div class="catering-note">
-            DEPOSIT REQUIRED TO BOOK. Your event date is not confirmed
-            until the required deposit is received.
-          </div>
+          <div class="catering-note">
+            DEPOSIT REQUIRED TO BOOK. Your event date is not confirmed
+            until the required deposit is received.
+          </div>
 
-          <div class="catering-buttons">
+          <div class="catering-buttons">
 
-            <a class="button" href="tel:3135913034">
-              CALL TO BOOK
-            </a>
+            <a class="button" href="tel:3135913034">
+              CALL TO BOOK
+            </a>
 
-            <a class="button" href="#contact">
-              REQUEST CATERING
-            </a>
+            <a class="button" href="#contact">
+              REQUEST CATERING
+            </a>
 
-          </div>
+          </div>
 
-        </div>
+        </div>
 
-      </article>
+      </article>
 
-      <!-- CLOTHING -->
-      <article class="card clothing" id="clothing">
+      <!-- CLOTHING -->
+      <article class="card clothing" id="clothing">
 
-        <img
-          class="card-image"
-          src="clothing.PNG"
-          alt="TastyStrains clothing"
-        >
+        <img
+          class="card-image"
+          src="clothing.PNG"
+          alt="TastyStrains clothing"
+        >
 
-        <div class="card-body">
+        <div class="card-body">
 
-          <h2 class="script-title">
-            Clothing
-          </h2>
+          <h2 class="script-title">
+            Clothing
+          </h2>
 
-          <div class="card-icon">
-            👕
-          </div>
+          <div class="card-icon">
+            👕
+          </div>
 
-          <p>
-            Fresh TastyStrains apparel made for people who stay true to the vibe.
-          </p>
+          <p>
+            Fresh TastyStrains apparel made for people who stay true to the vibe.
+          </p>
 
-          <a class="button" href="#lookbook">
-            VIEW THE LOOKBOOK
-          </a>
+          <a class="button" href="#lookbook">
+            VIEW THE LOOKBOOK
+          </a>
 
-        </div>
+        </div>
 
-      </article>
+      </article>
 
-      <!-- ABOUT -->
-      <article class="card about" id="about">
+      <!-- ABOUT -->
+      <article class="card about" id="about">
 
-        <img
-          class="card-image"
-          src="about-us.jpg"
-          alt="About TastyStrains 313"
-        >
+        <img
+          class="card-image"
+          src="about-us.jpg"
+          alt="About TastyStrains 313"
+        >
 
-        <div class="card-body">
+        <div class="card-body">
 
-          <h2 class="script-title">
-            About Us
-          </h2>
+          <h2 class="script-title">
+            About Us
+          </h2>
 
-          <div class="card-icon">
-            💚
-          </div>
+          <div class="card-icon">
+            💚
+          </div>
 
-          <p>
-            Detroit-grown flavor, good energy and frozen desserts made to stand out.
-          </p>
+          <p>
+            Detroit-grown flavor, good energy and frozen desserts made to stand out.
+          </p>
 
-          <a class="button" href="#story">
-            OUR STORY
-          </a>
+          <a class="button" href="#story">
+            OUR STORY
+          </a>
 
-        </div>
+        </div>
 
-      </article>
+      </article>
 
-    </section>
+    </section>
 
-    <!-- LOWER SECTION -->
-    <section class="lower">
+    <!-- LOWER SECTION -->
+    <section class="lower">
 
-      <!-- IN STORES NOW -->
-      <article class="panel">
+      <!-- IN STORES NOW -->
+      <article class="panel">
 
-        <h2 class="panel-title">
-          In Stores Now!
-        </h2>
+        <h2 class="panel-title">
+          In Stores Now!
+        </h2>
 
-        <img
-          class="store-photo"
-          src="store-location.jpg"
-          alt="TastyStrains Fenkell and Wyoming location"
-        >
+        <img
+          class="store-photo"
+          src="store-location.jpg"
+          alt="TastyStrains Fenkell and Wyoming location"
+        >
 
-        <div class="store-text">
-          FENKELL &amp; WYOMING
-        </div>
+        <div class="store-text">
+          FENKELL &amp; WYOMING
+        </div>
 
-      </article>
+      </article>
 
-      <!-- FEATURED PRODUCTS -->
-      <article class="panel" id="flavors">
+      <!-- FEATURED PRODUCTS -->
+      <article class="panel" id="flavors">
 
-        <h2 class="panel-title">
-          Featured Products
-        </h2>
+        <h2 class="panel-title">
+          Featured Products
+        </h2>
 
-        <div class="flavors">
+        <div class="flavors">
 
-          <div class="flavor">
-            <img src="mango.jpg" alt="Mango Water Ice">
-            <span>MANGO</span>
-          </div>
+          <div class="flavor">
+            <img src="mango.jpg" alt="Mango Water Ice">
+            <span>MANGO</span>
+          </div>
 
-          <div class="flavor">
-            <img src="lemon.jpg" alt="Lemon Water Ice">
-            <span>LEMON</span>
-          </div>
+          <div class="flavor">
+            <img src="lemon.jpg" alt="Lemon Water Ice">
+            <span>LEMON</span>
+          </div>
 
-          <div class="flavor">
-            <img src="cherry .jpg" alt="Cherry Water Ice">
-            <span>CHERRY</span>
-          </div>
+          <div class="flavor">
+            <img src="cherry .jpg" alt="Cherry Water Ice">
+            <span>CHERRY</span>
+          </div>
 
-          <div class="flavor">
-            <img src="blueberry .jpg" alt="Blueberry Water Ice">
-            <span>BLUEBERRY</span>
-          </div>
+          <div class="flavor">
+            <img src="blueberry .jpg" alt="Blueberry Water Ice">
+            <span>BLUEBERRY</span>
+          </div>
 
-          <div class="flavor">
-            <img src="tropical-rainbow.jpg" alt="Tropical Rainbow Water Ice">
-            <span>TROPICAL RAINBOW</span>
-          </div>
+          <div class="flavor">
+            <img src="tropical-rainbow.jpg" alt="Tropical Rainbow Water Ice">
+            <span>TROPICAL RAINBOW</span>
+          </div>
 
-          <div class="flavor">
-            <img src="cotton candy .jpg" alt="Cotton Candy Water Ice">
-            <span>COTTON CANDY</span>
-          </div>
+          <div class="flavor">
+            <img src="cotton candy .jpg" alt="Cotton Candy Water Ice">
+            <span>COTTON CANDY</span>
+          </div>
 
-          <div class="flavor">
-            <img src="fireworks.jpg" alt="Fireworks Water Ice">
-            <span>FIREWORKS</span>
-          </div>
+          <div class="flavor">
+            <img src="fireworks.jpg" alt="Fireworks Water Ice">
+            <span>FIREWORKS</span>
+          </div>
 
-          <div class="flavor">
-            <img src="watermelon .jpg" alt="Watermelon Water Ice">
-            <span>WATERMELON</span>
-          </div>
+          <div class="flavor">
+            <img src="watermelon .jpg" alt="Watermelon Water Ice">
+            <span>WATERMELON</span>
+          </div>
 
-        </div>
+        </div>
 
-      </article>
+      </article>
 
-    </section>
+    </section>
 
-    <!-- CLOTHING LOOKBOOK -->
-    <section class="lookbook" id="lookbook">
+    <!-- CLOTHING LOOKBOOK -->
+    <section class="lookbook" id="lookbook">
 
-      <h2 class="lookbook-title">
-        TastyStrains Clothing
-      </h2>
+      <h2 class="lookbook-title">
+        TastyStrains Clothing
+      </h2>
 
-      <p class="lookbook-subtitle">
-        REAL PEOPLE. REAL STYLE. REAL TASTY STRAINS.
-      </p>
+      <p class="lookbook-subtitle">
+        REAL PEOPLE. REAL STYLE. REAL TASTY STRAINS.
+      </p>
 
-      <div class="lookbook-grid">
+      <div class="lookbook-grid">
 
-        <img
-          class="lookbook-photo"
-          src="clothing-model-1.PNG"
-          alt="TastyStrains clothing model"
-        >
-
-        <img
-          class="lookbook-photo"
-          src="clothing-model2.PNG"
-          alt="TastyStrains clothing model"
-        >
-
-        <img
-          class="lookbook-photo"
-          src="clothing-model3.jpg"
-          alt="TastyStrains clothing model"
-        >
-
-        <img
-          class="lookbook-photo"
-          src="clothing-model4.PNG"
-          alt="TastyStrains clothing model"
-        >
-
-        <img
-          class="lookbook-photo"
-          src="clothing-model5.PNG"
-          alt="TastyStrains clothing model"
-        >
-
-        <img
-          class="lookbook-photo"
-          src="clothing-model6.PNG"
-          alt="TastyStrains clothing model"
-        >
-
-      </div>
-
-      <div class="lookbook-bottom">
-
-        <a class="button" href="#contact">
-          SHOP THE LOOK
-        </a>
-
-      </div>
-
-    </section>
-
-    <!-- LOCATIONS -->
-    <section class="locations" id="locations">
-
-      <h2 class="locations-title">
-        Find TastyStrains
-      </h2>
-
-      <p class="locations-subtitle">
-        AVAILABLE AT PARTICIPATING RETAIL LOCATIONS
-      </p>
-
-      <div class="location-grid">
-
-        <div class="location-card">
-          <h3>Grand Liquor</h3>
-          <p>
-            12889 Woodward<br>
-            Highland Park, MI 48203
-          </p>
-          <a
-            class="directions-button"
-            href="https://www.google.com/maps/search/?api=1&query=Grand+Liquor+12889+Woodward+Highland+Park+MI+48203"
-            target="_blank"
-            rel="noopener"
-          >
-            GET DIRECTIONS
-          </a>
-        </div>
-
-        <div class="location-card">
-          <h3>Imperial Fresh</h3>
-          <p>
-            14424 Schaefer<br>
-            Detroit, MI 48227
-          </p>
-          <a
-            class="directions-button"
-            href="https://www.google.com/maps/search/?api=1&query=Imperial+Fresh+14424+Schaefer+Detroit+MI+48227"
-            target="_blank"
-            rel="noopener"
-          >
-            GET DIRECTIONS
-          </a>
-        </div>
-
-        <div class="location-card">
-          <h3>Martell Liquor</h3>
-          <p>
-            19137 Seven Mile<br>
-            Detroit, MI 48219
-          </p>
-          <a
-            class="directions-button"
-            href="https://www.google.com/maps/search/?api=1&query=Martell+Liquor+19137+Seven+Mile+Detroit+MI+48219"
-            target="_blank"
-            rel="noopener"
-          >
-            GET DIRECTIONS
-          </a>
-        </div>
-
-        <div class="location-card">
-          <h3>Heydens Liquor</h3>
-          <p>
-            20201 Seven Mile<br>
-            Detroit, MI 48219
-          </p>
-          <a
-            class="directions-button"
-            href="https://www.google.com/maps/search/?api=1&query=Heydens+Liquor+20201+Seven+Mile+Detroit+MI+48219"
-            target="_blank"
-            rel="noopener"
-          >
-            GET DIRECTIONS
-          </a>
-        </div>
-
-        <div class="location-card">
-          <h3>BP</h3>
-          <p>
-            30435 Cherry Hill<br>
-            Westland, MI 48186
-          </p>
-          <a
-            class="directions-button"
-            href="https://www.google.com/maps/search/?api=1&query=BP+30435+Cherry+Hill+Westland+MI+48186"
-            target="_blank"
-            rel="noopener"
-          >
-            GET DIRECTIONS
-          </a>
-        </div>
-
-        <div class="location-card">
-          <h3>Vintage Village Liquor</h3>
-          <p>
-            28927 Southfield Rd<br>
-            Southfield, MI 48076
-          </p>
-          <a
-            class="directions-button"
-            href="https://www.google.com/maps/search/?api=1&query=Vintage+Village+Liquor+28927+Southfield+Rd+Southfield+MI+48076"
-            target="_blank"
-            rel="noopener"
-          >
-            GET DIRECTIONS
-          </a>
-        </div>
-
-        <div class="location-card">
-          <h3>Greenfield Market</h3>
-          <p>
-            15530 Puritan<br>
-            Detroit, MI 48227
-          </p>
-          <a
-            class="directions-button"
-            href="https://www.google.com/maps/search/?api=1&query=Greenfield+Market+15530+Puritan+Detroit+MI+48227"
-            target="_blank"
-            rel="noopener"
-          >
-            GET DIRECTIONS
-          </a>
-        </div>
-
-        <div class="location-card">
-          <h3>Big V Liquor</h3>
-          <p>
-            14111 Greenfield Rd<br>
-            Detroit, MI 48227
-          </p>
-          <a
-            class="directions-button"
-            href="https://www.google.com/maps/search/?api=1&query=Big+V+Liquor+14111+Greenfield+Rd+Detroit+MI+48227"
-            target="_blank"
-            rel="noopener"
-          >
-            GET DIRECTIONS
-          </a>
-        </div>
-
-        <div class="location-card">
-          <h3>Kennedy Liquor</h3>
-          <p>
-            13344 Seven Mile<br>
-            Detroit, MI 48219
-          </p>
-          <a
-            class="directions-button"
-            href="https://www.google.com/maps/search/?api=1&query=Kennedy+Liquor+13344+Seven+Mile+Detroit+MI+48219"
-            target="_blank"
-            rel="noopener"
-          >
-            GET DIRECTIONS
-          </a>
-        </div>
-
-        <div class="location-card">
-          <h3>W Liquor</h3>
-          <p>
-            3325 E Seven Mile<br>
-            Detroit, MI 48234
-          </p>
-          <a
-            class="directions-button"
-            href="https://www.google.com/maps/search/?api=1&query=W+Liquor+3325+E+Seven+Mile+Detroit+MI+48234"
-            target="_blank"
-            rel="noopener"
-          >
-            GET DIRECTIONS
-          </a>
-        </div>
-
-        <div class="location-card">
-          <h3>United Liquor</h3>
-          <p>
-            22040 Seven Mile<br>
-            Detroit, MI 48219
-          </p>
-          <a
-            class="directions-button"
-            href="https://www.google.com/maps/search/?api=1&query=United+Liquor+22040+Seven+Mile+Detroit+MI+48219"
-            target="_blank"
-            rel="noopener"
-          >
-            GET DIRECTIONS
-          </a>
-        </div>
-
-        <div class="location-card">
-          <h3>Marathon</h3>
-          <p>
-            10550 W Jefferson Ave<br>
-            River Rouge, MI 48218
-          </p>
-          <a
-            class="directions-button"
-            href="https://www.google.com/maps/search/?api=1&query=Marathon+10550+W+Jefferson+Ave+River+Rouge+MI+48218"
-            target="_blank"
-            rel="noopener"
-          >
-            GET DIRECTIONS
-          </a>
-        </div>
-
-        <div class="location-card">
-          <h3>Mobil</h3>
-          <p>
-            10001 Fenkell Ave<br>
-            Detroit, MI 48238
-          </p>
-          <a
-            class="directions-button"
-            href="https://www.google.com/maps/search/?api=1&query=Mobil+10001+Fenkell+Ave+Detroit+MI+48238"
-            target="_blank"
-            rel="noopener"
-          >
-            GET DIRECTIONS
-          </a>
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- OUR STORY -->
-    <section class="story" id="story">
-
-      <div class="story-photo-wrap">
-
-        <img
-          class="owner-photo"
-          src="owner-photo.PNG"
-          alt="TastyStrains founder"
-        >
-
-        <div class="founder-badge">
-          DETROIT<br>
-          <strong>FOUNDED WITH PURPOSE</strong>
-        </div>
-
-      </div>
-
-      <div class="story-content">
-
-        <div class="story-label">
-          DETROIT, MICHIGAN • FENKELL &amp; MONTE VISTA
-        </div>
-
-        <h2>
-          Our Story
-        </h2>
-
-        <h3>
-          BUILT FROM LOVE. SHAPED BY RESILIENCE. CREATED TO BRING JOY.
-        </h3>
-
-        <p>
-          I was born and raised in Detroit, Michigan, on Fenkell and
-          Monte Vista. Growing up, life was stable and full of love.
-          My parents were present, supportive and hardworking. My father
-          especially played a huge role in my life. He consistently showed
-          up for me and provided for our family alongside my mother.
-        </p>
-
-        <p>
-          Everything changed when my father was arrested and sentenced to
-          20 years in prison. His absence deeply impacted my family,
-          both emotionally and financially. What once felt secure became
-          uncertain, and my mother was left carrying the weight of our
-          household on her own.
-        </p>
-
-        <p>
-          Watching my family struggle during that time shaped how I view
-          responsibility, resilience and community.
-        </p>
-
-        <p>
-          During those years, one of my happiest memories came from my
-          uncle, who owned an ice cream truck. He would let me help pass
-          out ice cream to friends, family and neighbors. I remember the
-          joy on people's faces and the sense of togetherness it created.
-          Even in difficult times, something as simple as ice cream could
-          bring happiness, connection and relief.
-        </p>
-
-        <p>
-          That feeling never left me.
-        </p>
-
-        <p>
-          In 2021, inspired by those memories and my desire to give back,
-          I created Tasty Strains. The name represents bold flavors,
-          creativity and the power food has to uplift people. To me,
-          TastyStrains isn't just about frozen desserts — it's about
-          creating moments of joy, especially in the communities that
-          raised me.
-        </p>
-
-        <p>
-          Today, I'm taking the next step toward growing TastyStrains
-          into a real, sustainable business. My goal is to expand through
-          local retail partnerships, create opportunities and bring
-          something positive back to neighborhoods like the one I grew up in.
-        </p>
-
-        <div class="story-highlight">
-
-          <strong>
-            TASTY STRAINS IS MORE THAN A DESSERT BRAND.
-          </strong>
-
-          <span>
-            It's a story of family, resilience, community and the belief
-            that something meaningful can come from hardship, passion
-            and perseverance.
-          </span>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- CONTACT -->
-    <section class="contact-section" id="contact">
-
-      <h2 class="contact-title">
-        Let's Connect
-      </h2>
-
-      <p class="contact-subtitle">
-        WATER ICE • CATERING • CLOTHING • PARTNERSHIPS
-      </p>
-
-      <div class="contact-buttons">
-
-        <a
-          class="contact-button"
-          href="tel:3135913034"
-        >
-          CALL 313-591-3034
-        </a>
-
-        <a
-          class="contact-button blue"
-          href="mailto:tastystrains313@yahoo.com"
-        >
-          EMAIL US
-        </a>
-
-        <a
-          class="contact-button blue"
-          href="https://www.instagram.com/tastystrains313/"
-          target="_blank"
-          rel="noopener"
-        >
-          INSTAGRAM
-        </a>
-
-        <a
-          class="contact-button"
-          href="#catering"
-        >
-          REQUEST CATERING
-        </a>
-
-      </div>
-
-      <!-- PAYMENT METHODS -->
-      <div class="payment-methods">
-
-        <div class="payment-title">
-          PAYMENT METHODS
-        </div>
-
-        <div class="payment-list">
-
-          <div class="payment-method">
-
-            <img
-              class="payment-logo"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Zelle_logo.svg/1280px-Zelle_logo.svg.png"
-              alt="Zelle logo"
-            >
-
-            Zelle
-
-          </div>
-
-          <div class="payment-method">
-
-            <img
-              class="payment-logo"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Square%2C_Inc._logo.svg/1280px-Square%2C_Inc._logo.svg.png"
-              alt="Square logo"
-            >
-
-            Square
-
-          </div>
-
-          <div class="payment-method">
-
-            <img
-              class="payment-logo"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/1280px-PayPal.svg.png"
-              alt="PayPal logo"
-            >
-
-            PayPal
-
-          </div>
-
-        </div>
-
-        <p
-          style="
-            margin-top:12px;
-            color:#334d72;
-            font-size:11px;
-            font-weight:700;
-          "
-        >
-          Email: tastystrains313@yahoo.com
-        </p>
-
-      </div>
-
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-
-      <div>
-
-        <video
-          class="footer-logo"
-          autoplay
-          muted
-          loop
-          playsinline
-        >
-          <source
-            src="tastystrains-logo.MP4"
-            type="video/mp4"
-          >
-        </video>
-
-      </div>
-
-      <div class="footer-center">
-        © 2026 TastyStrains LLC<br>
-        Detroit, Michigan<br>
-        Philadelphia Water Ice
-      </div>
-
-      <div class="footer-right">
-
-        TastyStrains
-
-        <a href="tel:3135913034">
-          313-591-3034
-        </a>
-
-        <a
-          href="https://www.instagram.com/tastystrains313/"
-          target="_blank"
-          rel="noopener"
-        >
-          @tastystrains313
-        </a>
-
-      </div>
-
-    </footer>
-
-  </div>
+        <img
+          class="lookbook-photo"
+          src="clothing-model-1.PNG"
+          alt="TastyStrains clothing model"
+        >
+
+        <img
+          class="lookbook-photo"
+          src="clothing-model2.PNG"
+          alt="TastyStrains clothing model"
+        >
+
+        <img
+          class="lookbook-photo"
+          src="clothing-model3.jpg"
+          alt="TastyStrains clothing model"
+        >
+
+        <img
+          class="lookbook-photo"
+          src="clothing-model4.PNG"
+          alt="TastyStrains clothing model"
+        >
+
+        <img
+          class="lookbook-photo"
+          src="clothing-model5.PNG"
+          alt="TastyStrains clothing model"
+        >
+
+        <img
+          class="lookbook-photo"
+          src="clothing-model6.PNG"
+          alt="TastyStrains clothing model"
+        >
+
+      </div>
+
+      <div class="lookbook-bottom">
+
+        <a class="button" href="#contact">
+          SHOP THE LOOK
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- LOCATIONS -->
+    <section class="locations" id="locations">
+
+      <h2 class="locations-title">
+        Find TastyStrains
+      </h2>
+
+      <p class="locations-subtitle">
+        AVAILABLE AT PARTICIPATING RETAIL LOCATIONS
+      </p>
+
+      <div class="location-grid">
+
+        <div class="location-card">
+          <h3>Grand Liquor</h3>
+          <p>
+            12889 Woodward<br>
+            Highland Park, MI 48203
+          </p>
+          <a
+            class="directions-button"
+            href="https://www.google.com/maps/search/?api=1&query=Grand+Liquor+12889+Woodward+Highland+Park+MI+48203"
+            target="_blank"
+            rel="noopener"
+          >
+            GET DIRECTIONS
+          </a>
+        </div>
+
+        <div class="location-card">
+          <h3>Imperial Fresh</h3>
+          <p>
+            14424 Schaefer<br>
+            Detroit, MI 48227
+          </p>
+          <a
+            class="directions-button"
+            href="https://www.google.com/maps/search/?api=1&query=Imperial+Fresh+14424+Schaefer+Detroit+MI+48227"
+            target="_blank"
+            rel="noopener"
+          >
+            GET DIRECTIONS
+          </a>
+        </div>
+
+        <div class="location-card">
+          <h3>Martell Liquor</h3>
+          <p>
+            19137 Seven Mile<br>
+            Detroit, MI 48219
+          </p>
+          <a
+            class="directions-button"
+            href="https://www.google.com/maps/search/?api=1&query=Martell+Liquor+19137+Seven+Mile+Detroit+MI+48219"
+            target="_blank"
+            rel="noopener"
+          >
+            GET DIRECTIONS
+          </a>
+        </div>
+
+        <div class="location-card">
+          <h3>Heydens Liquor</h3>
+          <p>
+            20201 Seven Mile<br>
+            Detroit, MI 48219
+          </p>
+          <a
+            class="directions-button"
+            href="https://www.google.com/maps/search/?api=1&query=Heydens+Liquor+20201+Seven+Mile+Detroit+MI+48219"
+            target="_blank"
+            rel="noopener"
+          >
+            GET DIRECTIONS
+          </a>
+        </div>
+
+        <div class="location-card">
+          <h3>BP</h3>
+          <p>
+            30435 Cherry Hill<br>
+            Westland, MI 48186
+          </p>
+          <a
+            class="directions-button"
+            href="https://www.google.com/maps/search/?api=1&query=BP+30435+Cherry+Hill+Westland+MI+48186"
+            target="_blank"
+            rel="noopener"
+          >
+            GET DIRECTIONS
+          </a>
+        </div>
+
+        <div class="location-card">
+          <h3>Vintage Village Liquor</h3>
+          <p>
+            28927 Southfield Rd<br>
+            Southfield, MI 48076
+          </p>
+          <a
+            class="directions-button"
+            href="https://www.google.com/maps/search/?api=1&query=Vintage+Village+Liquor+28927+Southfield+Rd+Southfield+MI+48076"
+            target="_blank"
+            rel="noopener"
+          >
+            GET DIRECTIONS
+          </a>
+        </div>
+
+        <div class="location-card">
+          <h3>Greenfield Market</h3>
+          <p>
+            15530 Puritan<br>
+            Detroit, MI 48227
+          </p>
+          <a
+            class="directions-button"
+            href="https://www.google.com/maps/search/?api=1&query=Greenfield+Market+15530+Puritan+Detroit+MI+48227"
+            target="_blank"
+            rel="noopener"
+          >
+            GET DIRECTIONS
+          </a>
+        </div>
+
+        <div class="location-card">
+          <h3>Big V Liquor</h3>
+          <p>
+            14111 Greenfield Rd<br>
+            Detroit, MI 48227
+          </p>
+          <a
+            class="directions-button"
+            href="https://www.google.com/maps/search/?api=1&query=Big+V+Liquor+14111+Greenfield+Rd+Detroit+MI+48227"
+            target="_blank"
+            rel="noopener"
+          >
+            GET DIRECTIONS
+          </a>
+        </div>
+
+        <div class="location-card">
+          <h3>Kennedy Liquor</h3>
+          <p>
+            13344 Seven Mile<br>
+            Detroit, MI 48219
+          </p>
+          <a
+            class="directions-button"
+            href="https://www.google.com/maps/search/?api=1&query=Kennedy+Liquor+13344+Seven+Mile+Detroit+MI+48219"
+            target="_blank"
+            rel="noopener"
+          >
+            GET DIRECTIONS
+          </a>
+        </div>
+
+        <div class="location-card">
+          <h3>W Liquor</h3>
+          <p>
+            3325 E Seven Mile<br>
+            Detroit, MI 48234
+          </p>
+          <a
+            class="directions-button"
+            href="https://www.google.com/maps/search/?api=1&query=W+Liquor+3325+E+Seven+Mile+Detroit+MI+48234"
+            target="_blank"
+            rel="noopener"
+          >
+            GET DIRECTIONS
+          </a>
+        </div>
+
+        <div class="location-card">
+          <h3>United Liquor</h3>
+          <p>
+            22040 Seven Mile<br>
+            Detroit, MI 48219
+          </p>
+          <a
+            class="directions-button"
+            href="https://www.google.com/maps/search/?api=1&query=United+Liquor+22040+Seven+Mile+Detroit+MI+48219"
+            target="_blank"
+            rel="noopener"
+          >
+            GET DIRECTIONS
+          </a>
+        </div>
+
+        <div class="location-card">
+          <h3>Marathon</h3>
+          <p>
+            10550 W Jefferson Ave<br>
+            River Rouge, MI 48218
+          </p>
+          <a
+            class="directions-button"
+            href="https://www.google.com/maps/search/?api=1&query=Marathon+10550+W+Jefferson+Ave+River+Rouge+MI+48218"
+            target="_blank"
+            rel="noopener"
+          >
+            GET DIRECTIONS
+          </a>
+        </div>
+
+        <div class="location-card">
+          <h3>Mobil</h3>
+          <p>
+            10001 Fenkell Ave<br>
+            Detroit, MI 48238
+          </p>
+          <a
+            class="directions-button"
+            href="https://www.google.com/maps/search/?api=1&query=Mobil+10001+Fenkell+Ave+Detroit+MI+48238"
+            target="_blank"
+            rel="noopener"
+          >
+            GET DIRECTIONS
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- OUR STORY -->
+    <section class="story" id="story">
+
+      <div class="story-photo-wrap">
+
+        <img
+          class="owner-photo"
+          src="owner-photo.PNG"
+          alt="TastyStrains founder"
+        >
+
+        <div class="founder-badge">
+          DETROIT<br>
+          <strong>FOUNDED WITH PURPOSE</strong>
+        </div>
+
+      </div>
+
+      <div class="story-content">
+
+        <div class="story-label">
+          DETROIT, MICHIGAN • FENKELL &amp; MONTE VISTA
+        </div>
+
+        <h2>
+          Our Story
+        </h2>
+
+        <h3>
+          BUILT FROM LOVE. SHAPED BY RESILIENCE. CREATED TO BRING JOY.
+        </h3>
+
+        <p>
+          I was born and raised in Detroit, Michigan, on Fenkell and
+          Monte Vista. Growing up, life was stable and full of love.
+          My parents were present, supportive and hardworking. My father
+          especially played a huge role in my life. He consistently showed
+          up for me and provided for our family alongside my mother.
+        </p>
+
+        <p>
+          Everything changed when my father was arrested and sentenced to
+          20 years in prison. His absence deeply impacted my family,
+          both emotionally and financially. What once felt secure became
+          uncertain, and my mother was left carrying the weight of our
+          household on her own.
+        </p>
+
+        <p>
+          Watching my family struggle during that time shaped how I view
+          responsibility, resilience and community.
+        </p>
+
+        <p>
+          During those years, one of my happiest memories came from my
+          uncle, who owned an ice cream truck. He would let me help pass
+          out ice cream to friends, family and neighbors. I remember the
+          joy on people's faces and the sense of togetherness it created.
+          Even in difficult times, something as simple as ice cream could
+          bring happiness, connection and relief.
+        </p>
+
+        <p>
+          That feeling never left me.
+        </p>
+
+        <p>
+          In 2021, inspired by those memories and my desire to give back,
+          I created Tasty Strains. The name represents bold flavors,
+          creativity and the power food has to uplift people. To me,
+          TastyStrains isn't just about frozen desserts — it's about
+          creating moments of joy, especially in the communities that
+          raised me.
+        </p>
+
+        <p>
+          Today, I'm taking the next step toward growing TastyStrains
+          into a real, sustainable business. My goal is to expand through
+          local retail partnerships, create opportunities and bring
+          something positive back to neighborhoods like the one I grew up in.
+        </p>
+
+        <div class="story-highlight">
+
+          <strong>
+            TASTY STRAINS IS MORE THAN A DESSERT BRAND.
+          </strong>
+
+          <span>
+            It's a story of family, resilience, community and the belief
+            that something meaningful can come from hardship, passion
+            and perseverance.
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+
+      <h2 class="contact-title">
+        Let's Connect
+      </h2>
+
+      <p class="contact-subtitle">
+        WATER ICE • CATERING • CLOTHING • PARTNERSHIPS
+      </p>
+
+      <div class="contact-buttons">
+
+        <a
+          class="contact-button"
+          href="tel:3135913034"
+        >
+          CALL 313-591-3034
+        </a>
+
+        <a
+          class="contact-button blue"
+          href="mailto:tastystrains313@yahoo.com"
+        >
+          EMAIL US
+        </a>
+
+        <a
+          class="contact-button blue"
+          href="https://www.instagram.com/tastystrains313/"
+          target="_blank"
+          rel="noopener"
+        >
+          INSTAGRAM
+        </a>
+
+        <a
+          class="contact-button"
+          href="#catering"
+        >
+          REQUEST CATERING
+        </a>
+
+      </div>
+
+      <!-- PAYMENT METHODS -->
+      <div class="payment-methods">
+
+        <div class="payment-title">
+          PAYMENT METHODS
+        </div>
+
+        <div class="payment-list">
+
+          <div class="payment-method">
+
+            <img
+              class="payment-logo"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Zelle_logo.svg/1280px-Zelle_logo.svg.png"
+              alt="Zelle logo"
+            >
+
+            Zelle
+
+          </div>
+
+          <div class="payment-method">
+
+            <img
+              class="payment-logo"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Square%2C_Inc._logo.svg/1280px-Square%2C_Inc._logo.svg.png"
+              alt="Square logo"
+            >
+
+            Square
+
+          </div>
+
+          <div class="payment-method">
+
+            <img
+              class="payment-logo"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/1280px-PayPal.svg.png"
+              alt="PayPal logo"
+            >
+
+            PayPal
+
+          </div>
+
+        </div>
+
+        <p
+          style="
+            margin-top:12px;
+            color:#334d72;
+            font-size:11px;
+            font-weight:700;
+          "
+        >
+          Email: tastystrains313@yahoo.com
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+      <div>
+
+        <video
+          class="footer-logo"
+          autoplay
+          muted
+          loop
+          playsinline
+        >
+          <source
+            src="tastystrains-logo.MP4"
+            type="video/mp4"
+          >
+        </video>
+
+      </div>
+
+      <div class="footer-center">
+        © 2026 TastyStrains LLC<br>
+        Detroit, Michigan<br>
+        Philadelphia Water Ice
+      </div>
+
+      <div class="footer-right">
+
+        TastyStrains
+
+        <a href="tel:3135913034">
+          313-591-3034
+        </a>
+
+        <a
+          href="https://www.instagram.com/tastystrains313/"
+          target="_blank"
+          rel="noopener"
+        >
+          @tastystrains313
+        </a>
+
+      </div>
+
+    </footer>
+
+  </div>
 
 </body>
 </html>
