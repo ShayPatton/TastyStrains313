@@ -49,7 +49,6 @@
       color: var(--dark);
       line-height: 1.6;
 
-      /* ORIGINAL BACKGROUND */
       background-image: url("tastystrains-background.PNG");
       background-size: cover;
       background-position: center;
@@ -274,7 +273,7 @@
       margin: auto;
     }
 
-    /* ORIGINAL TASTY STRAINS VIDEO — KEPT */
+    /* ORIGINAL TASTY STRAINS LOGO */
     .hero-video {
       width: min(430px, 90vw);
 
@@ -291,7 +290,11 @@
       );
     }
 
-    /* NEW DETROIT'S FROZEN DESSERTS IMAGE */
+    /* =====================================================
+       NEW DETROIT'S FROZEN DESSERTS GRAPHIC
+       TRANSPARENT PNG — NO CHECKERBOARD
+       ===================================================== */
+
     .detroit-desserts-logo {
       width: min(900px, 95vw);
 
@@ -302,6 +305,10 @@
       margin: 0 auto 25px;
 
       background: transparent;
+
+      border: none;
+
+      box-shadow: none;
 
       filter: drop-shadow(
         0 15px 25px rgba(0, 0, 0, 0.18)
@@ -1140,8 +1147,11 @@
         margin-bottom: -20px;
       }
 
+      /* NEW LOGO ON MOBILE */
       .detroit-desserts-logo {
         width: 95vw;
+        max-width: 95vw;
+        margin-bottom: 22px;
       }
 
     }
@@ -1200,7 +1210,7 @@
     <div class="hero-content">
 
 
-      <!-- ORIGINAL TASTY STRAINS LOGO — STILL HERE -->
+      <!-- YOUR ORIGINAL TASTY STRAINS ANIMATED LOGO -->
 
       <video
         class="hero-video"
@@ -1215,7 +1225,7 @@
       <!-- NEW DETROIT'S FROZEN DESSERTS GRAPHIC -->
 
       <img
-        src="detroits-frozen-desserts.png"
+        src="detroits-frozen-desserts.PNG"
         alt="Detroit's Frozen Desserts - Philadelphia Water Ice, Catering and Apparel"
         class="detroit-desserts-logo"
       >
