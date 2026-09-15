@@ -116,7 +116,6 @@
       z-index: 1;
     }
 
-    /* Soft glow BEHIND the lettering */
     .brand::before {
       content: "";
 
@@ -145,7 +144,6 @@
       pointer-events: none;
     }
 
-    /* TASTY = BABY BLUE */
     .brand-tasty {
       color: #5ecbff;
 
@@ -154,7 +152,6 @@
         2px 2px 0 #ffffff;
     }
 
-    /* STRAINS = BUBBLEGUM PINK */
     .brand-strains {
       color: #ff77c8;
 
@@ -209,7 +206,6 @@
     section {
       padding: 90px 20px;
 
-      /* KEEP ORIGINAL BACKGROUND VISIBLE */
       background: transparent;
     }
 
@@ -278,6 +274,7 @@
       margin: auto;
     }
 
+    /* ORIGINAL TASTY STRAINS VIDEO — KEPT */
     .hero-video {
       width: min(430px, 90vw);
 
@@ -287,10 +284,27 @@
 
       border-radius: 25px;
 
-      margin-bottom: 20px;
+      margin-bottom: 15px;
 
       filter: drop-shadow(
         0 15px 25px rgba(0, 0, 0, 0.2)
+      );
+    }
+
+    /* NEW DETROIT'S FROZEN DESSERTS IMAGE */
+    .detroit-desserts-logo {
+      width: min(900px, 95vw);
+
+      height: auto;
+
+      display: block;
+
+      margin: 0 auto 25px;
+
+      background: transparent;
+
+      filter: drop-shadow(
+        0 15px 25px rgba(0, 0, 0, 0.18)
       );
     }
 
@@ -1126,6 +1140,10 @@
         margin-bottom: -20px;
       }
 
+      .detroit-desserts-logo {
+        width: 95vw;
+      }
+
     }
 
   </style>
@@ -1182,6 +1200,8 @@
     <div class="hero-content">
 
 
+      <!-- ORIGINAL TASTY STRAINS LOGO — STILL HERE -->
+
       <video
         class="hero-video"
         src="tastystrains-logo.MP4"
@@ -1190,6 +1210,15 @@
         loop
         playsinline
       ></video>
+
+
+      <!-- NEW DETROIT'S FROZEN DESSERTS GRAPHIC -->
+
+      <img
+        src="detroits-frozen-desserts.png"
+        alt="Detroit's Frozen Desserts - Philadelphia Water Ice, Catering and Apparel"
+        class="detroit-desserts-logo"
+      >
 
 
       <h1>
