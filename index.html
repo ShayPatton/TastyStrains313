@@ -23,7 +23,7 @@
   <style>
 
     /* =====================================================
-       TASTY STRAINS BRAND COLORS
+       BRAND COLORS
        ===================================================== */
 
     :root {
@@ -49,7 +49,7 @@
       color: var(--dark);
       line-height: 1.6;
 
-      /* ORIGINAL TASTY STRAINS BACKGROUND */
+      /* ORIGINAL BACKGROUND */
       background-image: url("tastystrains-background.PNG");
       background-size: cover;
       background-position: center;
@@ -72,7 +72,7 @@
 
       border-bottom: 4px solid var(--baby-blue);
 
-      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
     }
 
     .nav-container {
@@ -92,12 +92,11 @@
 
 
     /* =====================================================
-       LARGE GLOWING TASTY STRAINS
+       LARGE CRISP TASTY STRAINS WORDMARK
        ===================================================== */
 
     .brand {
       position: relative;
-
       display: inline-block;
 
       font-family: "Archivo Black", Impact, sans-serif;
@@ -117,8 +116,7 @@
       z-index: 1;
     }
 
-    /* Glow behind entire TastyStrains name */
-
+    /* Soft glow BEHIND the lettering */
     .brand::before {
       content: "";
 
@@ -127,47 +125,41 @@
       left: 50%;
       top: 50%;
 
-      width: 115%;
-      height: 135%;
+      width: 105%;
+      height: 100%;
 
       transform: translate(-50%, -50%);
 
       background: linear-gradient(
         90deg,
-        rgba(94, 203, 255, 0.45),
-        rgba(255, 119, 200, 0.45)
+        rgba(94, 203, 255, 0.28),
+        rgba(255, 119, 200, 0.28)
       );
 
-      filter: blur(22px);
+      filter: blur(12px);
 
       border-radius: 50%;
 
       z-index: -1;
+
+      pointer-events: none;
     }
 
-
     /* TASTY = BABY BLUE */
-
     .brand-tasty {
       color: #5ecbff;
 
       text-shadow:
-        0 0 5px rgba(94, 203, 255, 0.9),
-        0 0 12px rgba(94, 203, 255, 0.8),
-        0 0 24px rgba(94, 203, 255, 0.65),
+        0 0 4px rgba(94, 203, 255, 0.55),
         2px 2px 0 #ffffff;
     }
 
-
     /* STRAINS = BUBBLEGUM PINK */
-
     .brand-strains {
       color: #ff77c8;
 
       text-shadow:
-        0 0 5px rgba(255, 119, 200, 0.9),
-        0 0 12px rgba(255, 119, 200, 0.8),
-        0 0 24px rgba(255, 119, 200, 0.65),
+        0 0 4px rgba(255, 119, 200, 0.55),
         2px 2px 0 #ffffff;
     }
 
@@ -178,11 +170,8 @@
 
     nav {
       display: flex;
-
       flex-wrap: wrap;
-
       justify-content: center;
-
       gap: 8px;
     }
 
@@ -207,7 +196,7 @@
     nav a:hover {
       color: var(--bubblegum-pink);
 
-      background: rgba(94,203,255,0.14);
+      background: rgba(94, 203, 255, 0.14);
 
       transform: translateY(-2px);
     }
@@ -220,7 +209,7 @@
     section {
       padding: 90px 20px;
 
-      /* Background stays visible */
+      /* KEEP ORIGINAL BACKGROUND VISIBLE */
       background: transparent;
     }
 
@@ -262,7 +251,7 @@
 
       font-weight: 600;
 
-      background: rgba(255,255,255,0.88);
+      background: rgba(255, 255, 255, 0.88);
 
       padding: 18px 24px;
 
@@ -278,9 +267,7 @@
       min-height: 88vh;
 
       display: flex;
-
       align-items: center;
-
       justify-content: center;
 
       text-align: center;
@@ -288,7 +275,6 @@
 
     .hero-content {
       max-width: 1050px;
-
       margin: auto;
     }
 
@@ -304,7 +290,7 @@
       margin-bottom: 20px;
 
       filter: drop-shadow(
-        0 15px 25px rgba(0,0,0,0.2)
+        0 15px 25px rgba(0, 0, 0, 0.2)
       );
     }
 
@@ -337,7 +323,7 @@
 
       font-weight: 600;
 
-      background: rgba(255,255,255,0.9);
+      background: rgba(255, 255, 255, 0.9);
 
       padding: 20px 25px;
 
@@ -375,19 +361,17 @@
       transition: 0.25s ease;
 
       box-shadow:
-        0 8px 18px rgba(0,0,0,0.15);
+        0 8px 18px rgba(0, 0, 0, 0.15);
     }
 
     .btn-blue {
       background: var(--baby-blue);
-
-      color: #fff;
+      color: #ffffff;
     }
 
     .btn-pink {
       background: var(--bubblegum-pink);
-
-      color: #fff;
+      color: #ffffff;
     }
 
     .btn:hover {
@@ -402,13 +386,13 @@
     .feature-grid {
       display: grid;
 
-      grid-template-columns: repeat(4,1fr);
+      grid-template-columns: repeat(4, 1fr);
 
       gap: 20px;
     }
 
     .feature-card {
-      background: rgba(255,255,255,0.92);
+      background: rgba(255, 255, 255, 0.92);
 
       padding: 30px 22px;
 
@@ -417,7 +401,7 @@
       text-align: center;
 
       box-shadow:
-        0 12px 30px rgba(0,0,0,0.15);
+        0 12px 30px rgba(0, 0, 0, 0.15);
 
       transition: 0.25s ease;
     }
@@ -467,18 +451,18 @@
       border-radius: 30px;
 
       box-shadow:
-        0 15px 35px rgba(0,0,0,0.2);
+        0 15px 35px rgba(0, 0, 0, 0.2);
     }
 
     .info-card {
-      background: rgba(255,255,255,0.93);
+      background: rgba(255, 255, 255, 0.93);
 
       padding: 35px;
 
       border-radius: 30px;
 
       box-shadow:
-        0 15px 35px rgba(0,0,0,0.15);
+        0 15px 35px rgba(0, 0, 0, 0.15);
     }
 
     .info-card h3 {
@@ -567,14 +551,14 @@
 
       margin-top: -110px;
 
-      background: rgba(255,255,255,0.96);
+      background: rgba(255, 255, 255, 0.96);
 
       border-radius: 25px;
 
       padding: 10px;
 
       box-shadow:
-        0 12px 30px rgba(0,0,0,0.2);
+        0 12px 30px rgba(0, 0, 0, 0.2);
 
       backface-visibility: hidden;
     }
@@ -643,20 +627,20 @@
     .locations-grid {
       display: grid;
 
-      grid-template-columns: repeat(2,1fr);
+      grid-template-columns: repeat(2, 1fr);
 
       gap: 18px;
     }
 
     .location-card {
-      background: rgba(255,255,255,0.94);
+      background: rgba(255, 255, 255, 0.94);
 
       padding: 22px;
 
       border-radius: 22px;
 
       box-shadow:
-        0 8px 20px rgba(0,0,0,0.12);
+        0 8px 20px rgba(0, 0, 0, 0.12);
     }
 
     .location-card h3 {
@@ -685,7 +669,7 @@
 
       margin: auto auto 40px;
 
-      background: rgba(255,255,255,0.94);
+      background: rgba(255, 255, 255, 0.94);
 
       padding: 40px;
 
@@ -694,13 +678,13 @@
       text-align: center;
 
       box-shadow:
-        0 15px 35px rgba(0,0,0,0.15);
+        0 15px 35px rgba(0, 0, 0, 0.15);
     }
 
     .catering-hero h3 {
       font-family: "Archivo Black", Impact, sans-serif;
 
-      font-size: clamp(30px,5vw,48px);
+      font-size: clamp(30px, 5vw, 48px);
 
       color: var(--baby-blue);
 
@@ -716,7 +700,7 @@
     .catering-grid {
       display: grid;
 
-      grid-template-columns: repeat(2,1fr);
+      grid-template-columns: repeat(2, 1fr);
 
       gap: 25px;
 
@@ -724,14 +708,14 @@
     }
 
     .catering-card {
-      background: rgba(255,255,255,0.94);
+      background: rgba(255, 255, 255, 0.94);
 
       padding: 30px;
 
       border-radius: 28px;
 
       box-shadow:
-        0 12px 28px rgba(0,0,0,0.13);
+        0 12px 28px rgba(0, 0, 0, 0.13);
     }
 
     .catering-card h3 {
@@ -757,7 +741,7 @@
     .package-grid {
       display: grid;
 
-      grid-template-columns: repeat(3,1fr);
+      grid-template-columns: repeat(3, 1fr);
 
       gap: 20px;
 
@@ -765,7 +749,7 @@
     }
 
     .package {
-      background: rgba(255,255,255,0.95);
+      background: rgba(255, 255, 255, 0.95);
 
       padding: 28px;
 
@@ -774,7 +758,7 @@
       text-align: center;
 
       box-shadow:
-        0 10px 25px rgba(0,0,0,0.13);
+        0 10px 25px rgba(0, 0, 0, 0.13);
     }
 
     .package h4 {
@@ -794,7 +778,7 @@
     .policy {
       margin-top: 30px;
 
-      background: rgba(255,255,255,0.96);
+      background: rgba(255, 255, 255, 0.96);
 
       border: 4px solid var(--bubblegum-pink);
 
@@ -835,7 +819,7 @@
 
       text-align: center;
 
-      background: rgba(255,255,255,0.93);
+      background: rgba(255, 255, 255, 0.93);
 
       padding: 25px;
 
@@ -847,13 +831,13 @@
     .clothing-grid {
       display: grid;
 
-      grid-template-columns: repeat(3,1fr);
+      grid-template-columns: repeat(3, 1fr);
 
       gap: 20px;
     }
 
     .clothing-card {
-      background: rgba(255,255,255,0.94);
+      background: rgba(255, 255, 255, 0.94);
 
       padding: 12px;
 
@@ -862,7 +846,7 @@
       overflow: hidden;
 
       box-shadow:
-        0 12px 30px rgba(0,0,0,0.15);
+        0 12px 30px rgba(0, 0, 0, 0.15);
 
       transition: 0.25s ease;
     }
@@ -889,14 +873,14 @@
 
       margin: auto;
 
-      background: rgba(255,255,255,0.94);
+      background: rgba(255, 255, 255, 0.94);
 
       padding: 45px;
 
       border-radius: 30px;
 
       box-shadow:
-        0 15px 35px rgba(0,0,0,0.15);
+        0 15px 35px rgba(0, 0, 0, 0.15);
     }
 
     .story-card > img {
@@ -958,7 +942,7 @@
       border: 6px solid white;
 
       box-shadow:
-        0 15px 35px rgba(0,0,0,0.2);
+        0 15px 35px rgba(0, 0, 0, 0.2);
     }
 
     .owner-photo-caption {
@@ -991,14 +975,14 @@
 
       text-align: center;
 
-      background: rgba(255,255,255,0.94);
+      background: rgba(255, 255, 255, 0.94);
 
       padding: 45px;
 
       border-radius: 30px;
 
       box-shadow:
-        0 15px 35px rgba(0,0,0,0.15);
+        0 15px 35px rgba(0, 0, 0, 0.15);
     }
 
     .contact-card h3 {
@@ -1023,7 +1007,7 @@
        ===================================================== */
 
     footer {
-      background: rgba(255,255,255,0.96);
+      background: rgba(255, 255, 255, 0.96);
 
       padding: 45px 20px;
 
@@ -1078,7 +1062,7 @@
       }
 
       .feature-grid {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .water-ice-content {
@@ -1094,7 +1078,7 @@
       }
 
       .clothing-grid {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .locations-grid {
@@ -1732,7 +1716,6 @@
           BRING THE TASTY STRAINS EXPERIENCE
         </h3>
 
-
         <p>
           Bring the TastyStrains experience to your next celebration.
           Our Philadelphia Water Ice catering is designed to add a
@@ -1967,50 +1950,62 @@
 
 
         <div class="clothing-card">
+
           <img
             src="clothing-model-1.PNG"
             alt="TastyStrains clothing model"
           >
+
         </div>
 
 
         <div class="clothing-card">
+
           <img
             src="clothing-model2.PNG"
             alt="TastyStrains clothing model"
           >
+
         </div>
 
 
         <div class="clothing-card">
+
           <img
             src="clothing-model3.jpg"
             alt="TastyStrains clothing model"
           >
+
         </div>
 
 
         <div class="clothing-card">
+
           <img
             src="clothing-model4.PNG"
             alt="TastyStrains clothing model"
           >
+
         </div>
 
 
         <div class="clothing-card">
+
           <img
             src="clothing-model5.PNG"
             alt="TastyStrains clothing model"
           >
+
         </div>
 
 
         <div class="clothing-card">
+
           <img
             src="clothing-model6.PNG"
             alt="TastyStrains clothing model"
           >
+
         </div>
 
 
