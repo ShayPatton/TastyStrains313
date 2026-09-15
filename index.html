@@ -11,7 +11,7 @@
     content="TastyStrains — Detroit frozen desserts, Philadelphia Water Ice, catering and apparel."
   >
 
-  <!-- PREMIUM FONT PAIRING -->
+  <!-- PREMIUM FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -21,9 +21,10 @@
   >
 
   <style>
-    /* =========================
+
+    /* =====================================================
        TASTY STRAINS BRAND COLORS
-       ========================= */
+       ===================================================== */
 
     :root {
       --baby-blue: #5ecbff;
@@ -46,23 +47,20 @@
     body {
       font-family: "Poppins", Arial, sans-serif;
       color: var(--dark);
+      line-height: 1.6;
 
-      /*
-        ORIGINAL TASTY STRAINS BACKGROUND
-        STAYS FULL STRENGTH THROUGHOUT THE SITE
-      */
+      /* ORIGINAL TASTY STRAINS BACKGROUND */
       background-image: url("tastystrains-background.PNG");
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
       background-repeat: no-repeat;
-
-      line-height: 1.6;
     }
 
-    /* =========================
+
+    /* =====================================================
        HEADER
-       ========================= */
+       ===================================================== */
 
     header {
       position: sticky;
@@ -73,6 +71,7 @@
       backdrop-filter: blur(10px);
 
       border-bottom: 4px solid var(--baby-blue);
+
       box-shadow: 0 4px 20px rgba(0,0,0,0.12);
     }
 
@@ -80,56 +79,110 @@
       max-width: 1250px;
       margin: auto;
 
-      min-height: 82px;
+      min-height: 90px;
 
       padding: 12px 22px;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 20px;
     }
 
-    /* =========================
-       TASTY STRAINS TOP BRAND
-       HALF BLUE / HALF PINK
-       ========================= */
+
+    /* =====================================================
+       LARGE GLOWING TASTY STRAINS
+       ===================================================== */
 
     .brand {
-      text-decoration: none;
+      position: relative;
+
+      display: inline-block;
 
       font-family: "Archivo Black", Impact, sans-serif;
-      font-size: clamp(24px, 4vw, 36px);
+
+      font-size: clamp(34px, 5vw, 52px);
 
       font-weight: 900;
-      letter-spacing: -1.5px;
+
+      letter-spacing: -2px;
+
+      line-height: 1;
 
       white-space: nowrap;
 
-      /*
-        TASTY = BABY BLUE
-        STRAINS = BUBBLEGUM PINK
-      */
+      text-decoration: none;
+
+      z-index: 1;
     }
+
+    /* Glow behind entire TastyStrains name */
+
+    .brand::before {
+      content: "";
+
+      position: absolute;
+
+      left: 50%;
+      top: 50%;
+
+      width: 115%;
+      height: 135%;
+
+      transform: translate(-50%, -50%);
+
+      background: linear-gradient(
+        90deg,
+        rgba(94, 203, 255, 0.45),
+        rgba(255, 119, 200, 0.45)
+      );
+
+      filter: blur(22px);
+
+      border-radius: 50%;
+
+      z-index: -1;
+    }
+
+
+    /* TASTY = BABY BLUE */
 
     .brand-tasty {
-      color: var(--baby-blue);
+      color: #5ecbff;
+
       text-shadow:
-        2px 2px 0 rgba(255,255,255,0.9),
-        0 3px 10px rgba(94,203,255,0.25);
+        0 0 5px rgba(94, 203, 255, 0.9),
+        0 0 12px rgba(94, 203, 255, 0.8),
+        0 0 24px rgba(94, 203, 255, 0.65),
+        2px 2px 0 #ffffff;
     }
 
+
+    /* STRAINS = BUBBLEGUM PINK */
+
     .brand-strains {
-      color: var(--bubblegum-pink);
+      color: #ff77c8;
+
       text-shadow:
-        2px 2px 0 rgba(255,255,255,0.9),
-        0 3px 10px rgba(255,119,200,0.25);
+        0 0 5px rgba(255, 119, 200, 0.9),
+        0 0 12px rgba(255, 119, 200, 0.8),
+        0 0 24px rgba(255, 119, 200, 0.65),
+        2px 2px 0 #ffffff;
     }
+
+
+    /* =====================================================
+       NAVIGATION
+       ===================================================== */
 
     nav {
       display: flex;
+
       flex-wrap: wrap;
+
       justify-content: center;
+
       gap: 8px;
     }
 
@@ -137,7 +190,9 @@
       text-decoration: none;
 
       font-family: "Poppins", Arial, sans-serif;
+
       font-size: 13px;
+
       font-weight: 800;
 
       color: #222;
@@ -151,21 +206,21 @@
 
     nav a:hover {
       color: var(--bubblegum-pink);
-      background: rgba(94, 203, 255, 0.14);
+
+      background: rgba(94,203,255,0.14);
+
       transform: translateY(-2px);
     }
 
-    /* =========================
+
+    /* =====================================================
        GENERAL SECTIONS
-       ========================= */
+       ===================================================== */
 
     section {
       padding: 90px 20px;
 
-      /*
-        TRANSPARENT SO ORIGINAL
-        BACKGROUND CONTINUES DOWN PAGE
-      */
+      /* Background stays visible */
       background: transparent;
     }
 
@@ -178,9 +233,11 @@
       text-align: center;
 
       font-family: "Archivo Black", Impact, sans-serif;
+
       font-size: clamp(34px, 6vw, 62px);
 
       line-height: 1.05;
+
       letter-spacing: -1.5px;
 
       margin-bottom: 18px;
@@ -196,27 +253,34 @@
 
     .section-subtitle {
       max-width: 850px;
+
       margin: 0 auto 45px;
 
       text-align: center;
 
       font-size: 17px;
+
       font-weight: 600;
 
       background: rgba(255,255,255,0.88);
+
       padding: 18px 24px;
+
       border-radius: 20px;
     }
 
-    /* =========================
+
+    /* =====================================================
        HERO
-       ========================= */
+       ===================================================== */
 
     .hero {
       min-height: 88vh;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       text-align: center;
@@ -224,11 +288,13 @@
 
     .hero-content {
       max-width: 1050px;
+
       margin: auto;
     }
 
     .hero-video {
       width: min(430px, 90vw);
+
       max-height: 300px;
 
       object-fit: contain;
@@ -237,16 +303,20 @@
 
       margin-bottom: 20px;
 
-      filter: drop-shadow(0 15px 25px rgba(0,0,0,0.2));
+      filter: drop-shadow(
+        0 15px 25px rgba(0,0,0,0.2)
+      );
     }
 
     .hero h1 {
       font-family: "Archivo Black", Impact, sans-serif;
 
       font-size: clamp(40px, 8vw, 82px);
+
       line-height: 0.98;
 
       margin-bottom: 25px;
+
       letter-spacing: -2px;
     }
 
@@ -260,25 +330,32 @@
 
     .hero p {
       max-width: 800px;
+
       margin: auto auto 30px;
 
       font-size: clamp(17px, 2vw, 21px);
+
       font-weight: 600;
 
       background: rgba(255,255,255,0.9);
+
       padding: 20px 25px;
 
       border-radius: 22px;
     }
 
-    /* =========================
+
+    /* =====================================================
        BUTTONS
-       ========================= */
+       ===================================================== */
 
     .buttons {
       display: flex;
+
       justify-content: center;
+
       flex-wrap: wrap;
+
       gap: 14px;
     }
 
@@ -288,6 +365,7 @@
       text-decoration: none;
 
       font-family: "Poppins", Arial, sans-serif;
+
       font-weight: 900;
 
       padding: 14px 24px;
@@ -296,16 +374,19 @@
 
       transition: 0.25s ease;
 
-      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+      box-shadow:
+        0 8px 18px rgba(0,0,0,0.15);
     }
 
     .btn-blue {
       background: var(--baby-blue);
+
       color: #fff;
     }
 
     .btn-pink {
       background: var(--bubblegum-pink);
+
       color: #fff;
     }
 
@@ -313,13 +394,16 @@
       transform: translateY(-3px) scale(1.02);
     }
 
-    /* =========================
+
+    /* =====================================================
        FEATURE CARDS
-       ========================= */
+       ===================================================== */
 
     .feature-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+
+      grid-template-columns: repeat(4,1fr);
+
       gap: 20px;
     }
 
@@ -332,7 +416,8 @@
 
       text-align: center;
 
-      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+      box-shadow:
+        0 12px 30px rgba(0,0,0,0.15);
 
       transition: 0.25s ease;
     }
@@ -343,7 +428,9 @@
 
     .feature-card h3 {
       font-family: "Archivo Black", Impact, sans-serif;
+
       font-size: 24px;
+
       margin-bottom: 10px;
     }
 
@@ -359,13 +446,16 @@
       font-weight: 600;
     }
 
-    /* =========================
+
+    /* =====================================================
        WATER ICE
-       ========================= */
+       ===================================================== */
 
     .water-ice-content {
       display: grid;
+
       grid-template-columns: 1fr 1fr;
+
       gap: 35px;
 
       align-items: center;
@@ -373,9 +463,11 @@
 
     .water-ice-image {
       width: 100%;
+
       border-radius: 30px;
 
-      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+      box-shadow:
+        0 15px 35px rgba(0,0,0,0.2);
     }
 
     .info-card {
@@ -385,13 +477,15 @@
 
       border-radius: 30px;
 
-      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      box-shadow:
+        0 15px 35px rgba(0,0,0,0.15);
     }
 
     .info-card h3 {
       font-family: "Archivo Black", Impact, sans-serif;
 
       font-size: 32px;
+
       line-height: 1.05;
 
       margin-bottom: 15px;
@@ -401,6 +495,7 @@
 
     .info-card p {
       font-weight: 600;
+
       margin-bottom: 15px;
     }
 
@@ -414,12 +509,14 @@
       margin-top: 20px;
     }
 
-    /* =========================
-       FLAVOR ROTATING CAROUSEL
-       ========================= */
+
+    /* =====================================================
+       FLAVOR CAROUSEL
+       ===================================================== */
 
     .flavor-area {
       margin-top: 70px;
+
       text-align: center;
     }
 
@@ -435,6 +532,7 @@
 
     .carousel {
       width: 280px;
+
       height: 300px;
 
       margin: 0 auto;
@@ -444,6 +542,7 @@
 
     .carousel-inner {
       width: 100%;
+
       height: 100%;
 
       position: relative;
@@ -457,12 +556,15 @@
       position: absolute;
 
       width: 180px;
+
       height: 220px;
 
       left: 50%;
+
       top: 50%;
 
       margin-left: -90px;
+
       margin-top: -110px;
 
       background: rgba(255,255,255,0.96);
@@ -471,13 +573,15 @@
 
       padding: 10px;
 
-      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+      box-shadow:
+        0 12px 30px rgba(0,0,0,0.2);
 
       backface-visibility: hidden;
     }
 
     .flavor-card img {
       width: 100%;
+
       height: 100%;
 
       object-fit: contain;
@@ -486,27 +590,39 @@
     }
 
     .flavor-card:nth-child(1) {
-      transform: rotateY(0deg) translateZ(260px);
+      transform:
+        rotateY(0deg)
+        translateZ(260px);
     }
 
     .flavor-card:nth-child(2) {
-      transform: rotateY(60deg) translateZ(260px);
+      transform:
+        rotateY(60deg)
+        translateZ(260px);
     }
 
     .flavor-card:nth-child(3) {
-      transform: rotateY(120deg) translateZ(260px);
+      transform:
+        rotateY(120deg)
+        translateZ(260px);
     }
 
     .flavor-card:nth-child(4) {
-      transform: rotateY(180deg) translateZ(260px);
+      transform:
+        rotateY(180deg)
+        translateZ(260px);
     }
 
     .flavor-card:nth-child(5) {
-      transform: rotateY(240deg) translateZ(260px);
+      transform:
+        rotateY(240deg)
+        translateZ(260px);
     }
 
     .flavor-card:nth-child(6) {
-      transform: rotateY(300deg) translateZ(260px);
+      transform:
+        rotateY(300deg)
+        translateZ(260px);
     }
 
     @keyframes spin {
@@ -519,13 +635,16 @@
       }
     }
 
-    /* =========================
+
+    /* =====================================================
        LOCATIONS
-       ========================= */
+       ===================================================== */
 
     .locations-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+
+      grid-template-columns: repeat(2,1fr);
+
       gap: 18px;
     }
 
@@ -536,7 +655,8 @@
 
       border-radius: 22px;
 
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      box-shadow:
+        0 8px 20px rgba(0,0,0,0.12);
     }
 
     .location-card h3 {
@@ -551,15 +671,18 @@
 
     .location-card p {
       font-weight: 600;
+
       margin-bottom: 12px;
     }
 
-    /* =========================
+
+    /* =====================================================
        CATERING
-       ========================= */
+       ===================================================== */
 
     .catering-hero {
       max-width: 1000px;
+
       margin: auto auto 40px;
 
       background: rgba(255,255,255,0.94);
@@ -570,13 +693,14 @@
 
       text-align: center;
 
-      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      box-shadow:
+        0 15px 35px rgba(0,0,0,0.15);
     }
 
     .catering-hero h3 {
       font-family: "Archivo Black", Impact, sans-serif;
 
-      font-size: clamp(30px, 5vw, 48px);
+      font-size: clamp(30px,5vw,48px);
 
       color: var(--baby-blue);
 
@@ -585,12 +709,14 @@
 
     .catering-hero p {
       font-weight: 600;
+
       font-size: 17px;
     }
 
     .catering-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+
+      grid-template-columns: repeat(2,1fr);
 
       gap: 25px;
 
@@ -604,7 +730,8 @@
 
       border-radius: 28px;
 
-      box-shadow: 0 12px 28px rgba(0,0,0,0.13);
+      box-shadow:
+        0 12px 28px rgba(0,0,0,0.13);
     }
 
     .catering-card h3 {
@@ -623,12 +750,14 @@
 
     .catering-card li {
       margin-bottom: 8px;
+
       font-weight: 600;
     }
 
     .package-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+
+      grid-template-columns: repeat(3,1fr);
 
       gap: 20px;
 
@@ -644,7 +773,8 @@
 
       text-align: center;
 
-      box-shadow: 0 10px 25px rgba(0,0,0,0.13);
+      box-shadow:
+        0 10px 25px rgba(0,0,0,0.13);
     }
 
     .package h4 {
@@ -693,12 +823,14 @@
       margin-top: 12px;
     }
 
-    /* =========================
+
+    /* =====================================================
        CLOTHING
-       ========================= */
+       ===================================================== */
 
     .clothing-intro {
       max-width: 850px;
+
       margin: auto auto 35px;
 
       text-align: center;
@@ -715,7 +847,7 @@
     .clothing-grid {
       display: grid;
 
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3,1fr);
 
       gap: 20px;
     }
@@ -729,7 +861,8 @@
 
       overflow: hidden;
 
-      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+      box-shadow:
+        0 12px 30px rgba(0,0,0,0.15);
 
       transition: 0.25s ease;
     }
@@ -746,9 +879,10 @@
       border-radius: 18px;
     }
 
-    /* =========================
+
+    /* =====================================================
        OUR STORY
-       ========================= */
+       ===================================================== */
 
     .story-card {
       max-width: 1000px;
@@ -761,10 +895,11 @@
 
       border-radius: 30px;
 
-      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      box-shadow:
+        0 15px 35px rgba(0,0,0,0.15);
     }
 
-    .story-card img {
+    .story-card > img {
       width: 100%;
 
       border-radius: 25px;
@@ -798,6 +933,11 @@
       margin-bottom: 15px;
     }
 
+
+    /* =====================================================
+       FOUNDER PHOTO
+       ===================================================== */
+
     .owner-photo-wrap {
       max-width: 900px;
 
@@ -817,7 +957,8 @@
 
       border: 6px solid white;
 
-      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+      box-shadow:
+        0 15px 35px rgba(0,0,0,0.2);
     }
 
     .owner-photo-caption {
@@ -838,9 +979,10 @@
       font-size: 14px;
     }
 
-    /* =========================
+
+    /* =====================================================
        CONTACT
-       ========================= */
+       ===================================================== */
 
     .contact-card {
       max-width: 850px;
@@ -855,7 +997,8 @@
 
       border-radius: 30px;
 
-      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      box-shadow:
+        0 15px 35px rgba(0,0,0,0.15);
     }
 
     .contact-card h3 {
@@ -874,9 +1017,10 @@
       margin-bottom: 25px;
     }
 
-    /* =========================
+
+    /* =====================================================
        FOOTER
-       ========================= */
+       ===================================================== */
 
     footer {
       background: rgba(255,255,255,0.96);
@@ -905,7 +1049,7 @@
     footer .footer-brand {
       font-family: "Archivo Black", Impact, sans-serif;
 
-      font-size: 28px;
+      font-size: 32px;
 
       margin-bottom: 10px;
     }
@@ -918,9 +1062,10 @@
       color: var(--bubblegum-pink);
     }
 
-    /* =========================
+
+    /* =====================================================
        MOBILE
-       ========================= */
+       ===================================================== */
 
     @media (max-width: 900px) {
 
@@ -933,7 +1078,7 @@
       }
 
       .feature-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2,1fr);
       }
 
       .water-ice-content {
@@ -949,13 +1094,14 @@
       }
 
       .clothing-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2,1fr);
       }
 
       .locations-grid {
         grid-template-columns: 1fr;
       }
     }
+
 
     @media (max-width: 600px) {
 
@@ -979,86 +1125,125 @@
       }
 
       .brand {
-        font-size: 28px;
+        font-size: 36px;
       }
 
       nav a {
         font-size: 12px;
+
         padding: 7px 9px;
       }
 
       .carousel {
         transform: scale(0.82);
+
         margin-top: -20px;
+
         margin-bottom: -20px;
       }
+
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- =========================
+
+  <!-- =====================================================
        HEADER
-       ========================= -->
+       ===================================================== -->
 
   <header>
+
     <div class="nav-container">
 
       <a href="#home" class="brand">
+
         <span class="brand-tasty">Tasty</span><span class="brand-strains">Strains</span>
+
       </a>
 
+
       <nav>
+
         <a href="#home">Home</a>
+
         <a href="#water-ice">Water Ice</a>
+
         <a href="#locations">Locations</a>
+
         <a href="#catering">Catering</a>
+
         <a href="#clothing">Clothing</a>
+
         <a href="#about">About</a>
+
         <a href="#contact">Contact</a>
+
       </nav>
 
     </div>
+
   </header>
 
 
-  <!-- =========================
+  <!-- =====================================================
        HERO
-       ========================= -->
+       ===================================================== -->
 
   <section id="home" class="hero">
 
     <div class="hero-content">
 
+
       <video
         class="hero-video"
-        src="tastystrains-logo.mp4"
+        src="tastystrains-logo.MP4"
         autoplay
         muted
         loop
         playsinline
       ></video>
 
+
       <h1>
+
         <span class="blue">Detroit's</span>
-        <span class="pink">Frozen Dessert</span>
+
+        <span class="pink"> Frozen Dessert</span>
+
         Vibe
+
       </h1>
 
+
       <p>
+
         Bold flavors. Detroit energy. Philadelphia Water Ice.
+
         TastyStrains brings a colorful frozen dessert experience
+
         to neighborhoods, celebrations and communities.
+
       </p>
+
 
       <div class="buttons">
 
-        <a href="#water-ice" class="btn btn-blue">
+        <a
+          href="#water-ice"
+          class="btn btn-blue"
+        >
           EXPLORE WATER ICE
         </a>
 
-        <a href="#catering" class="btn btn-pink">
+
+        <a
+          href="#catering"
+          class="btn btn-pink"
+        >
           BOOK CATERING
         </a>
 
@@ -1069,9 +1254,9 @@
   </section>
 
 
-  <!-- =========================
-       FEATURES
-       ========================= -->
+  <!-- =====================================================
+       FEATURE CARDS
+       ===================================================== -->
 
   <section>
 
@@ -1079,37 +1264,54 @@
 
       <div class="feature-grid">
 
+
         <div class="feature-card">
+
           <h3>Water Ice</h3>
+
           <p>
             Bold Philadelphia Water Ice flavors made to
             bring the neighborhood ice-cream-truck feeling back.
           </p>
+
         </div>
 
+
         <div class="feature-card">
+
           <h3>Catering</h3>
+
           <p>
             Bring TastyStrains to birthdays, weddings,
             graduations, corporate events and more.
           </p>
+
         </div>
 
+
         <div class="feature-card">
+
           <h3>Clothing</h3>
+
           <p>
             TastyStrains apparel inspired by frozen desserts,
             Detroit culture and the ICY brand.
           </p>
+
         </div>
 
+
         <div class="feature-card">
+
           <h3>Our Story</h3>
+
           <p>
             Born in Detroit. Built through resilience.
             Created for community.
           </p>
+
         </div>
+
 
       </div>
 
@@ -1118,33 +1320,45 @@
   </section>
 
 
-  <!-- =========================
+  <!-- =====================================================
        WATER ICE
-       ========================= -->
+       ===================================================== -->
 
   <section id="water-ice">
 
     <div class="container">
 
+
       <h2 class="section-title">
+
         <span class="blue">PHILADELPHIA</span>
-        <span class="pink">WATER ICE</span>
+
+        <span class="pink"> WATER ICE</span>
+
       </h2>
 
+
       <p class="section-subtitle">
+
         Bold, colorful frozen desserts bringing the neighborhood
         ice-cream-truck feeling back to Detroit.
+
       </p>
+
 
       <div class="water-ice-content">
 
+
         <div>
+
           <img
             src="water-ice.jpg"
             alt="TastyStrains Philadelphia Water Ice"
             class="water-ice-image"
           >
+
         </div>
+
 
         <div class="info-card">
 
@@ -1152,15 +1366,18 @@
             FIND TASTY STRAINS
           </h3>
 
+
           <p>
             Our cups are available at select retail locations
             throughout Detroit and Metro Detroit.
           </p>
 
+
           <p>
             Stop by, grab your favorite flavor and experience
             the TastyStrains frozen dessert vibe.
           </p>
+
 
           <div class="location-highlight">
             FENKELL & WYOMING
@@ -1168,10 +1385,13 @@
 
         </div>
 
+
       </div>
 
 
-      <!-- FLAVORS -->
+      <!-- =================================================
+           FLAVORS
+           ================================================= -->
 
       <div class="flavor-area">
 
@@ -1179,33 +1399,71 @@
           SIX FLAVORS. ONE VIBE.
         </h3>
 
+
         <div class="carousel">
 
           <div class="carousel-inner">
 
-            <div class="flavor-card">
-              <img src="mango.jpg" alt="Mango Water Ice">
-            </div>
 
             <div class="flavor-card">
-              <img src="fireworks.jpg" alt="Fireworks Water Ice">
+
+              <img
+                src="mango.jpg"
+                alt="Mango Water Ice"
+              >
+
             </div>
 
-            <div class="flavor-card">
-              <img src="blueberry .jpg" alt="Blueberry Water Ice">
-            </div>
 
             <div class="flavor-card">
-              <img src="cotton candy .jpg" alt="Cotton Candy Water Ice">
+
+              <img
+                src="fireworks.jpg"
+                alt="Fireworks Water Ice"
+              >
+
             </div>
 
-            <div class="flavor-card">
-              <img src="watermelon .jpg" alt="Watermelon Water Ice">
-            </div>
 
             <div class="flavor-card">
-              <img src="cherry .jpg" alt="Cherry Water Ice">
+
+              <img
+                src="blueberry .jpg"
+                alt="Blueberry Water Ice"
+              >
+
             </div>
+
+
+            <div class="flavor-card">
+
+              <img
+                src="cotton candy .jpg"
+                alt="Cotton Candy Water Ice"
+              >
+
+            </div>
+
+
+            <div class="flavor-card">
+
+              <img
+                src="watermelon .jpg"
+                alt="Watermelon Water Ice"
+              >
+
+            </div>
+
+
+            <div class="flavor-card">
+
+              <img
+                src="cherry .jpg"
+                alt="Cherry Water Ice"
+              >
+
+            </div>
+
 
           </div>
 
@@ -1218,137 +1476,230 @@
   </section>
 
 
-  <!-- =========================
+  <!-- =====================================================
        LOCATIONS
-       ========================= -->
+       ===================================================== -->
 
   <section id="locations">
 
     <div class="container">
 
+
       <h2 class="section-title">
+
         <span class="blue">FIND</span>
-        <span class="pink">US</span>
+
+        <span class="pink"> US</span>
+
       </h2>
 
+
       <p class="section-subtitle">
+
         TastyStrains is growing throughout Detroit and Metro Detroit.
         Find a location near you.
+
       </p>
 
+
       <div class="locations-grid">
+
 
         <div class="location-card">
           <h3>Mobil</h3>
           <p>10001 Fenkell, Detroit, MI 48238</p>
-          <a class="btn btn-blue"
-             href="https://www.google.com/maps/search/?api=1&query=10001+Fenkell+Detroit+MI+48238"
-             target="_blank">MAP</a>
+
+          <a
+            class="btn btn-blue"
+            href="https://www.google.com/maps/search/?api=1&query=10001+Fenkell+Detroit+MI+48238"
+            target="_blank"
+          >
+            MAP
+          </a>
         </div>
+
 
         <div class="location-card">
           <h3>Kennedy Liquor</h3>
           <p>13344 Seven Mile, Detroit, MI 48219</p>
-          <a class="btn btn-pink"
-             href="https://www.google.com/maps/search/?api=1&query=13344+Seven+Mile+Detroit+MI+48219"
-             target="_blank">MAP</a>
+
+          <a
+            class="btn btn-pink"
+            href="https://www.google.com/maps/search/?api=1&query=13344+Seven+Mile+Detroit+MI+48219"
+            target="_blank"
+          >
+            MAP
+          </a>
         </div>
+
 
         <div class="location-card">
           <h3>W Liquor</h3>
           <p>3325 E Seven Mile, Detroit, MI 48234</p>
-          <a class="btn btn-blue"
-             href="https://www.google.com/maps/search/?api=1&query=3325+E+Seven+Mile+Detroit+MI+48234"
-             target="_blank">MAP</a>
+
+          <a
+            class="btn btn-blue"
+            href="https://www.google.com/maps/search/?api=1&query=3325+E+Seven+Mile+Detroit+MI+48234"
+            target="_blank"
+          >
+            MAP
+          </a>
         </div>
+
 
         <div class="location-card">
           <h3>AMOCO</h3>
           <p>38030 W 10 Mile Rd, Farmington, MI 48335</p>
-          <a class="btn btn-pink"
-             href="https://www.google.com/maps/search/?api=1&query=38030+W+10+Mile+Rd+Farmington+MI+48335"
-             target="_blank">MAP</a>
+
+          <a
+            class="btn btn-pink"
+            href="https://www.google.com/maps/search/?api=1&query=38030+W+10+Mile+Rd+Farmington+MI+48335"
+            target="_blank"
+          >
+            MAP
+          </a>
         </div>
+
 
         <div class="location-card">
           <h3>Grand Liquor</h3>
           <p>12889 Woodward, Highland Park, MI 48203</p>
-          <a class="btn btn-blue"
-             href="https://www.google.com/maps/search/?api=1&query=12889+Woodward+Highland+Park+MI+48203"
-             target="_blank">MAP</a>
+
+          <a
+            class="btn btn-blue"
+            href="https://www.google.com/maps/search/?api=1&query=12889+Woodward+Highland+Park+MI+48203"
+            target="_blank"
+          >
+            MAP
+          </a>
         </div>
+
 
         <div class="location-card">
           <h3>Imperial Fresh</h3>
           <p>14424 Schaefer, Detroit, MI 48227</p>
-          <a class="btn btn-pink"
-             href="https://www.google.com/maps/search/?api=1&query=14424+Schaefer+Detroit+MI+48227"
-             target="_blank">MAP</a>
+
+          <a
+            class="btn btn-pink"
+            href="https://www.google.com/maps/search/?api=1&query=14424+Schaefer+Detroit+MI+48227"
+            target="_blank"
+          >
+            MAP
+          </a>
         </div>
+
 
         <div class="location-card">
           <h3>Martell Liquor</h3>
           <p>19137 Seven Mile, Detroit, MI 48219</p>
-          <a class="btn btn-blue"
-             href="https://www.google.com/maps/search/?api=1&query=19137+Seven+Mile+Detroit+MI+48219"
-             target="_blank">MAP</a>
+
+          <a
+            class="btn btn-blue"
+            href="https://www.google.com/maps/search/?api=1&query=19137+Seven+Mile+Detroit+MI+48219"
+            target="_blank"
+          >
+            MAP
+          </a>
         </div>
+
 
         <div class="location-card">
           <h3>Heydens Liquor</h3>
           <p>20201 Seven Mile, Detroit, MI 48219</p>
-          <a class="btn btn-pink"
-             href="https://www.google.com/maps/search/?api=1&query=20201+Seven+Mile+Detroit+MI+48219"
-             target="_blank">MAP</a>
+
+          <a
+            class="btn btn-pink"
+            href="https://www.google.com/maps/search/?api=1&query=20201+Seven+Mile+Detroit+MI+48219"
+            target="_blank"
+          >
+            MAP
+          </a>
         </div>
+
 
         <div class="location-card">
           <h3>BP</h3>
           <p>30435 Cherry Hill, Westland, MI 48186</p>
-          <a class="btn btn-blue"
-             href="https://www.google.com/maps/search/?api=1&query=30435+Cherry+Hill+Westland+MI+48186"
-             target="_blank">MAP</a>
+
+          <a
+            class="btn btn-blue"
+            href="https://www.google.com/maps/search/?api=1&query=30435+Cherry+Hill+Westland+MI+48186"
+            target="_blank"
+          >
+            MAP
+          </a>
         </div>
+
 
         <div class="location-card">
           <h3>Vintage Village Liquor</h3>
           <p>28927 Southfield Rd, Lathrup Village, MI 48076</p>
-          <a class="btn btn-pink"
-             href="https://www.google.com/maps/search/?api=1&query=28927+Southfield+Rd+Lathrup+Village+MI+48076"
-             target="_blank">MAP</a>
+
+          <a
+            class="btn btn-pink"
+            href="https://www.google.com/maps/search/?api=1&query=28927+Southfield+Rd+Lathrup+Village+MI+48076"
+            target="_blank"
+          >
+            MAP
+          </a>
         </div>
+
 
         <div class="location-card">
           <h3>Greenfield Market</h3>
           <p>15530 Puritan, Detroit, MI 48227</p>
-          <a class="btn btn-blue"
-             href="https://www.google.com/maps/search/?api=1&query=15530+Puritan+Detroit+MI+48227"
-             target="_blank">MAP</a>
+
+          <a
+            class="btn btn-blue"
+            href="https://www.google.com/maps/search/?api=1&query=15530+Puritan+Detroit+MI+48227"
+            target="_blank"
+          >
+            MAP
+          </a>
         </div>
+
 
         <div class="location-card">
           <h3>Big V Liquor</h3>
           <p>14111 Greenfield Rd, Detroit, MI 48227</p>
-          <a class="btn btn-pink"
-             href="https://www.google.com/maps/search/?api=1&query=14111+Greenfield+Rd+Detroit+MI+48227"
-             target="_blank">MAP</a>
+
+          <a
+            class="btn btn-pink"
+            href="https://www.google.com/maps/search/?api=1&query=14111+Greenfield+Rd+Detroit+MI+48227"
+            target="_blank"
+          >
+            MAP
+          </a>
         </div>
+
 
         <div class="location-card">
           <h3>United Liquor</h3>
           <p>22040 Seven Mile, Detroit, MI 48219</p>
-          <a class="btn btn-blue"
-             href="https://www.google.com/maps/search/?api=1&query=22040+Seven+Mile+Detroit+MI+48219"
-             target="_blank">MAP</a>
+
+          <a
+            class="btn btn-blue"
+            href="https://www.google.com/maps/search/?api=1&query=22040+Seven+Mile+Detroit+MI+48219"
+            target="_blank"
+          >
+            MAP
+          </a>
         </div>
+
 
         <div class="location-card">
           <h3>Marathon</h3>
           <p>10550 W Jefferson Ave, River Rouge, MI 48218</p>
-          <a class="btn btn-pink"
-             href="https://www.google.com/maps/search/?api=1&query=10550+W+Jefferson+Ave+River+Rouge+MI+48218"
-             target="_blank">MAP</a>
+
+          <a
+            class="btn btn-pink"
+            href="https://www.google.com/maps/search/?api=1&query=10550+W+Jefferson+Ave+River+Rouge+MI+48218"
+            target="_blank"
+          >
+            MAP
+          </a>
         </div>
+
 
       </div>
 
@@ -1357,24 +1708,30 @@
   </section>
 
 
-  <!-- =========================
+  <!-- =====================================================
        CATERING
-       ========================= -->
+       ===================================================== -->
 
   <section id="catering">
 
     <div class="container">
 
+
       <h2 class="section-title">
+
         <span class="pink">TASTY STRAINS</span>
-        <span class="blue">CATERING</span>
+
+        <span class="blue"> CATERING</span>
+
       </h2>
+
 
       <div class="catering-hero">
 
         <h3>
           BRING THE TASTY STRAINS EXPERIENCE
         </h3>
+
 
         <p>
           Bring the TastyStrains experience to your next celebration.
@@ -1387,9 +1744,12 @@
 
       <div class="catering-grid">
 
+
         <div class="catering-card">
 
-          <h3>MAKE YOUR EVENT A TASTY ONE</h3>
+          <h3>
+            MAKE YOUR EVENT A TASTY ONE
+          </h3>
 
           <p>
             Whether you're celebrating with family, friends,
@@ -1406,14 +1766,23 @@
           <h3>PERFECT FOR</h3>
 
           <ul>
+
             <li>Birthday Parties</li>
+
             <li>Weddings</li>
+
             <li>Graduations</li>
+
             <li>Baby Showers</li>
+
             <li>Corporate Events</li>
+
             <li>Private Celebrations</li>
+
             <li>Family Reunions</li>
+
             <li>Community Events</li>
+
           </ul>
 
         </div>
@@ -1424,11 +1793,27 @@
           <h3>WHAT WE OFFER</h3>
 
           <ul>
-            <li>Philadelphia Water Ice catering</li>
-            <li>A variety of bold flavors</li>
-            <li>Catering options based on your event</li>
-            <li>Packages designed around your guest count</li>
-            <li>Detroit & Metro Detroit service</li>
+
+            <li>
+              Philadelphia Water Ice catering
+            </li>
+
+            <li>
+              A variety of bold flavors
+            </li>
+
+            <li>
+              Catering options based on your event
+            </li>
+
+            <li>
+              Packages designed around your guest count
+            </li>
+
+            <li>
+              Detroit & Metro Detroit service
+            </li>
+
           </ul>
 
         </div>
@@ -1446,10 +1831,12 @@
 
         </div>
 
+
       </div>
 
 
       <div class="package-grid">
+
 
         <div class="package">
 
@@ -1491,6 +1878,7 @@
 
         </div>
 
+
       </div>
 
 
@@ -1520,9 +1908,15 @@
       </div>
 
 
-      <div class="buttons" style="margin-top:35px;">
+      <div
+        class="buttons"
+        style="margin-top:35px;"
+      >
 
-        <a href="#contact" class="btn btn-pink">
+        <a
+          href="#contact"
+          class="btn btn-pink"
+        >
           REQUEST A CATERING QUOTE
         </a>
 
@@ -1533,18 +1927,23 @@
   </section>
 
 
-  <!-- =========================
+  <!-- =====================================================
        CLOTHING
-       ========================= -->
+       ===================================================== -->
 
   <section id="clothing">
 
     <div class="container">
 
+
       <h2 class="section-title">
+
         <span class="blue">TASTY</span>
-        <span class="pink">STRAINS CLOTHING</span>
+
+        <span class="pink"> STRAINS CLOTHING</span>
+
       </h2>
+
 
       <div class="clothing-intro">
 
@@ -1566,12 +1965,14 @@
 
       <div class="clothing-grid">
 
+
         <div class="clothing-card">
           <img
             src="clothing-model-1.PNG"
             alt="TastyStrains clothing model"
           >
         </div>
+
 
         <div class="clothing-card">
           <img
@@ -1580,12 +1981,14 @@
           >
         </div>
 
+
         <div class="clothing-card">
           <img
             src="clothing-model3.jpg"
             alt="TastyStrains clothing model"
           >
         </div>
+
 
         <div class="clothing-card">
           <img
@@ -1594,12 +1997,14 @@
           >
         </div>
 
+
         <div class="clothing-card">
           <img
             src="clothing-model5.PNG"
             alt="TastyStrains clothing model"
           >
         </div>
+
 
         <div class="clothing-card">
           <img
@@ -1608,10 +2013,14 @@
           >
         </div>
 
+
       </div>
 
 
-      <div class="buttons" style="margin-top:35px;">
+      <div
+        class="buttons"
+        style="margin-top:35px;"
+      >
 
         <a
           href="https://www.instagram.com/tastystrains313/"
@@ -1628,20 +2037,26 @@
   </section>
 
 
-  <!-- =========================
-       ABOUT / OUR STORY
-       ========================= -->
+  <!-- =====================================================
+       OUR STORY
+       ===================================================== -->
 
   <section id="about">
 
     <div class="container">
 
+
       <h2 class="section-title">
+
         <span class="blue">OUR</span>
-        <span class="pink">STORY</span>
+
+        <span class="pink"> STORY</span>
+
       </h2>
 
+
       <div class="story-card">
+
 
         <img
           src="about-us.jpg"
@@ -1654,13 +2069,16 @@
           CREATED FOR COMMUNITY.
         </h3>
 
+
         <p>
           Every great brand starts with a story.
         </p>
 
+
         <p>
           TastyStrains started in Detroit.
         </p>
+
 
         <p>
           Born and raised on Fenkell and Monte Vista, the founder
@@ -1668,6 +2086,7 @@
           family, hard work, perseverance, and looking out for
           one another.
         </p>
+
 
         <p>
           Growing up, the founder's parents were strong providers
@@ -1677,10 +2096,12 @@
           defining challenges of her childhood.
         </p>
 
+
         <p>
           Yet, even during difficult times, there were moments
           of happiness that left a lasting impression.
         </p>
+
 
         <p>
           One of those cherished memories was helping an uncle
@@ -1691,6 +2112,7 @@
           never faded.
         </p>
 
+
         <p>
           At the time, it was simply a childhood experience.
           Years later, it became part of the inspiration
@@ -1698,12 +2120,16 @@
         </p>
 
 
-        <h4>FROM A CHILDHOOD MEMORY TO A BUSINESS</h4>
+        <h4>
+          FROM A CHILDHOOD MEMORY TO A BUSINESS
+        </h4>
+
 
         <p>
           In 2021, TastyStrains was founded with a vision to
           transform that feeling of community and joy into a brand.
         </p>
+
 
         <p>
           TastyStrains is a pre-packaged frozen dessert brand
@@ -1711,11 +2137,13 @@
           and resilience.
         </p>
 
+
         <p>
           What began with a childhood memory became a mission
           to bring excitement and joy back to neighborhoods
           like the one that raised its founder.
         </p>
+
 
         <p>
           Every cup represents more than a frozen dessert.
@@ -1724,23 +2152,29 @@
           the future.
         </p>
 
+
         <p>
           TastyStrains is proof that even the smallest moments
           can inspire something much bigger.
         </p>
 
 
-        <h4>ROOTED IN DETROIT. BUILT FOR THE FUTURE.</h4>
+        <h4>
+          ROOTED IN DETROIT. BUILT FOR THE FUTURE.
+        </h4>
+
 
         <p>
           Detroit will always be at the heart of TastyStrains.
         </p>
+
 
         <p>
           The vision is to grow through local retail partnerships,
           reach more neighborhoods, and build TastyStrains into
           a recognizable brand throughout Detroit and beyond.
         </p>
+
 
         <p>
           At its core, TastyStrains is about recreating that
@@ -1749,21 +2183,27 @@
           and made to bring a smile to someone's face.
         </p>
 
+
         <p>
           Because sometimes, a simple frozen treat becomes
           more than a treat.
         </p>
 
+
         <p>
           It becomes a memory.
         </p>
+
 
         <p>
           And sometimes, a memory becomes a mission.
         </p>
 
 
-        <h4>THIS IS TASTY STRAINS.</h4>
+        <h4>
+          THIS IS TASTY STRAINS.
+        </h4>
+
 
         <p>
           Born in Detroit.<br>
@@ -1773,25 +2213,29 @@
           Created to bring people joy.
         </p>
 
+
         <p>
           The story began in one Detroit neighborhood.
           The vision is to take it everywhere.
         </p>
 
 
+        <!-- FOUNDER PHOTO -->
+
         <div class="owner-photo-wrap">
 
           <img
             src="owner-photo.PNG"
-            alt="The people behind TastyStrains"
+            alt="The founder of TastyStrains"
             class="owner-photo"
           >
 
           <div class="owner-photo-caption">
-            THE PEOPLE BEHIND TASTY STRAINS
+            THE FOUNDER OF TASTY STRAINS
           </div>
 
         </div>
+
 
       </div>
 
@@ -1800,24 +2244,31 @@
   </section>
 
 
-  <!-- =========================
+  <!-- =====================================================
        CONTACT
-       ========================= -->
+       ===================================================== -->
 
   <section id="contact">
 
     <div class="container">
 
+
       <h2 class="section-title">
+
         <span class="blue">GET IN</span>
-        <span class="pink">TOUCH</span>
+
+        <span class="pink"> TOUCH</span>
+
       </h2>
 
+
       <div class="contact-card">
+
 
         <h3>
           LET'S MAKE IT TASTY
         </h3>
+
 
         <p>
           Interested in retail placement, catering,
@@ -1825,7 +2276,9 @@
           Get in touch.
         </p>
 
+
         <div class="buttons">
+
 
           <a
             href="tel:313-591-3034"
@@ -1833,6 +2286,7 @@
           >
             CALL 313-591-3034
           </a>
+
 
           <a
             href="https://www.instagram.com/tastystrains313/"
@@ -1842,6 +2296,7 @@
             INSTAGRAM
           </a>
 
+
         </div>
 
       </div>
@@ -1851,42 +2306,52 @@
   </section>
 
 
-  <!-- =========================
+  <!-- =====================================================
        FOOTER
-       ========================= -->
+       ===================================================== -->
 
   <footer>
 
+
     <video
       class="footer-video"
-      src="tastystrains-logo.mp4"
+      src="tastystrains-logo.MP4"
       autoplay
       muted
       loop
       playsinline
     ></video>
 
+
     <div class="footer-brand">
+
       <span class="blue">Tasty</span><span class="pink">Strains</span>
+
     </div>
+
 
     <p>
       Detroit, Michigan
     </p>
 
+
     <p>
       313-591-3034
     </p>
+
 
     <p>
       14 Retail Locations
     </p>
 
+
     <p>
       © 2026 TastyStrains. All Rights Reserved.
     </p>
 
+
   </footer>
+
 
 </body>
 </html>
